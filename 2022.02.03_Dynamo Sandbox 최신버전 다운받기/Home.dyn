@@ -1,0 +1,463 @@
+{
+  "Uuid": "42ba23fd-9493-41ab-a6fd-6f1fa75e2953",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Home",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0..10;",
+      "Id": "abc632c113554bbd96bf7049102e4d2e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c37d64573a884000bfbf8add72df16f6",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.ByCoordinates@double,double,double",
+      "Id": "f05f88fcc8f744a5b39b228b341fb617",
+      "Inputs": [
+        {
+          "Id": "a130feeb57684625b6453d54c472ca2b",
+          "Name": "x",
+          "Description": "X 좌표\n\ndouble\n기본값 : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2e59ebab21ab4addb31d0e2766f162c8",
+          "Name": "y",
+          "Description": "Y 좌표\n\ndouble\n기본값 : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "572816f157b744bc89922a18b8769c5c",
+          "Name": "z",
+          "Description": "Z 좌표\n\ndouble\n기본값 : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "19775f92ac4c4b2f9311465b27ae3427",
+          "Name": "Point",
+          "Description": "좌표로 작성된 점",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "CrossProduct",
+      "Description": "지정된 3개의 데카르트 좌표를 사용하여 점을 형성합니다\n\nPoint.ByCoordinates (x: double = 0, y: double = 0, z: double = 0): Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Modifiers.GeometryColor.ByGeometryColor@Autodesk.DesignScript.Geometry.Geometry,DSCore.Color",
+      "Id": "40d3e5bdefb944dabcdbce4ff55955fa",
+      "Inputs": [
+        {
+          "Id": "b261c575f137463ea1b246bbfc74fe75",
+          "Name": "geometry",
+          "Description": "색상을 적용하려는 형상입니다.\n\nGeometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8309b7f7322a4f549cd74a68e02e2627",
+          "Name": "color",
+          "Description": "해당 색상입니다.\n\nColor",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a53261939d8b4d07bf5a4aef1e75a76f",
+          "Name": "GeometryColor",
+          "Description": "화면표시 객체입니다.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "색상을 사용하여 형상을 표시합니다.\n\nGeometryColor.ByGeometryColor (geometry: Geometry, color: Color): GeometryColor"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.ColorPalette, CoreNodeModels",
+      "InputValue": {
+        "R": 255,
+        "G": 0,
+        "B": 0,
+        "A": 101
+      },
+      "NodeType": "ColorInputNode",
+      "Id": "3d922849bb3e45168328943c1668c1bc",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "25855babe8f3466a91c194c5669577d9",
+          "Name": "Color",
+          "Description": "Selected Color.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "팔레트에서 색상 선택"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.ColorPalette, CoreNodeModels",
+      "InputValue": {
+        "R": 127,
+        "G": 255,
+        "B": 0,
+        "A": 133
+      },
+      "NodeType": "ColorInputNode",
+      "Id": "dca168febf764b75b89edf6cede15ae7",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "66e74166dba543ec85eb7b7fbff786cc",
+          "Name": "Color",
+          "Description": "Selected Color.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "팔레트에서 색상 선택"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.ColorPalette, CoreNodeModels",
+      "InputValue": {
+        "R": 65,
+        "G": 105,
+        "B": 225,
+        "A": 165
+      },
+      "NodeType": "ColorInputNode",
+      "Id": "2a004beebffb476f8f1adc5baed87e9c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "71878f13aab64921a34560946adb0962",
+          "Name": "Color",
+          "Description": "Selected Color.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "팔레트에서 색상 선택"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.ColorPalette, CoreNodeModels",
+      "InputValue": {
+        "R": 139,
+        "G": 69,
+        "B": 19,
+        "A": 110
+      },
+      "NodeType": "ColorInputNode",
+      "Id": "8d9c924241974834a352a6dcd4e05b67",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e895a36f7a9e43f8a84c53fdf9b6f457",
+          "Name": "Color",
+          "Description": "Selected Color.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "팔레트에서 색상 선택"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSVarArgFunction, DynamoCore",
+      "FunctionSignature": "DSCore.List.Join@var[]..[]",
+      "FunctionType": "VariableArgument",
+      "NodeType": "FunctionNode",
+      "Id": "cd459b9f711a467f9d93a7d3459b0ba9",
+      "Inputs": [
+        {
+          "Id": "decd5ac91432463aa9fabed9fdb21ab7",
+          "Name": "list0",
+          "Description": "하나로 결합할 리스트.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "db956875b8ef4bc6b82ab86bbc94618f",
+          "Name": "list1",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "99197b880e6744c0bfe8c314ca6555d5",
+          "Name": "list2",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d302af3b8013416bb481b497c9896381",
+          "Name": "list3",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8a544f01496948f792fd011424276926",
+          "Name": "list",
+          "Description": "결합된 리스트.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "지정된 모든 리스트를 단일 리스트로 연결합니다.\n\nList.Join (lists: var[]..[]): var[]..[]"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "c37d64573a884000bfbf8add72df16f6",
+      "End": "2e59ebab21ab4addb31d0e2766f162c8",
+      "Id": "63eae5cfb8e14af9b3d761a863b8da8a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c37d64573a884000bfbf8add72df16f6",
+      "End": "a130feeb57684625b6453d54c472ca2b",
+      "Id": "4fc11c232fc24370a7d516c933c9c8c5",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c37d64573a884000bfbf8add72df16f6",
+      "End": "572816f157b744bc89922a18b8769c5c",
+      "Id": "838b95419b1c42f4bba3121452ab3155",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "19775f92ac4c4b2f9311465b27ae3427",
+      "End": "b261c575f137463ea1b246bbfc74fe75",
+      "Id": "807fbf835ecc47a1bdd9a288f4f4feb6",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "25855babe8f3466a91c194c5669577d9",
+      "End": "decd5ac91432463aa9fabed9fdb21ab7",
+      "Id": "45ecc95cf1524b2f97955a723e7addd6",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "66e74166dba543ec85eb7b7fbff786cc",
+      "End": "db956875b8ef4bc6b82ab86bbc94618f",
+      "Id": "e657077b145144adb2f0bcaa41d984cb",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "71878f13aab64921a34560946adb0962",
+      "End": "99197b880e6744c0bfe8c314ca6555d5",
+      "Id": "37963725d3f64fa6b46221aa9b6f3b33",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e895a36f7a9e43f8a84c53fdf9b6f457",
+      "End": "d302af3b8013416bb481b497c9896381",
+      "Id": "b4b7b2db203143eaa7c61b0ae9325208",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8a544f01496948f792fd011424276926",
+      "End": "8309b7f7322a4f549cd74a68e02e2627",
+      "Id": "e58d3afdf22545da8669b1eff13fdf25",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.13",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "없음",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.13.1.3887",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "배경 미리보기",
+      "EyeX": -18.154075622558594,
+      "EyeY": 9.1984958648681641,
+      "EyeZ": 5.8182382583618164,
+      "LookX": 13.298298835754395,
+      "LookY": -6.0030736923217773,
+      "LookZ": -10.696164131164551,
+      "UpX": 0.094963222742080688,
+      "UpY": 0.99254626035690308,
+      "UpZ": -0.07638143002986908
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Id": "abc632c113554bbd96bf7049102e4d2e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 149.0,
+        "Y": 248.0
+      },
+      {
+        "Name": "Point.ByCoordinates",
+        "ShowGeometry": true,
+        "Id": "f05f88fcc8f744a5b39b228b341fb617",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 457.0,
+        "Y": 260.0
+      },
+      {
+        "Name": "GeometryColor.ByGeometryColor",
+        "ShowGeometry": true,
+        "Id": "40d3e5bdefb944dabcdbce4ff55955fa",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 793.55706822533193,
+        "Y": 428.54535719958085
+      },
+      {
+        "Name": "Color Palette",
+        "ShowGeometry": true,
+        "Id": "3d922849bb3e45168328943c1668c1bc",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 242.62855328513365,
+        "Y": 593.595890731765
+      },
+      {
+        "Name": "Color Palette",
+        "ShowGeometry": true,
+        "Id": "dca168febf764b75b89edf6cede15ae7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 242.62855328513365,
+        "Y": 740.595890731765
+      },
+      {
+        "Name": "Color Palette",
+        "ShowGeometry": true,
+        "Id": "2a004beebffb476f8f1adc5baed87e9c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 242.62855328513365,
+        "Y": 887.595890731765
+      },
+      {
+        "Name": "Color Palette",
+        "ShowGeometry": true,
+        "Id": "8d9c924241974834a352a6dcd4e05b67",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 242.62855328513365,
+        "Y": 1036.5958907317649
+      },
+      {
+        "Name": "List.Join",
+        "ShowGeometry": true,
+        "Id": "cd459b9f711a467f9d93a7d3459b0ba9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 511.62855328513365,
+        "Y": 763.595890731765
+      }
+    ],
+    "Annotations": [],
+    "X": 51.027911030328369,
+    "Y": 23.688680120110917,
+    "Zoom": 0.50254684118838844
+  }
+}
