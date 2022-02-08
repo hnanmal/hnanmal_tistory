@@ -1,0 +1,382 @@
+{
+  "Uuid": "29e6b89f-c6fb-4013-a9e6-e866a29722e2",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Home",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Python 표준 및 DesignScript 라이브러리 로드\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# 이 노드에 대한 입력값은 IN 변수에 리스트로 저장됩니다.\r\ndataEnteringNode = IN\r\n\r\n# 코드를 이 선 아래에 배치\r\nmylist = [\r\n\t\"강남_지사1\",\r\n\t\"강남_지사2\",\r\n\t\"강동_지사3\",\r\n\t\"강서_지사4\",\r\n\t\"강서_지사5\",\r\n\t\"강북_지사6\",\r\n\t\"강북_지사7\",\r\n\t\"강북_창고1\",\r\n\t\"강북_창고2\",\r\n\t\"의정부_지사8\",\r\n\t\"남양주_지사9\",\r\n\t\"수원_안전가옥\",\r\n\t\"태안_창고3\",\r\n\t\"강릉_소극장\",\r\n\t\"속초_연구동1\",\r\n\t\"나주_연구동2\",\r\n\t\"경주_지사10\",\r\n\t\"부산_지사11\",\r\n\t]\r\n\r\nmyresult = []\r\nfor i in mylist:\r\n    if \"강남\" in i or \"강북\" in i or \"수원\" in i or \"부산\" in i:\r\n        myresult.append(i)\r\n\r\n# 출력을 OUT 변수에 지정합니다.\r\nOUT = myresult",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "ba99cf1150c745e29c0c1a54f78ce4a2",
+      "Inputs": [
+        {
+          "Id": "063e66a0ca6343bc88414df32253f78d",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ad3144dc2ef048b79ba908856a28266a",
+          "Name": "OUT",
+          "Description": "Python 스크립트의 결과",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "포함된 Python 스크립트를 실행합니다."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Python 표준 및 DesignScript 라이브러리 로드\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\nimport json\r\n\r\n# 이 노드에 대한 입력값은 IN 변수에 리스트로 저장됩니다.\r\ndataEnteringNode = IN\r\nfilepath = IN[0]\r\n# 코드를 이 선 아래에 배치\r\nwith open(filepath, 'r') as f:\r\n    hero_data = json.load(f)\r\n\r\nmyData = [\r\n    {\"name\": \"식빵\", \"family\": \"웰시코기\", \"age\": 1, \"weight\": 2.14},\r\n    {\"name\": \"콩콩\", \"family\": \"포메라니안\", \"age\": 3, \"weight\": 2.5},\r\n    {\"name\": \"젤리\", \"family\": \"푸들\", \"age\": 7, \"weight\": 3.1},\r\n]\r\n\r\n\r\n# 출력을 OUT 변수에 지정합니다.\r\nOUT = hero_data[\"members\"]\r\n#superHeroes['active']",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "8537be9597cf4e428e6dfba9710900a7",
+      "Inputs": [
+        {
+          "Id": "c1ae70220f1d4869a902c0d8f522f3b5",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d49e39dc250a48d8a1bcc84de6986486",
+          "Name": "OUT",
+          "Description": "Python 스크립트의 결과",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "포함된 Python 스크립트를 실행합니다."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.Filename, CoreNodeModels",
+      "HintPath": "C:\\Users\\pjmk0\\Downloads\\MK\\hnanmal_tistory\\2022.02.08_파이썬으로 조건문 다루기\\samplejson.json",
+      "InputValue": ".\\samplejson.json",
+      "NodeType": "ExtensionNode",
+      "Id": "0e984119fa284f2cb33af4f9320c9aa5",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f24a38a4b23548bfa19aaec7c3154490",
+          "Name": "",
+          "Description": "File Path",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "시스템에서 파일을 선택하여 파일 경로를 가져올 수 있습니다."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport os\r\npython_rootpath = os.getenv('LOCALAPPDATA')+'\\Programs\\Python'\r\nfile_list = os.listdir(python_rootpath)\r\npython_version = file_list[-1]\r\nimport sys\r\nsys.path.append(os.getenv('LOCALAPPDATA').replace('\\\\','\\\\\\\\') + f'\\Programs\\Python\\{python_version}\\Lib\\site-packages')\r\n\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\nimport PyQt5\r\n\r\n#from PyQt5.QtWidgets import QWidget#, QDesktopWidget, QApplication\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\nPyQt5\r\n# Place your code below this line\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = python_version",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "132a5de1a927412a8cebde80d017dcff",
+      "Inputs": [
+        {
+          "Id": "342dab5d22b14209b66073a9357ae018",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ef3830d27b4f4316897bf1b072afc985",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "포함된 Python 스크립트를 실행합니다."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "import clr\r\n\r\nclr.AddReference('RevitAPI')\r\nfrom Autodesk.Revit.DB import *\r\nfrom Autodesk.Revit.DB.Structure import *\r\n\r\nclr.AddReference('RevitAPIUI')\r\nfrom Autodesk.Revit.UI import *\r\n\r\nclr.AddReference('System')\r\nfrom System.Collections.Generic import List\r\n\r\nclr.AddReference('RevitNodes')\r\nimport Revit\r\nclr.ImportExtensions(Revit.GeometryConversion)\r\nclr.ImportExtensions(Revit.Elements)\r\n\r\nclr.AddReference('RevitServices')\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\n\r\nclr.AddReference('System.Windows.Forms')\r\nfrom System.Windows.Forms import *\r\nclr.AddReference('System.Drawing')\r\nfrom System.Drawing import *\r\n\r\nclr.AddReference('DSCoreNodes')\r\nfrom DSCore import Math\r\n\r\n\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\nuidoc=DocumentManager.Instance.CurrentUIApplication.ActiveUIDocument\r\n\r\n#Preparing input from dynamo to revit\r\nif isinstance (IN[0], list):\r\n\telement = [UnwrapElement(e) for e in IN[0]]\r\nelse:\r\n\telement = [UnwrapElement(IN[0])]\r\n\r\n#Do some action in a Transaction\r\nTransactionManager.Instance.EnsureInTransaction(doc)\r\n\r\nTransactionManager.Instance.TransactionTaskDone()\r\n\r\nclass CustomForm(Form):\r\n    def __init__(self):\r\n    \r\n        #class data\r\n        self.data = 'foo'\r\n        \r\n        #form\r\n        \r\n        self.ShowIcon = False\r\n        self.MaximizeBox = False\r\n        self.FormBorderStyle = FormBorderStyle.FixedSingle\r\n        self.Size = Size(400,180)\r\n        \r\n        #label\r\n        self.currDist_label = Label()\r\n        self.currDist_label.Parent = self\r\n        self.currDist_label.Location = Point(21,18)\r\n        self.currDist_label.Size = Size(90,13)\r\n        self.currDist_label.Text = 'Current Distance'\r\n        \r\n        self.tarDist_label = Label()\r\n        self.tarDist_label.Parent = self\r\n        self.tarDist_label.Location = Point(21,66)\r\n        self.tarDist_label.Size = Size(90,13)\r\n        self.tarDist_label.Text = 'Distance to Set'\r\n        \r\n        \r\n        \r\n        #TextBox\r\n        self.currDist_textBox = TextBox()\r\n        self.currDist_textBox.Location = Point(131,12)\r\n        self.currDist_textBox.Size = Size(148,25)\r\n        self.currDist_textBox.Text = 'test'\r\n        self.currDist_textBox.ReadOnly = True\r\n        self.currDist_textBox.Parent = self\r\n\r\n        self.tarDist_textBox = TextBox()\r\n        self.tarDist_textBox.Location = Point(131,60)\r\n        self.tarDist_textBox.Size = Size(148,25)\r\n        self.tarDist_textBox.Text = ''\r\n        self.tarDist_textBox.Parent = self\r\n        self.ActiveControl = self.tarDist_textBox\r\n        #button\r\n        \r\n        self.button1 = Button()\r\n        self.button1.Text = 'Confirm'\r\n        self.button1.Name = 'Confirm'\r\n        self.button1.Parent = self\r\n        self.button1.Location = Point(297,12)\r\n        self.button1.Size = Size(75,25)\r\n        \r\n        self.button2 = Button()\r\n        self.button2.Text = 'Cancel'\r\n        self.button2.Name = 'Cancel'\r\n        self.button2.Parent = self\r\n        self.button2.Location = Point(297,60)\r\n        self.button2.Size = Size(75,25)\r\n        \r\n        #checkbox\r\n        self.deleteDim = CheckBox()\r\n        self.deleteDim.Name = 'deleteDim'\r\n        self.deleteDim.Text = 'Delete Dimension'\r\n        self.deleteDim.Location = Point(25,104)\r\n        self.deleteDim.Size = Size(109,17)\r\n        self.deleteDim.Parent = self\r\n        #events\r\n        \r\n        self.Load += self.formLoadHandler\r\n        self.button1.Click += self.buttonClickHandler\r\n        self.button2.Click += self.buttonClickHandler        \r\n        self.tarDist_textBox.KeyDown += self.keyPressHandler\r\n\r\n    def Show(self):\r\n        self.ShowDialog()\r\n\t\t\r\n    def keyPressHandler(self, sender, args):\r\n\r\n       if (args.KeyCode == Keys.Enter):\r\n           self.buttonClickHandler(self.button1, args)\r\n\t\t\r\n    def buttonClickHandler(self, sender, args):\r\n        if(sender.Name == 'Cancel'):\r\n            self.form.Close()\r\n        if(sender.Name == 'Confirm'):\r\n            self.data = self.tarDist_textBox.Text\r\n            self.Close()\r\n\r\n    def formLoadHandler(self, sender, args):\r\n        sender.Text = 'Dynamo'\r\n        \r\n        \r\nTransactionManager.Instance.EnsureInTransaction(doc)\r\nview = doc.ActiveView\r\nsel1 = uidoc.Selection.PickObject(Selection.ObjectType.Element, \"Select a Pipe Element to measure\")\r\nsel2 = uidoc.Selection.PickObject(Selection.ObjectType.Element, \"Select a Pipe or Linked Element\")\r\nele1 = doc.GetElement(sel1)\r\nele2 = doc.GetElement(sel2)\r\n\r\nif isinstance(ele2, RevitLinkInstance):\r\n    ref_link = uidoc.Selection.PickObject(Selection.ObjectType.LinkedElement, \"Select a element to measure\")\r\n    linkDoc = ele2.GetLinkDocument()\r\n    linkElement = linkDoc.GetElement(ref_link.LinkedElementId)\r\n    ele2 = linkElement\r\n    if isinstance(ele2.Location, LocationPoint):\r\n        ref_link = uidoc.Selection.PickObject(Selection.ObjectType.PointOnElement, \"Select point\")\r\n        linkElement = linkDoc.GetElement(ref_link.LinkedElementId)\r\n        globalPoint = ref_link.GlobalPoint\r\n        sel2 = ref_link\r\n        ele2 = linkElement\r\n        \r\n\r\nif isinstance (ele1, Grid):\r\n    line1 = ele1.Curve\r\nelse:\r\n    line1 = ele1.Location.Curve\r\npt1 = line1.Evaluate(0.5, True)\r\nrot = Transform.CreateRotationAtPoint(XYZ(0,0,1), Math.PI/2, pt1)\r\nline_trans = line1.CreateTransformed(rot)\r\nvec1 = line_trans.Direction\r\n\r\n\r\nref_Array = ReferenceArray()\r\nref_Array.Append(sel1)\r\nref_Array.Append(sel2)\r\n\r\ndim = doc.Create.NewDimension(view, line_trans, ref_Array)\r\nval = dim.Value\r\nconvert_val = UnitUtils.ConvertFromInternalUnits(val, UnitTypeId.Millimeters)\r\nTransactionManager.Instance.TransactionTaskDone()\r\n\r\ncf = CustomForm()\r\n\r\ncf.currDist_textBox.Text = str(Math.Round(convert_val,0))\r\n\r\ncf.Show()\r\n\r\nif cf.data == 'foo':\r\n    OUT = 0\r\n\r\nelse:\r\n    \r\n    targetVal = float(cf.data)\r\n    \r\n    TransactionManager.Instance.EnsureInTransaction(doc)\r\n    \r\n\r\n    calcVal = UnitUtils.ConvertToInternalUnits(targetVal - convert_val, UnitTypeId.Millimeters)\r\n    normal_pt = vec1.Normalize()\r\n    move_XYZ = normal_pt.Multiply(calcVal)\r\n    \r\n    ElementTransformUtils.MoveElement(doc, ele1.Id, move_XYZ)\r\n    TransactionManager.Instance.TransactionTaskDone()\r\n    \r\n    \r\n    translatedVal = dim.Value\r\n    translatedVal_unit = UnitUtils.ConvertFromInternalUnits(translatedVal, UnitTypeId.Millimeters)\r\n    \r\n    \r\n    if abs(translatedVal_unit - targetVal) > 0.005:\r\n        TransactionManager.Instance.EnsureInTransaction(doc)\r\n        reverse_XYZ = move_XYZ.Multiply(-2)\r\n        ElementTransformUtils.MoveElement(doc, ele1.Id, reverse_XYZ)\r\n        TransactionManager.Instance.TransactionTaskDone()\r\n    \r\n    #delete dimension\r\n    if cf.deleteDim.Checked:\r\n        doc.Delete(dim.Id)\r\n    \r\n    OUT = ele1\r\n",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "dbd137befb504ba985ce5f38ed2bc3fd",
+      "Inputs": [
+        {
+          "Id": "d2688e3f759d4c33acd2a4feae05f774",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f7ea944de65841788be6e27b14c6346e",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5a69daa21588460ea9d7fcdbaf97bc72",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "포함된 Python 스크립트를 실행합니다."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Python 표준 및 DesignScript 라이브러리 로드\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\nimport json\r\n\r\n# 이 노드에 대한 입력값은 IN 변수에 리스트로 저장됩니다.\r\ndataEnteringNode = IN\r\n\r\n# 코드를 이 선 아래에 배치\r\ndef func1():\r\n    return 0\r\n\r\nmyData = [\r\n    {\"name\": \"식빵\", \"family\": \"웰시코기\", \"age\": 1, \"weight\": 2.14, \"method\": func1},\r\n    {\"name\": \"콩콩\", \"family\": \"포메라니안\", \"age\": 3, \"weight\": 2.5},\r\n    {\"name\": \"젤리\", \"family\": \"푸들\", \"age\": 7, \"weight\": 3.1},\r\n]\r\n\r\n\r\n# 출력을 OUT 변수에 지정합니다.\r\nOUT = myData\r\n#superHeroes['active']",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "6ed0de51f5304e5a965ac58c332df85b",
+      "Inputs": [
+        {
+          "Id": "da91fe7d01834c7885716b3e9633fbf2",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1c3370e092d147d488d6670282135c7c",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "포함된 Python 스크립트를 실행합니다."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Python 표준 및 DesignScript 라이브러리 로드\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# 이 노드에 대한 입력값은 IN 변수에 리스트로 저장됩니다.\r\ndataEnteringNode = IN\r\n\r\n# 코드를 이 선 아래에 배치\r\ndef 지사처리(a):\r\n    return a + \"_지사장 파견 필요\"\r\n\r\ndef 안가처리(a):\r\n    return \"시설 폐쇄\"\r\n    \r\ndef 창고처리(a):\r\n    return \"<면적 확대예정>_\" + a\r\n\r\n\r\nmylist = IN[0]\r\n\r\nmyresult = []\r\nfor i in mylist:\r\n    if \"지사\" in i:\r\n        처리결과 = 지사처리(i)\r\n        myresult.append(처리결과)\r\n        \r\n    elif \"안전가옥\" in i:\r\n        처리결과 = 안가처리(i)\r\n        myresult.append(처리결과)\r\n        \r\n    elif \"창고\" in i:\r\n        처리결과 = 창고처리(i)\r\n        myresult.append(처리결과)\r\n\r\n# 출력을 OUT 변수에 지정합니다.\r\nOUT = myresult",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "0993f16d636f4028ace87ea67b6e4a3a",
+      "Inputs": [
+        {
+          "Id": "8886b62811ec44d59a16593ac9409e94",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "cc4f38d7722a40618863d4a31d4cf5cc",
+          "Name": "OUT",
+          "Description": "Python 스크립트의 결과",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "포함된 Python 스크립트를 실행합니다."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "ad3144dc2ef048b79ba908856a28266a",
+      "End": "8886b62811ec44d59a16593ac9409e94",
+      "Id": "f60f81a28cbc48909725daf47894f503",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f24a38a4b23548bfa19aaec7c3154490",
+      "End": "c1ae70220f1d4869a902c0d8f522f3b5",
+      "Id": "375f105fd2ef4d0285d4d2e84d6d36ed",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "samplejson.json",
+      "ReferenceType": "External",
+      "Nodes": [
+        "0e984119fa284f2cb33af4f9320c9aa5"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.13",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "없음",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.13.1.3887",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "배경 미리보기",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Name": "실행결과",
+        "ShowGeometry": true,
+        "Id": "ba99cf1150c745e29c0c1a54f78ce4a2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 412.0,
+        "Y": 261.0
+      },
+      {
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Id": "8537be9597cf4e428e6dfba9710900a7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -955.27728625167776,
+        "Y": -274.71729300740492
+      },
+      {
+        "Name": "File Path",
+        "ShowGeometry": true,
+        "Id": "0e984119fa284f2cb33af4f9320c9aa5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -1422.73994867566,
+        "Y": -400.19407410906518
+      },
+      {
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Id": "132a5de1a927412a8cebde80d017dcff",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -1005.7810156980042,
+        "Y": -523.238586775031
+      },
+      {
+        "Name": "거리조정기",
+        "ShowGeometry": true,
+        "Id": "dbd137befb504ba985ce5f38ed2bc3fd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "X": -654.75575148513622,
+        "Y": -567.9133880606596
+      },
+      {
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Id": "6ed0de51f5304e5a965ac58c332df85b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -778.67871676289815,
+        "Y": -327.53343550747678
+      },
+      {
+        "Name": "실행결과2",
+        "ShowGeometry": true,
+        "Id": "0993f16d636f4028ace87ea67b6e4a3a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 792.39357504361374,
+        "Y": 373.26813282513314
+      }
+    ],
+    "Annotations": [],
+    "X": 195.59163907075367,
+    "Y": -183.39909931345028,
+    "Zoom": 1.2005209111348329
+  }
+}
