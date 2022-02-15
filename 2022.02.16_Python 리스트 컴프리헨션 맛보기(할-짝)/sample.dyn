@@ -1,0 +1,105 @@
+{
+  "Uuid": "cac58290-10c8-4b08-800c-473ade2ec78c",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "sample",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "## for 문을 이용한 리스트 순회 및 조작 ##\r\nprelist = [1,3,4,5,6,7,8,11]\r\n#postlist = []\r\n#\r\n#for a in prelist:\r\n#    if a % 2 == 0:\r\n#        res = a * a\r\n#        postlist.append(res)\r\n\r\n\r\n## 리스트 컴프리헨션 문법 활용 ##\r\n#postlist = [a*a for a in prelist if a % 2 == 0]\r\npostlist = [a*a for a in prelist if a % 2 != 0]\r\n\r\n# 출력을 OUT 변수에 지정합니다.\r\nOUT = postlist",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "591cc9b618a54a5988028bbecc990b92",
+      "Inputs": [
+        {
+          "Id": "fb35b50651484b44ab97f5362680bb4e",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "42c8f174cfb740dc95b26df91c873d72",
+          "Name": "OUT",
+          "Description": "Python 스크립트의 결과",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "포함된 Python 스크립트를 실행합니다."
+    }
+  ],
+  "Connectors": [],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.13",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "없음",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.13.1.3887",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "배경 미리보기",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Id": "591cc9b618a54a5988028bbecc990b92",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 983.54896142433222,
+        "Y": -75.795252225519334
+      }
+    ],
+    "Annotations": [],
+    "X": 48.359999999999985,
+    "Y": 97.857500000000016,
+    "Zoom": 0.8425
+  }
+}
