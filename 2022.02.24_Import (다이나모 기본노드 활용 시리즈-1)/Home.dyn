@@ -1,0 +1,454 @@
+{
+  "Uuid": "1a45193a-625a-4060-ac19-9975e506b7d2",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Home",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSOffice.Data.ImportExcel@var,string,bool,bool",
+      "Id": "eac31822742e4e229a53cdabd325c9ef",
+      "Inputs": [
+        {
+          "Id": "1c197025395f45c5bfd22daa1bb10e5b",
+          "Name": "file",
+          "Description": "File representing the Excel workbook\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "798c99ec1424435d94435f97f5d387ae",
+          "Name": "sheetName",
+          "Description": "Name of the worksheet containing data\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "eb8e4237d32147fc88332c4f4b8f584b",
+          "Name": "readAsStrings",
+          "Description": "Toggle to read cells as strings\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "451de9008b23462c8eed6d04c7b75eeb",
+          "Name": "showExcel",
+          "Description": "Toggle to show excel's main window\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a4fe7fbe190a44588d09cae799614c9b",
+          "Name": "data",
+          "Description": "Rows of data from the Excel worksheet",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Read data from a Microsoft Excel spreadsheet. Data is read by row and returned in a series of lists by row. Rows and columns are zero-indexed; for example, the value in cell A1 will appear in the data list at [0,0]. This node requires Microsoft Excel to be installed.\n\nData.ImportExcel (file: var, sheetName: string, readAsStrings: bool = false, showExcel: bool = true): var[][]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.Filename, CoreNodeModels",
+      "HintPath": "C:\\Users\\pjmk0\\Downloads\\MK\\hnanmal_tistory\\2022.02.24_Import (다이나모 기본노드 활용 시리즈-1)\\TEST.xlsx",
+      "InputValue": ".\\TEST.xlsx",
+      "NodeType": "ExtensionNode",
+      "Id": "29e869ae14bd41fab3aa098a36181359",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a93d419ae43e47218b88ca1028087a7c",
+          "Name": "",
+          "Description": "File Path",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows you to select a file on the system to get its file path."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.FileObject, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "28cbdec3d10c4c52a77c9c848af2b01c",
+      "Inputs": [
+        {
+          "Id": "a88bf06b79414d368fdf3a081165e7b1",
+          "Name": "path",
+          "Description": "Path to the file.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "40b57dcdde8241cdbc7f42f7bcc515b6",
+          "Name": "file",
+          "Description": "File object",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a file object from a path."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"Sheet1\";",
+      "Id": "c3da18f9b8864832911266a59c982e7a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9b6bc10d47394c97a085105473a6cec7",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "1635449da4414857ab1f6777a3953395",
+      "Inputs": [
+        {
+          "Id": "a83d3aacfc344148885bd487c972ce1c",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "77b64a4ddfd849eeb4adccae70c8a8e6",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the node's output"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsAtLevel, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "546b896f75e74d5eb1d7b7b6f4c9c11c",
+      "Inputs": [
+        {
+          "Id": "5dbd16a640bc428295b0f5e62dfafb72",
+          "Name": "Level",
+          "Description": "A Level",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1de284f759bc4363a8e2ff2887d62d4a",
+          "Name": "Elements",
+          "Description": "Elements at the given level.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all the elements at the specified Level from the model."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Levels, DSRevitNodesUI",
+      "SelectedIndex": 1,
+      "SelectedString": "Foundation",
+      "NodeType": "ExtensionNode",
+      "Id": "741fc437ea494efc80e153192eedb871",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e507d5594e8247d996901e238df0c754",
+          "Name": "Levels",
+          "Description": "The selected Levels",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a level in the active document"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.Geometry",
+      "Id": "847f33ad0ef643dc93bc8da8325ef951",
+      "Inputs": [
+        {
+          "Id": "b376a0f05f9747e391e32dfe1cfcc5c3",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "79b267c6114c40748693a2eba5930942",
+          "Name": "var[]",
+          "Description": "var[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get all of the Geometry associated with this object\n\nElement.Geometry ( ): var[]"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "a4fe7fbe190a44588d09cae799614c9b",
+      "End": "a83d3aacfc344148885bd487c972ce1c",
+      "Id": "88800d8e28624f11be43bc65f1ebe974"
+    },
+    {
+      "Start": "a93d419ae43e47218b88ca1028087a7c",
+      "End": "a88bf06b79414d368fdf3a081165e7b1",
+      "Id": "8ab34261e32a4069b267044d751c76d1"
+    },
+    {
+      "Start": "40b57dcdde8241cdbc7f42f7bcc515b6",
+      "End": "1c197025395f45c5bfd22daa1bb10e5b",
+      "Id": "2cd91bf5572240eaa730b2153a3ab9cf"
+    },
+    {
+      "Start": "9b6bc10d47394c97a085105473a6cec7",
+      "End": "798c99ec1424435d94435f97f5d387ae",
+      "Id": "97b9b3f7bc7f4ea48b6209885cc65afa"
+    },
+    {
+      "Start": "1de284f759bc4363a8e2ff2887d62d4a",
+      "End": "b376a0f05f9747e391e32dfe1cfcc5c3",
+      "Id": "1d9d9d6b0fc04d3c9bc678b3c70a3c67"
+    },
+    {
+      "Start": "e507d5594e8247d996901e238df0c754",
+      "End": "5dbd16a640bc428295b0f5e62dfafb72",
+      "Id": "52df97461c334c4bb14f852c4af6be6c"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.0.5650",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -8522.515625,
+      "EyeY": 8217.09765625,
+      "EyeZ": 30312.11328125,
+      "LookX": 7141.1953125,
+      "LookY": -11269.16796875,
+      "LookZ": -23818.8984375,
+      "UpX": 0.059708673506975174,
+      "UpY": 0.97814762592315674,
+      "UpZ": -0.19915364682674408
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Data.ImportExcel",
+        "Id": "eac31822742e4e229a53cdabd325c9ef",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 282.5,
+        "Y": 182.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "File Path",
+        "Id": "29e869ae14bd41fab3aa098a36181359",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -124.5,
+        "Y": 143.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "File From Path",
+        "Id": "28cbdec3d10c4c52a77c9c848af2b01c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 57.5,
+        "Y": 143.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "c3da18f9b8864832911266a59c982e7a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 56.5,
+        "Y": 280.21333333333337
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "1635449da4414857ab1f6777a3953395",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 540.0,
+        "Y": 123.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements at Level",
+        "Id": "546b896f75e74d5eb1d7b7b6f4c9c11c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 221.95369773579671,
+        "Y": 954.0373915986504
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Levels",
+        "Id": "741fc437ea494efc80e153192eedb871",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -49.922099554376359,
+        "Y": 953.68282085583974
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.Geometry",
+        "Id": "847f33ad0ef643dc93bc8da8325ef951",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 467.56781455727719,
+        "Y": 931.67474744273318
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "e959c91dd6504106838e1a48964b0b11",
+        "Title": "1. 외부로부터의 입력",
+        "Nodes": [
+          "eac31822742e4e229a53cdabd325c9ef",
+          "29e869ae14bd41fab3aa098a36181359",
+          "28cbdec3d10c4c52a77c9c848af2b01c",
+          "c3da18f9b8864832911266a59c982e7a",
+          "1635449da4414857ab1f6777a3953395"
+        ],
+        "Left": -134.5,
+        "Top": 41.0,
+        "Width": 872.5,
+        "Height": 683.0,
+        "FontSize": 60.0,
+        "InitialTop": 123.0,
+        "InitialHeight": 631.0,
+        "TextblockHeight": 72.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "9bd9488c3f704cd8ba4f8b5eb56bfba4",
+        "Title": "2. 레빗으로부터의 입력",
+        "Nodes": [
+          "546b896f75e74d5eb1d7b7b6f4c9c11c",
+          "741fc437ea494efc80e153192eedb871",
+          "847f33ad0ef643dc93bc8da8325ef951"
+        ],
+        "Left": -59.922099554376359,
+        "Top": 849.67474744273318,
+        "Width": 734.48991411165355,
+        "Height": 197.36264415591722,
+        "FontSize": 60.0,
+        "InitialTop": 931.67474744273318,
+        "InitialHeight": 145.36264415591711,
+        "TextblockHeight": 72.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 388.8858688737642,
+    "Y": 16.181556489370791,
+    "Zoom": 0.49935774833045793
+  }
+}
