@@ -1,0 +1,2327 @@
+{
+  "Uuid": "9a10ae75-9a8c-4bf7-92b5-df1f3f1d4a67",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Home",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.CreateList, CoreNodeModels",
+      "VariableInputPorts": true,
+      "NodeType": "ExtensionNode",
+      "Id": "64e43941708f4368aafb63a70e9a72ba",
+      "Inputs": [
+        {
+          "Id": "10d0816bb2b048e5b84c0c71cd5ef507",
+          "Name": "item0",
+          "Description": "Item Index #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8934883336c64c7697b531ea890d0ae6",
+          "Name": "item1",
+          "Description": "Item Index #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7761c7b0d7e348db9f8a4cc4e91fbf77",
+          "Name": "list",
+          "Description": "A list (type: var[]..[])",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "지정된 입력에서 새 리스트를 만듭니다"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Range, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "4a3afb44db444a2280e70707234136b3",
+      "Inputs": [
+        {
+          "Id": "1b297245f92f4a2b85701b3b897e70a1",
+          "Name": "start",
+          "Description": "Number or letter to start the sequence at\r\nDefault value: 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b9627defb8b3455db1bc0e126536365a",
+          "Name": "end",
+          "Description": "Number or letter to end the sequence at\r\nDefault value: 9",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5ae07d14a69842aca3a8287e34c8049a",
+          "Name": "step",
+          "Description": "Space between numbers or letters\r\nDefault value: 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "afac326881164c1689bf057c06343948",
+          "Name": "list",
+          "Description": "New list of type: var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 범위에서 숫자 또는 문자의 시퀀스를 만듭니다."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Sequence, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "57a53ffa45a8483cb65583b6910b0106",
+      "Inputs": [
+        {
+          "Id": "16b75ccf10b947409ca0e0ae3e604cfb",
+          "Name": "start",
+          "Description": "Number or letter to start the sequence at\r\nDefault value: 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8522d1150cd74f02b7b4226e99d9c1eb",
+          "Name": "amount",
+          "Description": "Amount of numbers or letters in the sequence\r\nDefault value: 10",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8df4989788054d44b75efb6b394bd56d",
+          "Name": "step",
+          "Description": "Space between numbers or letters\r\nDefault value: 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8c8a8708cc7f471789e8a3be8788f7a6",
+          "Name": "list",
+          "Description": "New list of type: var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "숫자의 시퀀스를 만듭니다."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n# Place your code below this line\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = IN",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "640976bb36cd45308cd173aacbdc0b39",
+      "Inputs": [
+        {
+          "Id": "21b2b96461014b0b89c6d14508fec2e0",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "01d33c7f98cb4caabbb2c931a1346ef7",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7e35e9373e4b439d935a086d4559a7ae",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "포함된 Python 스크립트를 실행합니다."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "[a, b];",
+      "Id": "86a4bbc1e153473ca9851e080304c470",
+      "Inputs": [
+        {
+          "Id": "1377236716d04d22890eb47c4a510093",
+          "Name": "a",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2c9695f491ff4e4ca12b14fcfeed66d5",
+          "Name": "b",
+          "Description": "b",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "57041041458d4b41a0e69694907f5d75",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0..9..1;",
+      "Id": "175b8e490a1f487b9595f3195b33b8d5",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b0e74c2c424843569a3cb288f2f3b2ff",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0..#10..1;",
+      "Id": "df0c099c1a2241778d373e801716ab16",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "6f9c24847318409398b52b71967f4251",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n#def dtfn():\r\n\r\nstart = IN[0]\r\nend = IN[1]\r\nstep = IN[2]\r\n\r\n# Place your code below this line\r\n\r\ndef mk_range(start, end, step):\r\n    if start == None: start = 0\r\n    if end == None: end = 9\r\n    if step == None: step = 1\r\n    \r\n    return range(start, end+1, step)\r\n\r\n    \r\nres = mk_range(start, end, step)\r\n# Assign your output to the OUT variable.\r\nOUT = res",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "2dc4d08a858e4e5391b4576f8f9ed263",
+      "Inputs": [
+        {
+          "Id": "a920f1bdb4314186984ea336b84989be",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "107a12b49a574e09ac27e50e8b600718",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bfe654e430d64e09a3f8813cfd3e8f2d",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1a371ece825f415fbb0b2af24ed8f62b",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "포함된 Python 스크립트를 실행합니다."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n\r\nstart = IN[0]\r\namount = IN[1]\r\nstep = IN[2]\r\n\r\n# Place your code below this line\r\n\r\ndef mk_sequence(start, amount, step):\r\n    if start == None: start = 0\r\n    if amount == None: amount = 10\r\n    if step == None: step = 1\r\n    \r\n    res = []\r\n    for a in range(amount):       \r\n        res.append(start + step * a)\r\n    \r\n    return res\r\n    \r\n#res = range(start, end, step)\r\n    \r\nres = mk_sequence(start, amount, step)\r\n# Assign your output to the OUT variable.\r\nOUT = res",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "6692284981814ef38db8333743cb7505",
+      "Inputs": [
+        {
+          "Id": "9c4f5c0dde0848c4a422235edbda2966",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "db851959af80405c98383bd7062e9747",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f01933a36bbf420095cd13fc1b1aa50c",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4ad3da3b76c0468db2e16a348cb2aca3",
+          "Name": "OUT",
+          "Description": "Python 스크립트의 결과",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "포함된 Python 스크립트를 실행합니다."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.CreateList, CoreNodeModels",
+      "VariableInputPorts": true,
+      "NodeType": "ExtensionNode",
+      "Id": "81bf43c2a1e4451f8bec14d26ee420c0",
+      "Inputs": [
+        {
+          "Id": "18b7fc5a812348aeb90ba86bd897b55d",
+          "Name": "item0",
+          "Description": "항목 인덱스 #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "af949d36d9c143d085ae7ce04d0967cb",
+          "Name": "item1",
+          "Description": "항목 Index 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b5cca517680a4768bfdf167c7d2c5058",
+          "Name": "list",
+          "Description": "리스트(유형: var[]..[])",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "지정된 입력에서 새 리스트를 만듭니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "1;\n2;",
+      "Id": "3addb25117ea4caeba1d92ff81b90d92",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "57a8b6838fb143549a2c5a5f84c0d858",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5118edecb5c24937bbd37c8455879288",
+          "Name": "",
+          "Description": "선 2의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.CreateList, CoreNodeModels",
+      "VariableInputPorts": true,
+      "NodeType": "ExtensionNode",
+      "Id": "c2ff3b8c7a9b46cab244164af8d9489c",
+      "Inputs": [
+        {
+          "Id": "39c0245ca5404cfc878be2ea27a1bcff",
+          "Name": "item0",
+          "Description": "항목 인덱스 #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8e101d2feb264c80adfbe761992a82fe",
+          "Name": "item1",
+          "Description": "항목 Index 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "58ac43cf36d14073a0b29a634044a2c8",
+          "Name": "list",
+          "Description": "리스트(유형: var[]..[])",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "지정된 입력에서 새 리스트를 만듭니다"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.CreateList, CoreNodeModels",
+      "VariableInputPorts": true,
+      "NodeType": "ExtensionNode",
+      "Id": "8b43aeecbc2e43a68f609e0f2b74f6c9",
+      "Inputs": [
+        {
+          "Id": "b66c70aae3ad4cc090e14c129d26d423",
+          "Name": "item0",
+          "Description": "항목 인덱스 #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "427c3f233d8046c396b0c3ca334ed34e",
+          "Name": "item1",
+          "Description": "항목 Index 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "124184f0ebe34e518603e02c571dabe7",
+          "Name": "item2",
+          "Description": "항목 Index 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "52c2d77a6d844e9a8ecbac0db69e69a5",
+          "Name": "list",
+          "Description": "리스트(유형: var[]..[])",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "지정된 입력에서 새 리스트를 만듭니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "1;\n[2,3];\n4;",
+      "Id": "eb5bc0b487c94cde92a85a84ad4b9baf",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "423bb8133e4e431cac71d9905d9a8a46",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b99937d587dd425faa0b1fbde4d027aa",
+          "Name": "",
+          "Description": "선 2의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d31d938b26cf4f78ae31c1c3cb774cb3",
+          "Name": "",
+          "Description": "선 3의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.CreateList, CoreNodeModels",
+      "VariableInputPorts": true,
+      "NodeType": "ExtensionNode",
+      "Id": "c7defd1a773141efbdddfefbd0f7a071",
+      "Inputs": [
+        {
+          "Id": "5c38903db4bd4f9882eab2bc7e84001d",
+          "Name": "item0",
+          "Description": "항목 인덱스 #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "af128b3006a04e7b891c6bd909545168",
+          "Name": "item1",
+          "Description": "항목 Index 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d079b5f95465472fbb0912401c164e80",
+          "Name": "list",
+          "Description": "리스트(유형: var[]..[])",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "지정된 입력에서 새 리스트를 만듭니다"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Range, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "888ba8041550403e80a419e09c3d6be5",
+      "Inputs": [
+        {
+          "Id": "9d390ac677b04b63ad2525bdd233f198",
+          "Name": "start",
+          "Description": "시퀀스를 시작할 숫자 또는 문자\r\n기본값: 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "65f076f83b7f4673a845d28faf7ee605",
+          "Name": "end",
+          "Description": "시퀀스를 종료할 숫자 또는 문자\r\n기본값: 9",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "15b6bd9ab2ed4806932e0a3550ef7612",
+          "Name": "step",
+          "Description": "숫자 또는 문자 사이 공백\r\n기본값: 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4625321121f344f4b304cbd61f189787",
+          "Name": "list",
+          "Description": "유형의 새 리스트: var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 범위에서 숫자 또는 문자의 시퀀스를 만듭니다."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Range, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "f99ef17e0e0742078223325ae39dda52",
+      "Inputs": [
+        {
+          "Id": "c44ab5811a2c4f3c98d2c4005c457d3c",
+          "Name": "start",
+          "Description": "시퀀스를 시작할 숫자 또는 문자\r\n기본값: 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0045fd1a71c84217a3f44270126e92b8",
+          "Name": "end",
+          "Description": "시퀀스를 종료할 숫자 또는 문자\r\n기본값: 9",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "539cad7e87e44f0abe42aefbb410efa8",
+          "Name": "step",
+          "Description": "숫자 또는 문자 사이 공백\r\n기본값: 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2c0f542fd59a461e8eef52baec53afb4",
+          "Name": "list",
+          "Description": "유형의 새 리스트: var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 범위에서 숫자 또는 문자의 시퀀스를 만듭니다."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0;",
+      "Id": "cb69b23cad64411caa47e7d2d66d9637",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1b816a5790144d6e9ab1163dc56e5ef4",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "11;",
+      "Id": "da6dee1dc9754bfbb321dd8635510de6",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "94cb904c951943aa84e3716824e2c48c",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Range, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "92833703a2554838af9657b2e26528bb",
+      "Inputs": [
+        {
+          "Id": "18fdcc553bfa40ce98fd4fe4e186670b",
+          "Name": "start",
+          "Description": "시퀀스를 시작할 숫자 또는 문자\r\n기본값: 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dae3b977aabc4ccd9c5074df13770f0f",
+          "Name": "end",
+          "Description": "시퀀스를 종료할 숫자 또는 문자\r\n기본값: 9",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8eeb7dd69e8d49a1b108b36422f127da",
+          "Name": "step",
+          "Description": "숫자 또는 문자 사이 공백\r\n기본값: 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5fe53c9300fd4256a70bee3879a46856",
+          "Name": "list",
+          "Description": "유형의 새 리스트: var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 범위에서 숫자 또는 문자의 시퀀스를 만듭니다."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0;",
+      "Id": "f9c8518f4cbd438cba2ae7551adaf96e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ebe1f91d94b44129a728d868c270a422",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "2;",
+      "Id": "1c1cce2f0f364c6fa03360ba06e41851",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "de4d41d4a72246d6878fa48f1b03f736",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Range, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "8606364a07104ae49253baa49e27a9ee",
+      "Inputs": [
+        {
+          "Id": "119f0bb0066b4ef28d67279f6d110978",
+          "Name": "start",
+          "Description": "시퀀스를 시작할 숫자 또는 문자\r\n기본값: 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e59a7c4d354747d5abe698dee0742aee",
+          "Name": "end",
+          "Description": "시퀀스를 종료할 숫자 또는 문자\r\n기본값: 9",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5d41ab0e2c8244128a291140c55e23c6",
+          "Name": "step",
+          "Description": "숫자 또는 문자 사이 공백\r\n기본값: 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "412285bea36b49af8fe2fe336a47776a",
+          "Name": "list",
+          "Description": "유형의 새 리스트: var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 범위에서 숫자 또는 문자의 시퀀스를 만듭니다."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Sequence, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "67af905135f645d893423b1dc57b7c45",
+      "Inputs": [
+        {
+          "Id": "706e6eeb145242469da50a1d55b31c89",
+          "Name": "start",
+          "Description": "시퀀스를 시작할 숫자 또는 문자\r\n기본값: 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0203bb6f3197474cb9ab67120e44c4d8",
+          "Name": "amount",
+          "Description": "시퀀스의 숫자 또는 문자 수\r\n기본값: 10",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8438b17d99a6499d94c8f188b7a66e7d",
+          "Name": "step",
+          "Description": "숫자 또는 문자 사이 공백\r\n기본값: 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e17e22a4a93645e29c5a3e6804ddc041",
+          "Name": "list",
+          "Description": "유형의 새 리스트: var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "숫자의 시퀀스를 만듭니다."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0;",
+      "Id": "c900825ac9794517814ebc079f69653a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a53462f1329a4919b938b5e3f73d08b2",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "11;",
+      "Id": "cb89e17d1fc44f86a710f285b81a1b18",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "97e22496bf4745b98c9e0a3ec1f6ef92",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "2;",
+      "Id": "173e533689a646ac993a44aeab8e2495",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "31005999a17d40a49af090c8a62849e8",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "2;",
+      "Id": "93013e8c609e4bd6a612798a9accdedf",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1f350897a9944bceb16865ecc65e3c03",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Sequence, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "13f71a49a049428fb2aee42f83c00b15",
+      "Inputs": [
+        {
+          "Id": "5ed0b0359e2a4c9797e793598156707e",
+          "Name": "start",
+          "Description": "시퀀스를 시작할 숫자 또는 문자\r\n기본값: 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5f6fd42437be414c9f4273293996cae3",
+          "Name": "amount",
+          "Description": "시퀀스의 숫자 또는 문자 수\r\n기본값: 10",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "eee165c7250e4391adf0608695701389",
+          "Name": "step",
+          "Description": "숫자 또는 문자 사이 공백\r\n기본값: 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1e2abc21b55e46e7af0cdaeba0cdac92",
+          "Name": "list",
+          "Description": "유형의 새 리스트: var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "숫자의 시퀀스를 만듭니다."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Sequence, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "6d47a0b88b6446d1a1c6caaa405066fb",
+      "Inputs": [
+        {
+          "Id": "1d1d44bd6dc740e5a111e2a33dabe134",
+          "Name": "start",
+          "Description": "시퀀스를 시작할 숫자 또는 문자\r\n기본값: 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3eb1f54d7e19418f8546755e3b401605",
+          "Name": "amount",
+          "Description": "시퀀스의 숫자 또는 문자 수\r\n기본값: 10",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bf837b63f33e4fdab2a58cf3adbff286",
+          "Name": "step",
+          "Description": "숫자 또는 문자 사이 공백\r\n기본값: 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e96d7bfe48664c059f7e59709c08750e",
+          "Name": "list",
+          "Description": "유형의 새 리스트: var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "숫자의 시퀀스를 만듭니다."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Sequence, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "95acc5d2c00242c8a3dc6dc1d743c70f",
+      "Inputs": [
+        {
+          "Id": "4c669e48e9e545d9b6a3ec87f39c29d5",
+          "Name": "start",
+          "Description": "시퀀스를 시작할 숫자 또는 문자\r\n기본값: 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a59c6b3f82584c3e81669ceb802164f7",
+          "Name": "amount",
+          "Description": "시퀀스의 숫자 또는 문자 수\r\n기본값: 10",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4e1fbaa665b141dfb80bb862f48ce51e",
+          "Name": "step",
+          "Description": "숫자 또는 문자 사이 공백\r\n기본값: 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b9c58bb47347458e9999c6b0c31d0b8f",
+          "Name": "list",
+          "Description": "유형의 새 리스트: var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "숫자의 시퀀스를 만듭니다."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "[a,b,c];",
+      "Id": "283efdef0d234a638cd4bd7de2428656",
+      "Inputs": [
+        {
+          "Id": "0b00e3152c5c422c97594c7c0ac0dc20",
+          "Name": "a",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d954d5442cf541b0bad1a0a973b9ac29",
+          "Name": "b",
+          "Description": "b",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9f5a4a70d8c34c68b90e252d6832cf85",
+          "Name": "c",
+          "Description": "c",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fe7b9305d48e474183be0ca70468b1a4",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.CreateList, CoreNodeModels",
+      "VariableInputPorts": true,
+      "NodeType": "ExtensionNode",
+      "Id": "a2c587d686d5488fb8edfba3cbec4418",
+      "Inputs": [
+        {
+          "Id": "f2c8fc3993fd494a98ed9b6042135a6b",
+          "Name": "item0",
+          "Description": "항목 인덱스 #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8d79dfdd10c54b108066fd21d470bdaf",
+          "Name": "item1",
+          "Description": "항목 Index 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "194be651477e4396a376fc1c706f3caf",
+          "Name": "item2",
+          "Description": "항목 Index 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c1b6048de44148a287d2b8da9fbc3f0d",
+          "Name": "list",
+          "Description": "리스트(유형: var[]..[])",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "지정된 입력에서 새 리스트를 만듭니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "1;\n3;\n9;",
+      "Id": "4c696171c2ae43b5937cef52a25ea353",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "5ef476010c344f51823c7aef4f212cf1",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b144c783567d4b83811445f4e2b9243d",
+          "Name": "",
+          "Description": "선 2의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "44d9ce0684f54e2189863ca261ada1e0",
+          "Name": "",
+          "Description": "선 3의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Range, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "373686af376c48b8a6396138ae3062f1",
+      "Inputs": [
+        {
+          "Id": "0141e7e446af4c5890e05ea8e45f9d94",
+          "Name": "start",
+          "Description": "시퀀스를 시작할 숫자 또는 문자\r\n기본값: 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "89b70a506dff4553bde58431311dbc59",
+          "Name": "end",
+          "Description": "시퀀스를 종료할 숫자 또는 문자\r\n기본값: 9",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "09c769048eb24cef859c1b28b8c2bf1a",
+          "Name": "step",
+          "Description": "숫자 또는 문자 사이 공백\r\n기본값: 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d2db84543aaa4a91ba759a310ee2edaf",
+          "Name": "list",
+          "Description": "유형의 새 리스트: var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 범위에서 숫자 또는 문자의 시퀀스를 만듭니다."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0..9..1;",
+      "Id": "4337c219c16741dba1334948b42ed1a3",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "01f4e187ce0b43a1b30c99938a3a8e53",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0;\n9;\n1;",
+      "Id": "0dbba09c6f034528909225a340f774f8",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ccf8007e61894ea28f238de49fd4d0ac",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3cfa8a12f4394a4c8b5b235e2989c7b3",
+          "Name": "",
+          "Description": "선 2의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "df941f6098cb4d158039b948bd4a12b9",
+          "Name": "",
+          "Description": "선 3의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Sequence, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "3fceb0230d0a441689563c72ae0b46e4",
+      "Inputs": [
+        {
+          "Id": "53fe4cd0fe03451cafa5996125dfecbc",
+          "Name": "start",
+          "Description": "시퀀스를 시작할 숫자 또는 문자\r\n기본값: 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b2135f83c7fe4d4998eb1955618311b8",
+          "Name": "amount",
+          "Description": "시퀀스의 숫자 또는 문자 수\r\n기본값: 10",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0d00b2f385b048ef83e5e6b78d268e41",
+          "Name": "step",
+          "Description": "숫자 또는 문자 사이 공백\r\n기본값: 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6044e8f714604e84a6a8beb35038cbba",
+          "Name": "list",
+          "Description": "유형의 새 리스트: var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "숫자의 시퀀스를 만듭니다."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0..#10..1;",
+      "Id": "6923207fcfee4a62a79f0a2227b1858c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9f5e4e3b46884ad4987ffb4d1df2163f",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0;\n10;\n1;",
+      "Id": "e464cf7c1b9a4e6a97a56e62b65a4c9b",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "111c805bea0d4da4a364f757936b903f",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "412cd4624f5d4ba08966d9d14409329f",
+          "Name": "",
+          "Description": "선 2의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d5bc33824eb2465ca62ee86181cbba00",
+          "Name": "",
+          "Description": "선 3의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0..10..#3;",
+      "Id": "75d3acfd2257498d9f17032bd44e8888",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c21e83f8db9d4c49a10ad45ac6f6c40e",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0..10..#4;",
+      "Id": "72e3fdbd1afc44e0ad6bce230ce95750",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "01b8d66ef23c4a02b3ae2b22bf0eab72",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "b5cca517680a4768bfdf167c7d2c5058",
+      "End": "5c38903db4bd4f9882eab2bc7e84001d",
+      "Id": "feed32b4d9f44dca8c5d8c1431332907"
+    },
+    {
+      "Start": "57a8b6838fb143549a2c5a5f84c0d858",
+      "End": "18b7fc5a812348aeb90ba86bd897b55d",
+      "Id": "75eeeb78bc3745bcb2fef933904e68f0"
+    },
+    {
+      "Start": "5118edecb5c24937bbd37c8455879288",
+      "End": "af949d36d9c143d085ae7ce04d0967cb",
+      "Id": "f9969216df6f47c6a2ff7ff1b0774748"
+    },
+    {
+      "Start": "52c2d77a6d844e9a8ecbac0db69e69a5",
+      "End": "af128b3006a04e7b891c6bd909545168",
+      "Id": "ecf01242471a4230a3d8b3a200455120"
+    },
+    {
+      "Start": "423bb8133e4e431cac71d9905d9a8a46",
+      "End": "b66c70aae3ad4cc090e14c129d26d423",
+      "Id": "79be92b36ac543f5b6782ae6ee2ffe39"
+    },
+    {
+      "Start": "b99937d587dd425faa0b1fbde4d027aa",
+      "End": "427c3f233d8046c396b0c3ca334ed34e",
+      "Id": "d2fcd9dea3ef4fa8a4b0b46bbbfbf313"
+    },
+    {
+      "Start": "d31d938b26cf4f78ae31c1c3cb774cb3",
+      "End": "124184f0ebe34e518603e02c571dabe7",
+      "Id": "9c6c0491d4274cffaad83e2980f52d59"
+    },
+    {
+      "Start": "2c0f542fd59a461e8eef52baec53afb4",
+      "End": "119f0bb0066b4ef28d67279f6d110978",
+      "Id": "7dd089a77526445b987d9546e783222c"
+    },
+    {
+      "Start": "1b816a5790144d6e9ab1163dc56e5ef4",
+      "End": "c44ab5811a2c4f3c98d2c4005c457d3c",
+      "Id": "4d154efd9a4e4709aeb5ab89729bd96c"
+    },
+    {
+      "Start": "94cb904c951943aa84e3716824e2c48c",
+      "End": "0045fd1a71c84217a3f44270126e92b8",
+      "Id": "68502f47ac5345e0b677bd13161dcbbf"
+    },
+    {
+      "Start": "5fe53c9300fd4256a70bee3879a46856",
+      "End": "e59a7c4d354747d5abe698dee0742aee",
+      "Id": "abc6398e9a0a4133a6474d16655b6b4b"
+    },
+    {
+      "Start": "ebe1f91d94b44129a728d868c270a422",
+      "End": "18fdcc553bfa40ce98fd4fe4e186670b",
+      "Id": "1881d58d86944c5d8d40128ff57bb9ba"
+    },
+    {
+      "Start": "de4d41d4a72246d6878fa48f1b03f736",
+      "End": "8eeb7dd69e8d49a1b108b36422f127da",
+      "Id": "2991c1f6238e40deb4f04c31c261c464"
+    },
+    {
+      "Start": "a53462f1329a4919b938b5e3f73d08b2",
+      "End": "5ed0b0359e2a4c9797e793598156707e",
+      "Id": "fd8150d103d0463cb5db7a3be36dfb2c"
+    },
+    {
+      "Start": "97e22496bf4745b98c9e0a3ec1f6ef92",
+      "End": "5f6fd42437be414c9f4273293996cae3",
+      "Id": "d85ba1ba3ea64685b29fd70c96b93e7f"
+    },
+    {
+      "Start": "31005999a17d40a49af090c8a62849e8",
+      "End": "1d1d44bd6dc740e5a111e2a33dabe134",
+      "Id": "e8a809ef1b8c4dd7bba903642a18ed44"
+    },
+    {
+      "Start": "1f350897a9944bceb16865ecc65e3c03",
+      "End": "bf837b63f33e4fdab2a58cf3adbff286",
+      "Id": "9b6bd8f10569413eb7a2dbfb0aab7553"
+    },
+    {
+      "Start": "1e2abc21b55e46e7af0cdaeba0cdac92",
+      "End": "4c669e48e9e545d9b6a3ec87f39c29d5",
+      "Id": "41abf4b9e9ea48ab9fec89c75fb9e128"
+    },
+    {
+      "Start": "e96d7bfe48664c059f7e59709c08750e",
+      "End": "4e1fbaa665b141dfb80bb862f48ce51e",
+      "Id": "1fb2a9e9cc88481da784f9ddd94adce6"
+    },
+    {
+      "Start": "5ef476010c344f51823c7aef4f212cf1",
+      "End": "f2c8fc3993fd494a98ed9b6042135a6b",
+      "Id": "1f74a17134714b94b8a642bc136f5e6b"
+    },
+    {
+      "Start": "5ef476010c344f51823c7aef4f212cf1",
+      "End": "0b00e3152c5c422c97594c7c0ac0dc20",
+      "Id": "b27bc74c23c842298cf371bd93d1f9f4"
+    },
+    {
+      "Start": "b144c783567d4b83811445f4e2b9243d",
+      "End": "8d79dfdd10c54b108066fd21d470bdaf",
+      "Id": "3b65e533ef974ead98934c6f83fa9c0c"
+    },
+    {
+      "Start": "b144c783567d4b83811445f4e2b9243d",
+      "End": "d954d5442cf541b0bad1a0a973b9ac29",
+      "Id": "bd59ec4b786d45d8bfaec7cf372bf964"
+    },
+    {
+      "Start": "44d9ce0684f54e2189863ca261ada1e0",
+      "End": "194be651477e4396a376fc1c706f3caf",
+      "Id": "82944e107149432c899d1bcbb3761c31"
+    },
+    {
+      "Start": "44d9ce0684f54e2189863ca261ada1e0",
+      "End": "9f5a4a70d8c34c68b90e252d6832cf85",
+      "Id": "0b243ac5606244fc89a6315e9d774226"
+    },
+    {
+      "Start": "ccf8007e61894ea28f238de49fd4d0ac",
+      "End": "0141e7e446af4c5890e05ea8e45f9d94",
+      "Id": "4c6cdd21538843369bdc09320ca44b1f"
+    },
+    {
+      "Start": "3cfa8a12f4394a4c8b5b235e2989c7b3",
+      "End": "89b70a506dff4553bde58431311dbc59",
+      "Id": "8352f4a82a924edd9bf97ff381e41c37"
+    },
+    {
+      "Start": "df941f6098cb4d158039b948bd4a12b9",
+      "End": "09c769048eb24cef859c1b28b8c2bf1a",
+      "Id": "f4b547af8cec449b9fe0ff1e792397d2"
+    },
+    {
+      "Start": "111c805bea0d4da4a364f757936b903f",
+      "End": "53fe4cd0fe03451cafa5996125dfecbc",
+      "Id": "e986c779af314e97a63cb033d9f96b07"
+    },
+    {
+      "Start": "412cd4624f5d4ba08966d9d14409329f",
+      "End": "b2135f83c7fe4d4998eb1955618311b8",
+      "Id": "e4ad0d8815a04cfca1aa091199724d8a"
+    },
+    {
+      "Start": "d5bc33824eb2465ca62ee86181cbba00",
+      "End": "0d00b2f385b048ef83e5e6b78d268e41",
+      "Id": "b9ceaa5ee1ee4ebf8659faa9818714cd"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "없음",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.0.5650",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "배경 미리보기",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "List Create",
+        "Id": "64e43941708f4368aafb63a70e9a72ba",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -426.88497480091951,
+        "Y": -102.19998414027424
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Range",
+        "Id": "4a3afb44db444a2280e70707234136b3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -154.95188121679553,
+        "Y": -103.8752452236331
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Sequence",
+        "Id": "57a53ffa45a8483cb65583b6910b0106",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 107.04811878320447,
+        "Y": -103.8752452236331
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List Create(Py)",
+        "Id": "640976bb36cd45308cd173aacbdc0b39",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 364.10562124257774,
+        "Y": 523.24717902009343
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "86a4bbc1e153473ca9851e080304c470",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -93.472125802959113,
+        "Y": 229.33551242969236
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "175b8e490a1f487b9595f3195b33b8d5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 203.83380713091412,
+        "Y": 228.7017155886511
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "df0c099c1a2241778d373e801716ab16",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 478.59208213312775,
+        "Y": 233.95777663555839
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Range(Py)",
+        "Id": "2dc4d08a858e4e5391b4576f8f9ed263",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 650.69810920945554,
+        "Y": 522.09043988661278
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Sequence(Py)",
+        "Id": "6692284981814ef38db8333743cb7505",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 926.3030962713093,
+        "Y": 522.18792283946277
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List Create",
+        "Id": "81bf43c2a1e4451f8bec14d26ee420c0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -3245.8638877411249,
+        "Y": -2296.0208833066936
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "3addb25117ea4caeba1d92ff81b90d92",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -3376.6741542030068,
+        "Y": -2287.0115313331653
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List Create",
+        "Id": "c2ff3b8c7a9b46cab244164af8d9489c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -3027.1514301531997,
+        "Y": -2474.3946420080829
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List Create",
+        "Id": "8b43aeecbc2e43a68f609e0f2b74f6c9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -3240.8358939340183,
+        "Y": -2025.1158119932136
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "eb5bc0b487c94cde92a85a84ad4b9baf",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -3366.8348599626106,
+        "Y": -2013.6411826069364
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List Create",
+        "Id": "c7defd1a773141efbdddfefbd0f7a071",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -2952.6512914489572,
+        "Y": -2167.4473004888987
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Range",
+        "Id": "888ba8041550403e80a419e09c3d6be5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -2045.8868879049051,
+        "Y": -2604.6139595521727
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Range",
+        "Id": "f99ef17e0e0742078223325ae39dda52",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -2187.4668611647294,
+        "Y": -2189.4368659614192
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "cb69b23cad64411caa47e7d2d66d9637",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -2372.4668611647289,
+        "Y": -2226.2235326280861
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "da6dee1dc9754bfbb321dd8635510de6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -2372.4668611647289,
+        "Y": -2118.2235326280861
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Range",
+        "Id": "92833703a2554838af9657b2e26528bb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -2198.3192713034009,
+        "Y": -1734.5794562897838
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "f9c8518f4cbd438cba2ae7551adaf96e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -2383.3192713034009,
+        "Y": -1771.36612295645
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "1c1cce2f0f364c6fa03360ba06e41851",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -2383.3192713034009,
+        "Y": -1663.3661229564502
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Range",
+        "Id": "8606364a07104ae49253baa49e27a9ee",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -1829.7022259395796,
+        "Y": -1959.8164793521626
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Sequence",
+        "Id": "67af905135f645d893423b1dc57b7c45",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -1070.4705267677055,
+        "Y": -2572.4178141824918
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "c900825ac9794517814ebc079f69653a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -1443.1426292170377,
+        "Y": -2178.2319951300992
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "cb89e17d1fc44f86a710f285b81a1b18",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -1443.1426292170377,
+        "Y": -2070.2319951300992
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "173e533689a646ac993a44aeab8e2495",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -1443.2888325966419,
+        "Y": -1741.9316821973975
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "93013e8c609e4bd6a612798a9accdedf",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -1443.2888325966419,
+        "Y": -1633.9316821973975
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Sequence",
+        "Id": "13f71a49a049428fb2aee42f83c00b15",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -1258.1426292170377,
+        "Y": -2141.4453284634328
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Sequence",
+        "Id": "6d47a0b88b6446d1a1c6caaa405066fb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -1258.2888325966419,
+        "Y": -1718.1450155307309
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Sequence",
+        "Id": "95acc5d2c00242c8a3dc6dc1d743c70f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -793.17549224555432,
+        "Y": -1957.7164473554767
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "283efdef0d234a638cd4bd7de2428656",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -160.47276618914748,
+        "Y": -913.33667952613928
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List Create",
+        "Id": "a2c587d686d5488fb8edfba3cbec4418",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -146.64694167876178,
+        "Y": -1217.1110417571024
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "4c696171c2ae43b5937cef52a25ea353",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -473.14171114547185,
+        "Y": -1059.0941189648249
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Range",
+        "Id": "373686af376c48b8a6396138ae3062f1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 276.40546656559377,
+        "Y": -1191.8814197091961
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "4337c219c16741dba1334948b42ed1a3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 304.33938171852719,
+        "Y": -800.75530196456839
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "0dbba09c6f034528909225a340f774f8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 115.99367679362581,
+        "Y": -1177.4774424009311
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Sequence",
+        "Id": "3fceb0230d0a441689563c72ae0b46e4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 941.71348052578264,
+        "Y": -1241.6151617230539
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "6923207fcfee4a62a79f0a2227b1858c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 967.6918594898,
+        "Y": -848.18726156676223
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "e464cf7c1b9a4e6a97a56e62b65a4c9b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 770.494332096069,
+        "Y": -1229.0205245124346
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "75d3acfd2257498d9f17032bd44e8888",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1295.4878482471515,
+        "Y": -845.65325969298749
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "72e3fdbd1afc44e0ad6bce230ce95750",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1519.3357329758878,
+        "Y": -845.65325969298749
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "eeecbe4071364b758328199855ec3160",
+        "Title": "리스트 생성 3총사",
+        "Nodes": [
+          "64e43941708f4368aafb63a70e9a72ba",
+          "4a3afb44db444a2280e70707234136b3",
+          "57a53ffa45a8483cb65583b6910b0106"
+        ],
+        "Left": -436.88497480091951,
+        "Top": -185.8752452236331,
+        "Width": 734.933093584124,
+        "Height": 227.0,
+        "FontSize": 60.0,
+        "InitialTop": -103.8752452236331,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 72.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "7b917f0875f04609a312706af61cbf19",
+        "Title": "Range 설명",
+        "Nodes": [
+          "888ba8041550403e80a419e09c3d6be5",
+          "f99ef17e0e0742078223325ae39dda52",
+          "cb69b23cad64411caa47e7d2d66d9637",
+          "da6dee1dc9754bfbb321dd8635510de6",
+          "92833703a2554838af9657b2e26528bb",
+          "f9c8518f4cbd438cba2ae7551adaf96e",
+          "1c1cce2f0f364c6fa03360ba06e41851",
+          "8606364a07104ae49253baa49e27a9ee"
+        ],
+        "Left": -2393.3192713034009,
+        "Top": -2657.6139595521727,
+        "Width": 735.61704536382126,
+        "Height": 1087.2478365957224,
+        "FontSize": 36.0,
+        "InitialTop": -2604.6139595521727,
+        "InitialHeight": 1064.2478365957224,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "91e1ca0f937a4eceb76ca32561675fed",
+        "Title": "List Create 설명",
+        "Nodes": [
+          "81bf43c2a1e4451f8bec14d26ee420c0",
+          "3addb25117ea4caeba1d92ff81b90d92",
+          "c2ff3b8c7a9b46cab244164af8d9489c",
+          "8b43aeecbc2e43a68f609e0f2b74f6c9",
+          "eb5bc0b487c94cde92a85a84ad4b9baf",
+          "c7defd1a773141efbdddfefbd0f7a071"
+        ],
+        "Left": -3386.6741542030068,
+        "Top": -2527.3946420080829,
+        "Width": 564.02286275404958,
+        "Height": 647.2788300148693,
+        "FontSize": 36.0,
+        "InitialTop": -2474.3946420080829,
+        "InitialHeight": 624.27883001486907,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "1c561e6441b948099b369fd7a7737c30",
+        "Title": "Sequence 설명",
+        "Nodes": [
+          "67af905135f645d893423b1dc57b7c45",
+          "c900825ac9794517814ebc079f69653a",
+          "cb89e17d1fc44f86a710f285b81a1b18",
+          "173e533689a646ac993a44aeab8e2495",
+          "93013e8c609e4bd6a612798a9accdedf",
+          "13f71a49a049428fb2aee42f83c00b15",
+          "6d47a0b88b6446d1a1c6caaa405066fb",
+          "95acc5d2c00242c8a3dc6dc1d743c70f"
+        ],
+        "Left": -1453.2888325966419,
+        "Top": -2625.4178141824918,
+        "Width": 851.11334035108757,
+        "Height": 1084.4861319850943,
+        "FontSize": 36.0,
+        "InitialTop": -2572.4178141824918,
+        "InitialHeight": 1061.4861319850943,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "f66d3ed1195d4e05a965ddb95b1a7c32",
+        "Title": "<그룹 제목을 수정하려면 여기를 클릭하십시오.>",
+        "Nodes": [
+          "283efdef0d234a638cd4bd7de2428656",
+          "a2c587d686d5488fb8edfba3cbec4418",
+          "4c696171c2ae43b5937cef52a25ea353"
+        ],
+        "Left": -483.14171114547185,
+        "Top": -1313.1110417571024,
+        "Width": 469.66894495632437,
+        "Height": 520.77436223096311,
+        "FontSize": 36.0,
+        "InitialTop": -1217.1110417571024,
+        "InitialHeight": 454.77436223096311,
+        "TextblockHeight": 86.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "71544b4d3b8c448db2764f30583b60aa",
+        "Title": "<그룹 제목을 수정하려면 여기를 클릭하십시오.>",
+        "Nodes": [
+          "373686af376c48b8a6396138ae3062f1",
+          "4337c219c16741dba1334948b42ed1a3",
+          "0dbba09c6f034528909225a340f774f8"
+        ],
+        "Left": 105.99367679362581,
+        "Top": -1331.8814197091961,
+        "Width": 342.41178977196796,
+        "Height": 624.12611774462766,
+        "FontSize": 36.0,
+        "InitialTop": -1191.8814197091961,
+        "InitialHeight": 514.12611774462744,
+        "TextblockHeight": 130.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "8190a15811b0409f8352bebe6a201eb8",
+        "Title": "<그룹 제목을 수정하려면 여기를 클릭하십시오.>",
+        "Nodes": [
+          "3fceb0230d0a441689563c72ae0b46e4",
+          "6923207fcfee4a62a79f0a2227b1858c",
+          "e464cf7c1b9a4e6a97a56e62b65a4c9b",
+          "75d3acfd2257498d9f17032bd44e8888",
+          "72e3fdbd1afc44e0ad6bce230ce95750"
+        ],
+        "Left": 760.494332096069,
+        "Top": -1294.6151617230539,
+        "Width": 901.84140087981882,
+        "Height": 541.96190203006643,
+        "FontSize": 36.0,
+        "InitialTop": -1241.6151617230539,
+        "InitialHeight": 518.96190203006643,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "c4c9bede9d744ea6be28e3a466168020",
+        "Title": "리스트 생성 3총사_by Code Block",
+        "Nodes": [
+          "86a4bbc1e153473ca9851e080304c470",
+          "175b8e490a1f487b9595f3195b33b8d5",
+          "df0c099c1a2241778d373e801716ab16"
+        ],
+        "Left": -103.47212580295911,
+        "Top": 74.7017155886511,
+        "Width": 725.06420793608686,
+        "Height": 257.63379684104126,
+        "FontSize": 60.0,
+        "InitialTop": 228.7017155886511,
+        "InitialHeight": 135.30905792440007,
+        "TextblockHeight": 144.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "86b8a4e389fd4930a77090cbc5d692ee",
+        "Title": "리스트 생성 3총사_by Python",
+        "Nodes": [
+          "640976bb36cd45308cd173aacbdc0b39",
+          "2dc4d08a858e4e5391b4576f8f9ed263",
+          "6692284981814ef38db8333743cb7505"
+        ],
+        "Left": 354.10562124257774,
+        "Top": 368.09043988661278,
+        "Width": 736.19747502873145,
+        "Height": 310.09748295285,
+        "FontSize": 60.0,
+        "InitialTop": 522.09043988661278,
+        "InitialHeight": 186.09748295285,
+        "TextblockHeight": 144.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 600.61020401117651,
+    "Y": 233.33411350301481,
+    "Zoom": 0.59692188276410929
+  }
+}
