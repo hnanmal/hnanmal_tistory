@@ -1,0 +1,578 @@
+{
+  "Uuid": "e9aed549-aafd-4700-88ee-06e76c5b5ae5",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Home",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "c4d91c6067b5468fa350b17ffbfde322",
+      "Inputs": [
+        {
+          "Id": "20b64953db604d9a82d58c8d98633e73",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3028376911394734ad9cfe54b73d7c37",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 686,
+      "SelectedString": "OST_Walls",
+      "NodeType": "ExtensionNode",
+      "Id": "4f4abad1ae3f4846816624dd25bf6f4d",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d9a98fc9fb284bc3a4e87de523347333",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.GetParameterValueByName@string",
+      "Id": "9981006dcb59444d8d3fc8fe24eeb56b",
+      "Inputs": [
+        {
+          "Id": "2b84cd961b5e429b92da102a7616dcba",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "67968e9bdbbd410e9f3b1be0f04801cf",
+          "Name": "parameterName",
+          "Description": "The name of the parameter whose value you want to obtain.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "addd2031aaf34938847d8b6c68cc2f8f",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the value of one of the element's parameters.\n\nElement.GetParameterValueByName (parameterName: string): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"Mark\";",
+      "Id": "b7a8b85d84eb4ee4b9d30dab8f86cd68",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "256c0687d6024318ab1effa160d6eb56",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "\r\n\r\n어떤리스트 = [1,2,3,4,5,6,7,8,9,10 ]\r\n\r\n전체계산결과 = []\r\n\r\nfor 원소 in 어떤리스트:\r\n\r\n    계산결과 = 원소 ** 2\r\n    \r\n    전체계산결과.append(계산결과)\r\n\r\n\r\nOUT = 전체계산결과",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "f2cc108394204c5bbe15e891c11ef37b",
+      "Inputs": [
+        {
+          "Id": "def0988916ad44978acf0dc8bcc7161b",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2a63cbf97d7742d7a35f12817d93ad82",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "\r\n\r\n어떤리스트 = [1,2,3,4,5,6,7,8,9,10 ]\r\n\r\n전체계산결과 = []\r\n\r\n계산결과 = 어떤리스트[0] ** 2 ## 1번째 원소 대상\r\n전체계산결과.append(계산결과)\r\n\r\n계산결과 = 어떤리스트[1] ** 2 ## 2번째 원소 대상\r\n전체계산결과.append(계산결과)\r\n\r\n계산결과 = 어떤리스트[2] ** 2 ## 3번째 원소 대상\r\n전체계산결과.append(계산결과)\r\n\r\n계산결과 = 어떤리스트[3] ** 2 ## 4번째 원소 대상\r\n전체계산결과.append(계산결과)\r\n\r\n계산결과 = 어떤리스트[4] ** 2 ## 5번째 원소 대상\r\n전체계산결과.append(계산결과)\r\n\r\n계산결과 = 어떤리스트[5] ** 2 ## 6번째 원소 대상\r\n전체계산결과.append(계산결과)\r\n\r\n계산결과 = 어떤리스트[6] ** 2 ## 7번째 원소 대상\r\n전체계산결과.append(계산결과)\r\n\r\n계산결과 = 어떤리스트[7] ** 2 ## 8번째 원소 대상\r\n전체계산결과.append(계산결과)\r\n\r\n계산결과 = 어떤리스트[8] ** 2 ## 9번째 원소 대상\r\n전체계산결과.append(계산결과)\r\n\r\n계산결과 = 어떤리스트[9] ** 2 ## 10째 원소 대상\r\n전체계산결과.append(계산결과)\r\n\r\n\r\n\r\nOUT = 전체계산결과",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "413fae5e297e42b8bf6df9e299eaf783",
+      "Inputs": [
+        {
+          "Id": "a2e189f63b564ddfbb6bdd0640068006",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7d0c7c6066c740e6ae7203a3d470ef2e",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n모든벽들 = IN[0]\r\n\r\n# Place your code below this line\r\n\r\n전체처리결과 = []\r\n\r\n#for 벽하나 in 모든벽들:\r\n#    벽하나.SetParameterByName\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = 0",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "1ef79a773822498e99e6d3fdac0279f5",
+      "Inputs": [
+        {
+          "Id": "104b870674ad4e518c8c2774aa71a67d",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3c2186c100f14f03984109900c8eaaa8",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n모든벽들 = IN[0]\r\n\r\n# Place your code below this line\r\n\r\n전체처리결과 = []\r\n\r\nfor 번호객체세트 in enumerate(모든벽들):\r\n    벽번호 = 번호객체세트[0]\r\n    벽객체 = 번호객체세트[1]\r\n    벽객체.SetParameterByName(\"Mark\", f\"wall-{벽번호}\")\r\n    전체처리결과.append(벽객체)\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = 전체처리결과",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "99089cc8d7e5483ebecfe6730a4ce965",
+      "Inputs": [
+        {
+          "Id": "580dec462aea43febbdbfdab35daddfa",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "448daa0273494a2797c86c8e5de8e1cf",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.GetParameterValueByName@string",
+      "Id": "662872628bc94dedaa4b40ba66bda091",
+      "Inputs": [
+        {
+          "Id": "062db53cfa7b40f0afaeb4c3cefdf6c3",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "786f43551a5141f59f4ec5cd5a36f1b3",
+          "Name": "parameterName",
+          "Description": "The name of the parameter whose value you want to obtain.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f6f69382eb204903bc3a0c509c07f734",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the value of one of the element's parameters.\n\nElement.GetParameterValueByName (parameterName: string): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.SetParameterByName@string,var",
+      "Id": "0e9bfa20a2e54f20ba5378fa48ef1648",
+      "Inputs": [
+        {
+          "Id": "2b8d07a5586f43cf9ae639e1acc422bd",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3a875898031e4975a043befca20723cd",
+          "Name": "parameterName",
+          "Description": "The name of the parameter to set.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "11ef512ad61248cda2c70eaef5009e93",
+          "Name": "value",
+          "Description": "The value.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "73abed301fe34a6991896c017612ccf2",
+          "Name": "Element",
+          "Description": "Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Set one of the element's parameters.\n\nElement.SetParameterByName (parameterName: string, value: var): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"Mark\";",
+      "Id": "381cf65d90644642950784dac29a00a5",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e463fd947da24163bc59eaa41a465cf7",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "3028376911394734ad9cfe54b73d7c37",
+      "End": "2b84cd961b5e429b92da102a7616dcba",
+      "Id": "2408a9e7922b4729a0ae384947696f51"
+    },
+    {
+      "Start": "3028376911394734ad9cfe54b73d7c37",
+      "End": "104b870674ad4e518c8c2774aa71a67d",
+      "Id": "fb889d3b49f14f988aec2d6e71d374af"
+    },
+    {
+      "Start": "3028376911394734ad9cfe54b73d7c37",
+      "End": "580dec462aea43febbdbfdab35daddfa",
+      "Id": "9750274af9a8499cbe4820caf4d98de8"
+    },
+    {
+      "Start": "d9a98fc9fb284bc3a4e87de523347333",
+      "End": "20b64953db604d9a82d58c8d98633e73",
+      "Id": "a5b9352314124419904c52a975f869dd"
+    },
+    {
+      "Start": "256c0687d6024318ab1effa160d6eb56",
+      "End": "67968e9bdbbd410e9f3b1be0f04801cf",
+      "Id": "687a7f5809a34a9fa5a205ffc46efd31"
+    },
+    {
+      "Start": "448daa0273494a2797c86c8e5de8e1cf",
+      "End": "062db53cfa7b40f0afaeb4c3cefdf6c3",
+      "Id": "34b93bb6d9e142c19135c2a622467328"
+    },
+    {
+      "Start": "e463fd947da24163bc59eaa41a465cf7",
+      "End": "786f43551a5141f59f4ec5cd5a36f1b3",
+      "Id": "a085fabfa931404fb7756edc6095166d"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.0.5650",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
+        "Id": "c4d91c6067b5468fa350b17ffbfde322",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 61.515899870953035,
+        "Y": 528.00583997615638
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "4f4abad1ae3f4846816624dd25bf6f4d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -204.48410012904696,
+        "Y": 528.00583997615638
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.GetParameterValueByName",
+        "Id": "9981006dcb59444d8d3fc8fe24eeb56b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 335.51589987095349,
+        "Y": 567.00583997615638
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "b7a8b85d84eb4ee4b9d30dab8f86cd68",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -113.48410012904696,
+        "Y": 636.21917330948975
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script_for 문 사용",
+        "Id": "f2cc108394204c5bbe15e891c11ef37b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -3568.4656066629777,
+        "Y": -1067.8177454787242
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script_하드코딩",
+        "Id": "413fae5e297e42b8bf6df9e299eaf783",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -3572.38526870904,
+        "Y": -682.02183567500742
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "1ef79a773822498e99e6d3fdac0279f5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 669.3653965142671,
+        "Y": 187.60881285420547
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "99089cc8d7e5483ebecfe6730a4ce965",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 875.15690334745443,
+        "Y": 305.02215880968083
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.GetParameterValueByName",
+        "Id": "662872628bc94dedaa4b40ba66bda091",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1251.676710988897,
+        "Y": 288.57481103739019
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.SetParameterByName",
+        "Id": "0e9bfa20a2e54f20ba5378fa48ef1648",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 135.80262183258947,
+        "Y": -172.82741721295639
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "381cf65d90644642950784dac29a00a5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1077.0909647600217,
+        "Y": 362.67859716809039
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "e354ff8b8a1e47f392b1e9dcb2a95181",
+        "Title": "외우세요. 자주 씁니다.",
+        "Nodes": [
+          "c4d91c6067b5468fa350b17ffbfde322",
+          "4f4abad1ae3f4846816624dd25bf6f4d",
+          "9981006dcb59444d8d3fc8fe24eeb56b",
+          "b7a8b85d84eb4ee4b9d30dab8f86cd68"
+        ],
+        "Left": -214.48410012904696,
+        "Top": 475.00583997615638,
+        "Width": 823.00000000000045,
+        "Height": 254.21333333333337,
+        "FontSize": 36.0,
+        "InitialTop": 528.00583997615638,
+        "InitialHeight": 253.21333333333337,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 346.814659498071,
+    "Y": 330.48462642024447,
+    "Zoom": 0.6799769984087759
+  }
+}
