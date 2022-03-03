@@ -1,0 +1,1256 @@
+{
+  "Uuid": "0b7e5fab-3227-4234-9c31-63fba8b8b807",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Home",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.AllFalse@var[]..[]",
+      "Id": "f40e1d47623d47498f1e72312be35edc",
+      "Inputs": [
+        {
+          "Id": "f5919e57b0754326831fb28ead73592a",
+          "Name": "list",
+          "Description": "모든 항목이 false인지 여부를 확인할 리스트입니다.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bd11a1d8fea248e3a98af2668c35558e",
+          "Name": "bool",
+          "Description": "리스트의 모든 항목이 false이면 true, 하나 이상의 항목이 false가 아니면 false",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 리스트의 모든 항목이 부울이고 false 값을 가지는지 여부를 결정합니다.\n\nList.AllFalse (list: var[]..[]): bool"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.AllTrue@var[]..[]",
+      "Id": "873bc6bc4d4c4a8594dc3689f75f5571",
+      "Inputs": [
+        {
+          "Id": "45699db6c25749af8735dcc82717a858",
+          "Name": "list",
+          "Description": "모든 항목이 true인지 여부를 확인할 리스트입니다.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c43446ef0bd243cfa8faa8ae11758b06",
+          "Name": "bool",
+          "Description": "리스트의 모든 항목이 true이면 true, 하나 이상의 항목이 true가 아니면 false",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 리스트의 모든 항목이 부울이고 true 값을 가지는지 여부를 결정합니다.\n\nList.AllTrue (list: var[]..[]): bool"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.AllIndicesOf@var[]..[],var",
+      "Id": "bc12959c44ac48ec9d201af3a3b63187",
+      "Inputs": [
+        {
+          "Id": "e70ea3888342431297665515fd693b98",
+          "Name": "list",
+          "Description": "검색할 리스트. 이 인수가 null이면 빈 리스트가 반환됩니다.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5351ecade2d0482597052cc786a3268f",
+          "Name": "item",
+          "Description": "찾을 항목.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "800f121810894332932bbcfbb848ee06",
+          "Name": "indices",
+          "Description": "항목이 발견된 경우 항목의 모든 발생의 0 기점 색인 리스트 또는 항목이 리스트에 없는 경우 빈 리스트.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "항목을 지정하면 리스트에서 모든 발생의 0 기점 색인을 반환합니다. 항목을 찾을 수 없으면 빈 리스트가 반환됩니다.\n\nList.AllIndicesOf (list: var[]..[], item: var): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.AnyFalse@var[]..[]",
+      "Id": "bcaf77152ce243aebde888be043f1841",
+      "Inputs": [
+        {
+          "Id": "455633967b7f4acfa8a98775fb143343",
+          "Name": "list",
+          "Description": "항목이 false인지 여부를 확인할 리스트입니다.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ec8c2e4f1a1d4f9883b893b6311eed27",
+          "Name": "bool",
+          "Description": "항목이 false인지 여부입니다.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 리스트의 항목이 부울인지와 false 값을 갖는지 여부를 확인합니다.\n\nList.AnyFalse (list: var[]..[]): bool"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.AnyTrue@var[]..[]",
+      "Id": "33f0e73f46a64c2db57a2cf8e061f585",
+      "Inputs": [
+        {
+          "Id": "d78c7b9ab5ea4d3fa969067a3ad6e94d",
+          "Name": "list",
+          "Description": "항목이 true인지 여부를 확인할 리스트입니다.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f56c8b002a834467bde951b6ffa4d5aa",
+          "Name": "bool",
+          "Description": "항목이 true인지 여부입니다.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 리스트의 항목이 부울인지와 true 값을 갖는지 여부를 확인합니다.\n\nList.AnyTrue (list: var[]..[]): bool"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Contains@var[]..[],var[]..[]",
+      "Id": "7946356012904aa3a893b717def5d277",
+      "Inputs": [
+        {
+          "Id": "15e4faaebe9a42fb9e0fddfba11604fd",
+          "Name": "list",
+          "Description": "검색할 리스트\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8b0a7d511d7c4b649044e8722b9aaa7b",
+          "Name": "item",
+          "Description": "찾을 항목\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b022d247d6ee400aa3cc6c8a5c04be1f",
+          "Name": "bool",
+          "Description": "리스트에 항목이 포함되어 있으면 true, 그렇지 않으면 false",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 리스트에 지정된 항목이 포함되어 있는지 확인합니다. 이 기능은 지정된 리스트에 포함된 하위 리스트를 검색합니다.\n\nList.Contains (list: var[]..[], item: var[]..[]): bool"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Count@var[]..[]",
+      "Id": "a7e872faf8de42e58565cdfe64b1ce96",
+      "Inputs": [
+        {
+          "Id": "28d420c50caa428da53a330f7573588c",
+          "Name": "list",
+          "Description": "항목 수를 가져올 리스트.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b02e28acede54dc49a4959509ab0a67b",
+          "Name": "int",
+          "Description": "리스트 길이.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 리스트에 저장된 항목의 개수를 반환합니다.\n\nList.Count (list: var[]..[]): int"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.CountFalse@var[]..[]",
+      "Id": "07466ddbaee14ec8b278ca8e940cacd1",
+      "Inputs": [
+        {
+          "Id": "151055bf23c944758b077d62c90f0fa7",
+          "Name": "list",
+          "Description": "False 부울 값을 찾을 리스트입니다.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5269a1983edc48f0abbaadca8f1a0810",
+          "Name": "int",
+          "Description": "리스트의 False 부울 값 수입니다.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 리스트의 false 부울 값 수를 반환합니다.\n\nList.CountFalse (list: var[]..[]): int"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.CountTrue@var[]..[]",
+      "Id": "946d0f01898a4c01a7648632aa6c3aaa",
+      "Inputs": [
+        {
+          "Id": "df7e1f52e41040b39bc9e7d2d3eba06d",
+          "Name": "list",
+          "Description": "True 부울 값을 찾을 리스트입니다.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ec020dfbec5549298e56d028a028bc89",
+          "Name": "int",
+          "Description": "리스트의 True 부울 값 수입니다.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 리스트의 true 부울 값 수를 반환합니다.\n\nList.CountTrue (list: var[]..[]): int"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.DiagonalLeft@var[]..[],int",
+      "Id": "f31a28edbd8944f1bc096412312bf757",
+      "Inputs": [
+        {
+          "Id": "ec4879e2fb56472aa62e82632cb38075",
+          "Name": "list",
+          "Description": "단순 리스트.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "58e6aebe889f4f939cbec10a27000002",
+          "Name": "rowLength",
+          "Description": "각 새 하위 리스트의 길이.\n\nint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "29285b9279b743d29c175d99f60072c8",
+          "Name": "diagonals",
+          "Description": "매트릭스 대각선을 따라 나열된 요소의 리스트.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "매트릭스에서 왼쪽 상단부터 오른쪽 하단까지 각 대각선을 따라 요소를 나열합니다.\n\nList.DiagonalLeft (list: var[]..[], rowLength: int): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.DiagonalRight@var[]..[],int",
+      "Id": "510b4d926aa74f439c3d7b41dda3441b",
+      "Inputs": [
+        {
+          "Id": "037b6335003c4efeab66e5ad307da0ee",
+          "Name": "list",
+          "Description": "단순 리스트\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d0ea7b2e6d144114ac241777c3660ff1",
+          "Name": "subLength",
+          "Description": "각 새 하위 리스트의 길이.\n\nint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a2052306b90541b9bedae1877f3dd616",
+          "Name": "diagonals",
+          "Description": "매트릭스 대각선을 따라 나열된 요소의 리스트.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "매트릭스에서 왼쪽 하단부터 오른쪽 상단까지 각 대각선을 따라 요소를 나열합니다.\n\nList.DiagonalRight (list: var[]..[], subLength: int): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "List.Equals@var[]..[],var[]..[]",
+      "Id": "1e1c3108308b40cda33d37f5569da8d6",
+      "Inputs": [
+        {
+          "Id": "b38efadf47c84d20a09d016dc2bbceae",
+          "Name": "object",
+          "Description": "첫 번째 객체\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f6ac221d5c27468c851f089a34ab3a12",
+          "Name": "otherObject",
+          "Description": "기타 객체\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1e994e5e49b6473c845423c2b770d34b",
+          "Name": "bool",
+          "Description": "객체 인스턴스가 같은 경우 true를 반환하고, 서로 다른 경우 false를 반환합니다.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "두 객체 인스턴스(instance)가 같은지 확인합니다.\n\nList.Equals (object: var[]..[], otherObject: var[]..[]): bool"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.FirstIndexOf@var[]..[],var",
+      "Id": "8ebf19ecc0c6444589d9691d3aae0a55",
+      "Inputs": [
+        {
+          "Id": "1580f93c0a234b3caefe5514b2cb3ea0",
+          "Name": "list",
+          "Description": "검색할 리스트. 이 인수가 null이면 -1이 반환됩니다.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c75330bfa9264d0bb68de347b926d53b",
+          "Name": "item",
+          "Description": "찾을 항목.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "757f9f320ea8480a9bc6d93585398e82",
+          "Name": "int",
+          "Description": "리스트에서 항목의 0 기점 색인 또는 항목이 없는 경우 -1.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "항목을 지정하면 리스트에서 첫 번째 발생의 0 기점 색인을 반환합니다. 리스트에서 항목을 찾을 수 없으면 -1이 반환됩니다.\n\nList.FirstIndexOf (list: var[]..[], item: var): int"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.FirstItem@var[]..[]",
+      "Id": "41c9b0f57ce848d783dd27130781fe95",
+      "Inputs": [
+        {
+          "Id": "7128403946e84bc695ad9051e535faa7",
+          "Name": "list",
+          "Description": "첫 번째 항목을 가져올 리스트.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d19f1f8ffa6f407481b81fcb4abe4b76",
+          "Name": "item",
+          "Description": "리스트의 첫 번째 항목.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "리스트에서 첫 번째 항목을 반환합니다.\n\nList.FirstItem (list: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.GetItemAtIndex@var[]..[],int",
+      "Id": "5ab6b9ed0aa24783971f960c86ec6564",
+      "Inputs": [
+        {
+          "Id": "056356e54ca54a4c850f23f28d07dfbc",
+          "Name": "list",
+          "Description": "항목을 가져올 리스트.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f675052e263e484eaa497bd965fd44df",
+          "Name": "index",
+          "Description": "가져올 항목의 인덱스.\n\nint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "785bdff893164b8bbe799a51b693981b",
+          "Name": "item",
+          "Description": "지정된 인덱스의 리스트에 있는 항목.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 색인에 위치하는 지정된 리스트에서 항목을 반환합니다.\n\nList.GetItemAtIndex (list: var[]..[], index: int): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.IndexOf@var[]..[],var",
+      "Id": "27b353ec95b649d59f3f01ac208c8b27",
+      "Inputs": [
+        {
+          "Id": "fbd2f89c22f0421385fb2234001bb04a",
+          "Name": "list",
+          "Description": "요소를 찾을 리스트입니다.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3ba2b5ace0754600b554bcfa2e0f2a68",
+          "Name": "element",
+          "Description": "색인이 반환될 요소입니다.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ca41359b4b2542249ba3276168261628",
+          "Name": "int",
+          "Description": "리스트에 있는 요소의 색인입니다. 엄격한 일치를 찾을 수 없는 경우 유효하지 않은 색인 -1이 반환됩니다.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 리스트에 있는 요소의 색인을 반환합니다. 지정된 리스트와 대상 요소 간의 일치는 엄격한 일치여야 합니다(예: 정수 대 정수, double 대 double, 문자열 대 문자열, 객체 대 객체 등).\n\nList.IndexOf (list: var[]..[], element: var): int"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.IsEmpty@var[]..[]",
+      "Id": "0b16783f14ba433996a8642de5d93c5c",
+      "Inputs": [
+        {
+          "Id": "62a467162c3840fd9fd8afbb0fe6d0d3",
+          "Name": "list",
+          "Description": "비어 있는지 확인할 리스트\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "cb93473c4f01434da3d5cf6ea69430db",
+          "Name": "bool",
+          "Description": "리스트가 비어 있으면 true, 그렇지 않으면 false",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 리스트가 비어 있는지 확인합니다.\n\nList.IsEmpty (list: var[]..[]): bool"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.IsHomogeneous@var[]..[]",
+      "Id": "649accb820334c39af2fc546a471fcfe",
+      "Inputs": [
+        {
+          "Id": "eb0373234fb9420d89c71b2ebf4797cf",
+          "Name": "list",
+          "Description": "동종인 경우 확인할 리스트입니다.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8ae479a2b5b84ade9fd65f4d50efd233",
+          "Name": "bool",
+          "Description": "리스트가 동종인지 여부입니다.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "리스트의 항목이 동일한 유형인지 확인합니다.\n\nList.IsHomogeneous (list: var[]..[]): bool"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.IsRectangular@var[]..[]",
+      "Id": "3ee02e0dc0014686b97ea9100647ddec",
+      "Inputs": [
+        {
+          "Id": "dd041af96c89414dae5816e06c14aa99",
+          "Name": "list",
+          "Description": "행에 동일한 수의 항목이 있는지 검사할 리스트입니다.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d7ec4995b16645f5a55953d08c528949",
+          "Name": "bool",
+          "Description": "리스트에 있는 모든 행의 항목 수가 동일한지 여부입니다.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "리스트의 모든 행에 있는 항목 수가 동일한지 확인합니다.\n\nList.IsRectangular (list: var[]..[]): bool"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.LastItem@var[]..[]",
+      "Id": "6b5eb49724714b169f5c244cae5cb00c",
+      "Inputs": [
+        {
+          "Id": "db90d17002a04ef494a50df12312c236",
+          "Name": "list",
+          "Description": "마지막 항목을 가져올 리스트\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4468880accab4b8085d2ccc32e5b40e3",
+          "Name": "item",
+          "Description": "리스트의 마지막 항목",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "리스트의 마지막 항목을 검색합니다.\n\nList.LastItem (list: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.MaximumItem@var[]",
+      "Id": "228ecdca2980468792188c2e841f2a39",
+      "Inputs": [
+        {
+          "Id": "4ba709ab09cf4a8e860fa43fa6216af9",
+          "Name": "list",
+          "Description": "최대값을 가져올 비교 가능한 항목의 리스트\n\nvar[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a4cc1bcdbfcc482493cc4d7dc1f5fa75",
+          "Name": "item",
+          "Description": "리스트의 최대값 항목",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "리스트에서 최대값을 반환합니다.\n\nList.MaximumItem (list: var[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.MinimumItem@var[]",
+      "Id": "1fa5c825bb1d4e1c9bec5aa0dec13840",
+      "Inputs": [
+        {
+          "Id": "093fe61f531c4633b8099a7c7f9cec40",
+          "Name": "list",
+          "Description": "최소값을 가져올 비교 가능한 항목의 리스트\n\nvar[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "80d55541102f4c4097a39f4f0ac8a0bc",
+          "Name": "item",
+          "Description": "리스트의 최소값 항목",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "리스트에서 최소값을 반환합니다.\n\nList.MinimumItem (list: var[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.SetDifference@var[],var[]",
+      "Id": "3f67055e3be8478585b55504df3fbaad",
+      "Inputs": [
+        {
+          "Id": "97f78654e80c494588d7ad365df3d444",
+          "Name": "list1",
+          "Description": "새 리스트에 포함할 객체의 리스트\n\nvar[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d5b0c7e34cb141ee9fadc8aa5bce312c",
+          "Name": "list2",
+          "Description": "새 리스트에서 제외할 객체의 리스트\n\nvar[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f276f8f91be24345bac8d95af02093e2",
+          "Name": "list",
+          "Description": "List1의 객체는 포함하나 List2의 객체는 포함하지 않는 새 리스트",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "List1의 객체는 포함하지만 List2의 객체는 제외된 새 리스트를 반환합니다.\n\nList.SetDifference (list1: var[], list2: var[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.SetIntersection@var[],var[]",
+      "Id": "ae30d75bf88b49ef83c7c5b35d25c4e4",
+      "Inputs": [
+        {
+          "Id": "aa9087c1f2774bdc8a3845bd47f317d2",
+          "Name": "list1",
+          "Description": "List2와 비교할 객체의 리스트\n\nvar[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5eb2f735ef924f93ab27e806c4965ef5",
+          "Name": "list2",
+          "Description": "List1과 비교할 객체의 리스트\n\nvar[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6e2b2858f9c4451caadd24bd524f64a9",
+          "Name": "list",
+          "Description": "List1 및 List2 모두에 있는 객체를 포함하는 새 리스트",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "List1 및 List2 모두에 있는 객체를 포함하는 새 리스트를 반환합니다.\n\nList.SetIntersection (list1: var[], list2: var[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "List.TrueForAll@var[]..[],Function",
+      "Id": "6d9ad0b86913499e9b1f465f0d4e0d21",
+      "Inputs": [
+        {
+          "Id": "f482a45d6fd94f62bdf68fed181c83ec",
+          "Name": "list",
+          "Description": "조회 함수별로 항목을 평가할 리스트\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1e733c26cf924a41975c3738289454d5",
+          "Name": "queryFunction",
+          "Description": "평가할 함수 리스트\n\nFunction",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6b0946792f33407ea5d865e3ef3e7c7b",
+          "Name": "bool",
+          "Description": "지정된 조회 함수를 사용하여 리스트의 모든 항목이 true로 평가되면 true를 반환합니다.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 조회 함수를 사용하여 리스트의 모든 항목이 true로 평가되면 true를 반환합니다.\n\nList.TrueForAll (list: var[]..[], queryFunction: Function): bool"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "List.TrueForAny@var[]..[],Function",
+      "Id": "147c65dfe2dc483492618fa82610883b",
+      "Inputs": [
+        {
+          "Id": "950040801f2f48dd82635198f32cae46",
+          "Name": "list",
+          "Description": "조회 함수별로 항목을 평가할 리스트\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f3b21791daeb4c0b805f3e76b2b4daf4",
+          "Name": "queryFunction",
+          "Description": "평가할 함수 리스트\n\nFunction",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "003bce20056649e0bd5571d453def21f",
+          "Name": "bool",
+          "Description": "리스트에서 모든 항목이 조회 함수에서 true로 평가하는 경우 true를 반환합니다.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "리스트에서 하나 이상의 항목이 주어진 조회 함수에서 true로 평가하는 경우 true를 반환합니다.\n\nList.TrueForAny (list: var[]..[], queryFunction: Function): bool"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.UniqueItems@var[]..[]",
+      "Id": "7188f4370ae74b35bcf22bdb3e7964a8",
+      "Inputs": [
+        {
+          "Id": "e2199919697f4ab4b1f6ecafe4ec79fd",
+          "Name": "list",
+          "Description": "중복 항목을 필터링할 리스트.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "80e14585cce2467c8b148acf592c2c2e",
+          "Name": "list",
+          "Description": "필터링된 리스트.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 리스트의 고유한 항목이 모두 포함된 새 리스트를 만듭니다.\n\nList.UniqueItems (list: var[]..[]): var[]..[]"
+    }
+  ],
+  "Connectors": [],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "없음",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.0.5650",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "배경 미리보기",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "List.AllFalse",
+        "Id": "f40e1d47623d47498f1e72312be35edc",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 179.5,
+        "Y": 68.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.AllTrue",
+        "Id": "873bc6bc4d4c4a8594dc3689f75f5571",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 192.5,
+        "Y": 170.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.AllIndicesOf",
+        "Id": "bc12959c44ac48ec9d201af3a3b63187",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 488.5,
+        "Y": 78.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.AnyFalse",
+        "Id": "bcaf77152ce243aebde888be043f1841",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 202.5,
+        "Y": 287.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.AnyTrue",
+        "Id": "33f0e73f46a64c2db57a2cf8e061f585",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 203.5,
+        "Y": 389.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Contains",
+        "Id": "7946356012904aa3a893b717def5d277",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 743.5,
+        "Y": 78.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Count",
+        "Id": "a7e872faf8de42e58565cdfe64b1ce96",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 958.5,
+        "Y": 81.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.CountFalse",
+        "Id": "07466ddbaee14ec8b278ca8e940cacd1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 963.5,
+        "Y": 188.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.CountTrue",
+        "Id": "946d0f01898a4c01a7648632aa6c3aaa",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 948.5,
+        "Y": 290.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.DiagonalLeft",
+        "Id": "f31a28edbd8944f1bc096412312bf757",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1247.0261258240157,
+        "Y": 70.177096110910128
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.DiagonalRight",
+        "Id": "510b4d926aa74f439c3d7b41dda3441b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1251.5197234307295,
+        "Y": 198.43029730755313
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Equals",
+        "Id": "1e1c3108308b40cda33d37f5569da8d6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1572.4434584469866,
+        "Y": 75.79470974734852
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.FirstIndexOf",
+        "Id": "8ebf19ecc0c6444589d9691d3aae0a55",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 190.10759682833805,
+        "Y": 565.32643655811808
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.FirstItem",
+        "Id": "41c9b0f57ce848d783dd27130781fe95",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 195.15380324110947,
+        "Y": 724.11565130937447
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.GetItemAtIndex",
+        "Id": "5ab6b9ed0aa24783971f960c86ec6564",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 407.80797933943916,
+        "Y": 568.97172409298275
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.IndexOf",
+        "Id": "27b353ec95b649d59f3f01ac208c8b27",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 401.12074109735363,
+        "Y": 710.74117482520285
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.IsEmpty",
+        "Id": "0b16783f14ba433996a8642de5d93c5c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 919.92137124617511,
+        "Y": 443.77096564194653
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.IsHomogeneous",
+        "Id": "649accb820334c39af2fc546a471fcfe",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 910.796806541579,
+        "Y": 536.8458526816496
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.IsRectangular",
+        "Id": "3ee02e0dc0014686b97ea9100647ddec",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 917.130982436961,
+        "Y": 631.63837756579471
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.LastItem",
+        "Id": "6b5eb49724714b169f5c244cae5cb00c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 194.98516865873029,
+        "Y": 812.82644762035545
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.MaximumItem",
+        "Id": "228ecdca2980468792188c2e841f2a39",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1154.0431640834677,
+        "Y": 493.87132386727944
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.MinimumItem",
+        "Id": "1fa5c825bb1d4e1c9bec5aa0dec13840",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1155.4807379253532,
+        "Y": 600.25178816681012
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.SetDifference",
+        "Id": "3f67055e3be8478585b55504df3fbaad",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1513.4366245548561,
+        "Y": 515.43493149556252
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.SetIntersection",
+        "Id": "ae30d75bf88b49ef83c7c5b35d25c4e4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1517.7493460805129,
+        "Y": 652.0044464746901
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.TrueForAll",
+        "Id": "6d9ad0b86913499e9b1f465f0d4e0d21",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1782.2629329874546,
+        "Y": 485.24588081596596
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.TrueForAny",
+        "Id": "147c65dfe2dc483492618fa82610883b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1776.5126376199125,
+        "Y": 613.18995274378028
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.UniqueItems",
+        "Id": "7188f4370ae74b35bcf22bdb3e7964a8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1816.7647051927077,
+        "Y": 781.38609224438994
+      }
+    ],
+    "Annotations": [],
+    "X": 31.677582215527877,
+    "Y": 59.581237185319708,
+    "Zoom": 0.55500271293456593
+  }
+}

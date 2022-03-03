@@ -1,0 +1,152 @@
+{
+  "Uuid": "6b6ea7b6-26ac-43b9-a732-56a25194caa6",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Home",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "## mouse: ADCC03RRT // keyboard: SP0015_2323010z, KY8519_745022a, KY2415_102536a\r\nimport re\r\n\r\nmystring = [\"ADCC03RRT\", \"SP0015_2323010z\", \"KY8519_745022a\", \"KY2415_102536a\"]\r\n\r\nresult = []\r\n\r\nfor 일련번호 in mystring:\r\n\r\n    if re.search(\"[A-Z]{2}\\d{4}_\\d{6,7}[a-z]\", 일련번호):\r\n        result.append(일련번호 + \": 참\")\r\n    else:\r\n        result.append(일련번호 + \": 거짓\")\r\n\r\n\r\n\r\n\r\n\r\n# 출력을 OUT 변수에 지정합니다.\r\nOUT = result",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "b97c5eefb2404200991ddd45f5b9424e",
+      "Inputs": [
+        {
+          "Id": "d780af83090a4308a85ecd89db073b2f",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8581178bd798485aa401d0eb0e1ba68e",
+          "Name": "OUT",
+          "Description": "Python 스크립트의 결과",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "포함된 Python 스크립트를 실행합니다."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "## mouse: ADCC03RRT // keyboard: SP0015_2323010z, KY8519_745022a, KY2415_102536a\r\n\r\nmystring = [\"ADCC03RRT\", \"SP0015_2323010z\", \"KY8519_745022a\", \"KY2415_102536a\"]\r\n\r\n\r\n\"Regular Expression\"\r\n\r\n\"[A-Z][a-z]{6}\\s[A-Z][a-z]{9}\"\r\n\r\n\r\n\r\n# 출력을 OUT 변수에 지정합니다.\r\nOUT = 0",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "560bb54570fb49e1a7e3135e6d4dbe7f",
+      "Inputs": [
+        {
+          "Id": "f2b07a2187cd463fb850ec39910a1ec9",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a5ee1013c4d34e1f8c768648d8bed2d9",
+          "Name": "OUT",
+          "Description": "Python 스크립트의 결과",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "포함된 Python 스크립트를 실행합니다."
+    }
+  ],
+  "Connectors": [],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "없음",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.0.5650",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "배경 미리보기",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "b97c5eefb2404200991ddd45f5b9424e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 660.79703449238207,
+        "Y": 193.46681002203596
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "560bb54570fb49e1a7e3135e6d4dbe7f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 102.62393442497557,
+        "Y": 202.52171356819105
+      }
+    ],
+    "Annotations": [],
+    "X": 80.296756000615318,
+    "Y": -149.14198640502423,
+    "Zoom": 1.4848619772588221
+  }
+}
