@@ -1,0 +1,953 @@
+{
+  "Uuid": "42d2029d-0a24-45cb-88b9-22d63bbb8887",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Home",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Sphere": {
+        "Key": "Autodesk.DesignScript.Geometry.Sphere",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "DesignScript.Builtin.Dictionary": {
+        "Key": "DesignScript.Builtin.Dictionary",
+        "Value": "DesignScriptBuiltin.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.IO.FileSystem.WriteText@string,string",
+      "Id": "6aa8d166f7df4fb0addf53bfe92893ad",
+      "Inputs": [
+        {
+          "Id": "86257ab7e6ab410cbffc6c5db9adff85",
+          "Name": "filePath",
+          "Description": "쓸 경로\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b8ed7cb0dde64f8cbdabb25804e8c064",
+          "Name": "text",
+          "Description": "텍스트 내용\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "dfdb218d78ba44e7806a7d587868af6b",
+          "Name": "void",
+          "Description": "출력 없음",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "텍스트 내용을 경로로 지정된 파일에 씁니다\n\nFileSystem.WriteText (filePath: string, text: string): void"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.Filename, CoreNodeModels",
+      "HintPath": "C:\\Users\\pjmk0\\Downloads\\MK\\copypjt\\3.html",
+      "InputValue": "C:\\Users\\pjmk0\\Downloads\\MK\\copypjt\\3.html",
+      "NodeType": "ExtensionNode",
+      "Id": "b72a6e0c38194b0e924877b2c8fdd700",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "87491bc905904657a22059a92992c740",
+          "Name": "",
+          "Description": "파일 경로",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "시스템에서 파일을 선택하여 파일 경로를 가져올 수 있습니다."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "a;\n\"asdf{a}fd\nadsfasfdasfd\";",
+      "Id": "2adeedd707634a0692b454e062ae7133",
+      "Inputs": [
+        {
+          "Id": "b7fd3c5898a742f5b3a4cbd606034a5a",
+          "Name": "a",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1b0e68f0cfad486b822094318bf871aa",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "41917f18887e41b9bb37ff4db567f211",
+          "Name": "",
+          "Description": "선 2의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "1;",
+      "Id": "7c05aaecdef543bab33041c218951fea",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9ec957f5a6a64408b531caa4ff502cd5",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "/*This is a multi-line comment,\nwhich continues for\nmultiple lines*/\ndef MKfunc(in1,in2)\n{\n//This is a comment\nsum = in1+in2;\nreturn sum;\n};",
+      "Id": "17cba6ad9bc940d4849728aa3d59d8c9",
+      "Inputs": [],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "MKfunc(a,b);",
+      "Id": "658b7e1caf364a84b3e6cc0bdef727e4",
+      "Inputs": [
+        {
+          "Id": "f542a3908e8143aa8736a2375d63300e",
+          "Name": "a",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8e0135c6213543daafa4e450e6052245",
+          "Name": "b",
+          "Description": "b",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a56021507939477086d0a50aed2e7a75",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "3;\n4;",
+      "Id": "a800633f757c434ca771e00adad0620d",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "57347c6e48254f29994fd0c695a62606",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d0974c24f5ca4dfeb8acff54069052f6",
+          "Name": "",
+          "Description": "선 2의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "def sphereByZ(inputPt,radiusRatio)\n{\n//get Z Value, use it to drive radius of sphere\nsphereRadius=inputPt.Z/radiusRatio;\n//Define Sphere Geometry\nsphere=Sphere.ByCenterPointRadius(inputPt,sphereRadius);\n//Define output for function\nreturn sphere;\n};",
+      "Id": "ec34c7e845e447aca03b608a6bc1dfc9",
+      "Inputs": [],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "sphereByZ(a,b);",
+      "Id": "5c923d5ad3944f0e8ff816d723d1e907",
+      "Inputs": [
+        {
+          "Id": "1c73829d4c39439ebad84726b1049ab0",
+          "Name": "a",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "62d0da3cf3d64b61b0c1973bc24e7cb2",
+          "Name": "b",
+          "Description": "b",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b5ca6a24dc0240228e791eefd2cd1f9b",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "3;\n1;",
+      "Id": "0e6b059fbdda4e83964cb0b8067724a1",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "cd9c93aa82eb4d0faa11f06ec70c8898",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8feeb6cb8fde4c32abad70d1ba4ab6b4",
+          "Name": "",
+          "Description": "선 2의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "Point.ByCoordinates(0,0,1);",
+      "Id": "b9456371617c4743baf60860368cf0d9",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a8fda5f4adef4fc58226d65fb3a9057a",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.DynamoConvert, CoreNodeModels",
+      "NodeType": "ConvertBetweenUnitsNode",
+      "MeasurementType": "Length",
+      "FromConversion": "Millimeters",
+      "ToConversion": "Inches",
+      "Id": "d5a6a1722d1542b9a51976befc3594f7",
+      "Inputs": [
+        {
+          "Id": "1308cf31d10b4062b71215e65ea500d3",
+          "Name": "",
+          "Description": "변환할 숫자 값.",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2e23130fa91443ef9dd7ce451efcdba3",
+          "Name": "",
+          "Description": "변환된 숫자 값.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "측정 단위 사이를 변환합니다."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "100;",
+      "Id": "701fb1c9b43a45289474eddb2ec4cb50",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "24e3a6b4584840dcb4a944095af459d1",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "{\n\"foo\": 1\n};",
+      "Id": "8443688a462e48a0862200acbff67a3d",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "118c366a691d40febd2721c12e502117",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "i = 0 ? \"non-empty\" : \"empty\";\n // i = “non-empty”;",
+      "Id": "615d943b458f421b981a8b04623ce366",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "afc89792a02045c1bf6926cd710fcf36",
+          "Name": "",
+          "Description": "i",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "a;\n\"\\\"Hello{a}\\fDesignScript\\nLanguage\\\"\";",
+      "Id": "3029f4a6bbbe464c868c827f97187397",
+      "Inputs": [
+        {
+          "Id": "1e0962a71c634ceabf50452e6f8717ab",
+          "Name": "a",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d5fa246ee60a45149631129017a4ed2d",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2c3296f7c77348a48978c2be7823764b",
+          "Name": "",
+          "Description": "선 2의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "32;",
+      "Id": "f3ea9e1465694bcba9b6eb95a47175d9",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "171425fc6d0149fe8ec25477cab2a871",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "[Associative]\n{\n\tclass Foo\n\t{\n\t\tx;\n\t}\n};",
+      "Id": "ed63ad021ce84b86bb4d7a43ffce4d1c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f1505d609f5f448191ba56b526047bc2",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "[Associative]\n{\n\tclass Foo\n\t{\n\t\tx;\n\t}\n};",
+      "Id": "80477580bfb74a43b9cb0482683c952c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7ad52d459ee84bfca0b9cb8fc5a3bc2a",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "<html>\r\n\r\n<head>\r\n<title>WEB1 - html by Dynamo Sandbox</title>\r\n<meta charset=\"utf-8\">\r\n</head>\r\n\r\n<body>\r\n<h2>목차</h2>\r\n<ol>\r\n    <li>Dynamo로 html 문서를 만드는 것은</li>\r\n    <li>String노드와 CodeBlock</li>\r\n    <li>Open html with Browser</li>\r\n</ol>\r\n\r\n<h2>Dynamo로 html 문서를 만드는 것은</h2>\r\n<p>예를 들면 야구방망이로 글씨를 쓰는 것과 비슷합니다. <br>시간은 오래걸리고, 기능도 한정적인데다가 완성품의 퀄리티를 놓고 봐도 당연히 따라잡기 어렵죠.</p>\r\n<p>그런데도 이런걸  해보는 이유는 뭘까요?<br>다이나모 샌드박스도 프로그래밍 툴이고, 다른 프로그래밍 툴이 할 수 있는 일은 다이나모도 할 수 있다는 것을 보여드림으로써 동기부여가 되었으면 좋겠다는 마음때문입니다.</p>\r\n\r\n</body>\r\n</html>",
+      "Id": "110068e0321b45eaa1c2cefcc1f8976e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "21d922da482b41a18b6a81997db40c12",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "문자열을 작성합니다."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.IO.FileSystem.WriteText@string,string",
+      "Id": "bcc6cc3a742c42dbb35f82dde9cd5c64",
+      "Inputs": [
+        {
+          "Id": "c4dc979d8117470fbcb7bcb587e6b857",
+          "Name": "filePath",
+          "Description": "쓸 경로\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c84f9eab4cd8401889add0bf3851f0f7",
+          "Name": "text",
+          "Description": "텍스트 내용\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b146243fe4b14ce9a177d43742003590",
+          "Name": "void",
+          "Description": "출력 없음",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "텍스트 내용을 경로로 지정된 파일에 씁니다\n\nFileSystem.WriteText (filePath: string, text: string): void"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.Filename, CoreNodeModels",
+      "HintPath": "C:\\Users\\pjmk0\\Downloads\\MK\\hnanmal_tistory\\2022.03.26_다이나모를 이용해서 웹페이지를 만들고\\index.html",
+      "InputValue": ".\\index.html",
+      "NodeType": "ExtensionNode",
+      "Id": "94ea7f58a7a0462da8e4935dac5b5222",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "aa465e8336d04097879a9278435af56b",
+          "Name": "",
+          "Description": "파일 경로",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "시스템에서 파일을 선택하여 파일 경로를 가져올 수 있습니다."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "<html>\r\n\r\n<head>\r\n<title>WEB1 - html by Dynamo Sandbox</title>\r\n<meta charset=\"utf-8\">\r\n</head>\r\n\r\n<body>\r\n<h2>목차</h2>\r\n<ol>\r\n    <li>Dynamo로 html 문서를 만드는 것은</li>\r\n    <li>String노드와 CodeBlock</li>\r\n    <li>Open html with Browser</li>\r\n</ol>\r\n\r\n<h2>Dynamo로 html 문서를 만드는 것은</h2>\r\n\r\n<p>예를 들면 야구방망이로 글씨를 쓰는 것과 비슷합니다. <br>시간은 오래걸리고, 기능도 한정적인데다가 완성품의 퀄리티를 놓고 봐도 당연히 따라잡기 어렵죠.</p>\r\n<p>그런데도 이런걸  해보는 이유는 뭘까요?<br>다이나모 샌드박스도 프로그래밍 툴이고, 다른 프로그래밍 툴이 할 수 있는 일은 다이나모도 할 수 있다는 것을 보여드림으로써 동기부여가 되었으면 좋겠다는 마음때문입니다.</p>\r\n\r\n</body>\r\n\r\n</html>",
+      "Id": "253eabfcc1b14547b9cdee898619126c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4c314278d92d478a9edcfc87ddaf8911",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "문자열을 작성합니다."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "87491bc905904657a22059a92992c740",
+      "End": "86257ab7e6ab410cbffc6c5db9adff85",
+      "Id": "6752353e9a0b4f8187421a326d89c94b"
+    },
+    {
+      "Start": "9ec957f5a6a64408b531caa4ff502cd5",
+      "End": "b7fd3c5898a742f5b3a4cbd606034a5a",
+      "Id": "0818777d2e3a43e8a3986a70e6a347d4"
+    },
+    {
+      "Start": "57347c6e48254f29994fd0c695a62606",
+      "End": "f542a3908e8143aa8736a2375d63300e",
+      "Id": "74219cb95073479e8704d6c243b2f38c"
+    },
+    {
+      "Start": "d0974c24f5ca4dfeb8acff54069052f6",
+      "End": "8e0135c6213543daafa4e450e6052245",
+      "Id": "8cdd674ed342400cb441e244bc85372f"
+    },
+    {
+      "Start": "8feeb6cb8fde4c32abad70d1ba4ab6b4",
+      "End": "62d0da3cf3d64b61b0c1973bc24e7cb2",
+      "Id": "38b7c06e1a28490a99a968d78a52509c"
+    },
+    {
+      "Start": "a8fda5f4adef4fc58226d65fb3a9057a",
+      "End": "1c73829d4c39439ebad84726b1049ab0",
+      "Id": "00a195fef7674ac392666104bb1190c8"
+    },
+    {
+      "Start": "24e3a6b4584840dcb4a944095af459d1",
+      "End": "1308cf31d10b4062b71215e65ea500d3",
+      "Id": "a89054e7f7584ad7acd4beba4cd49811"
+    },
+    {
+      "Start": "171425fc6d0149fe8ec25477cab2a871",
+      "End": "1e0962a71c634ceabf50452e6f8717ab",
+      "Id": "1123b4727b734b2a90735f3676965167"
+    },
+    {
+      "Start": "21d922da482b41a18b6a81997db40c12",
+      "End": "b8ed7cb0dde64f8cbdabb25804e8c064",
+      "Id": "f6d900e114f94db8800cdb478ddf605a"
+    },
+    {
+      "Start": "aa465e8336d04097879a9278435af56b",
+      "End": "c4dc979d8117470fbcb7bcb587e6b857",
+      "Id": "65aaad7851294cc1b8db5e50123b981e"
+    },
+    {
+      "Start": "4c314278d92d478a9edcfc87ddaf8911",
+      "End": "c84f9eab4cd8401889add0bf3851f0f7",
+      "Id": "db223d6c677b4beaaff28cb6eb99880a"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "없음",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.0.5650",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "배경 미리보기",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "FileSystem.WriteText",
+        "Id": "6aa8d166f7df4fb0addf53bfe92893ad",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -197.20384337588848,
+        "Y": 893.95857531428294
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "File Path",
+        "Id": "b72a6e0c38194b0e924877b2c8fdd700",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -567.314847412953,
+        "Y": 845.72983783233371
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "2adeedd707634a0692b454e062ae7133",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 665.88056513072729,
+        "Y": 352.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "7c05aaecdef543bab33041c218951fea",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 505.0,
+        "Y": 356.0
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "17cba6ad9bc940d4849728aa3d59d8c9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 929.0,
+        "Y": 251.0
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "658b7e1caf364a84b3e6cc0bdef727e4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1347.0796232461819,
+        "Y": 136.1020020472458
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "a800633f757c434ca771e00adad0620d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1169.0,
+        "Y": 116.0
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "ec34c7e845e447aca03b608a6bc1dfc9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 930.31413496798359,
+        "Y": 557.04972829516316
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "5c923d5ad3944f0e8ff816d723d1e907",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1807.7001453303442,
+        "Y": 456.8744471124005
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "0e6b059fbdda4e83964cb0b8067724a1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1491.8897068114352,
+        "Y": 599.4879312520701
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "b9456371617c4743baf60860368cf0d9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1305.0,
+        "Y": 364.0
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Convert Between Units",
+        "Id": "d5a6a1722d1542b9a51976befc3594f7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1504.7638175008017,
+        "Y": 801.3303782863652
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "701fb1c9b43a45289474eddb2ec4cb50",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1360.0422375328574,
+        "Y": 816.17096720809525
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "8443688a462e48a0862200acbff67a3d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 962.0,
+        "Y": 917.0
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "615d943b458f421b981a8b04623ce366",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1275.0,
+        "Y": 1029.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "3029f4a6bbbe464c868c827f97187397",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 397.47155697351138,
+        "Y": 808.1928554816709
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "f3ea9e1465694bcba9b6eb95a47175d9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1663.0,
+        "Y": 1098.0
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "ed63ad021ce84b86bb4d7a43ffce4d1c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2071.2507662601943,
+        "Y": 652.472176178951
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "80477580bfb74a43b9cb0482683c952c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2371.753448753092,
+        "Y": 715.53407943860407
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String",
+        "Id": "110068e0321b45eaa1c2cefcc1f8976e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -529.30818287494139,
+        "Y": 1001.132047691018
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "FileSystem.WriteText",
+        "Id": "bcc6cc3a742c42dbb35f82dde9cd5c64",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -639.44046108955945,
+        "Y": 2305.2139748105847
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "File Path",
+        "Id": "94ea7f58a7a0462da8e4935dac5b5222",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -864.8927724982583,
+        "Y": 2235.8211233672696
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String",
+        "Id": "253eabfcc1b14547b9cdee898619126c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -920.78728990567981,
+        "Y": 2445.9758514131258
+      }
+    ],
+    "Annotations": [],
+    "X": 1271.1278423577869,
+    "Y": -2496.33020968307,
+    "Zoom": 1.0723638893318155
+  }
+}
