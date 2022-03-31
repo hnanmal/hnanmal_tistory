@@ -1,0 +1,1053 @@
+{
+  "Uuid": "186fda81-6b95-47b6-8284-8acec7b0c1da",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Home",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "6f54834ee170400695124030bec3fec7",
+      "Inputs": [
+        {
+          "Id": "b5cd2653d2fa47bc933f08c2f5279be9",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "39671e899b1142bb8e2159b285136485",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 571,
+      "SelectedString": "OST_StructuralColumns",
+      "NodeType": "ExtensionNode",
+      "Id": "ca6390bdf778448481753ebdb61e6ea5",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "134d3da9d3f442b891717bea577f7bda",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.Geometry",
+      "Id": "ee392d24ae274ea38772329f7228df13",
+      "Inputs": [
+        {
+          "Id": "8514b8ce55664ecf8365d3469fa6dc33",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9b6a05894fbb4dcdbc0e27279dc7a7b9",
+          "Name": "var[]",
+          "Description": "var[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get all of the Geometry associated with this object\n\nElement.Geometry ( ): var[]"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "fd0ad498dc294a76b20bdb018bfa20ef",
+      "Inputs": [
+        {
+          "Id": "eada5aa0134a4754a4ec91c24f95780f",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5169e047bd484de282d5d53cb67dcd5d",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 486,
+      "SelectedString": "OST_Rooms",
+      "NodeType": "ExtensionNode",
+      "Id": "9931b395dbce4e5dbb0c6916249cf0e7",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "15dc2bab3d794a0293f6be8a61cec333",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 241,
+      "SelectedString": "OST_Floors",
+      "NodeType": "ExtensionNode",
+      "Id": "40861dfa71ec48b9891d9622cda952e6",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "8be4ed6013494f25871724c6dd9d3683",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "f1ed0952f41e4b24a5a5c98a2a83b79d",
+      "Inputs": [
+        {
+          "Id": "d6c659532d8d45a5b30814e39fc90b41",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5fd1a6b6c3164bd188495c0f3f55b420",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.Geometry",
+      "Id": "708b8832ad1041f39873c8b9fc3f9578",
+      "Inputs": [
+        {
+          "Id": "fef1bba36e644b738c3093000af1fb32",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ce4a0ea7c5704a2294cc046ab5547b6b",
+          "Name": "var[]",
+          "Description": "var[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get all of the Geometry associated with this object\n\nElement.Geometry ( ): var[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Modifiers.GeometryColor.ByGeometryColor@Autodesk.DesignScript.Geometry.Geometry,DSCore.Color",
+      "Id": "27f26eea449d4cbe916c5904e10f223d",
+      "Inputs": [
+        {
+          "Id": "e69e47129fe8409eadb0028e64f1dc47",
+          "Name": "geometry",
+          "Description": "The geometry to which you would like to apply color.\n\nGeometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "43f193e639964825b0ae146067854cda",
+          "Name": "color",
+          "Description": "The color.\n\nColor",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e2abbd03c9304d859d273af430b790e3",
+          "Name": "GeometryColor",
+          "Description": "A Display object.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Display geometry using a color.\n\nGeometryColor.ByGeometryColor (geometry: Geometry, color: Color): GeometryColor"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.ColorPalette, CoreNodeModels",
+      "InputValue": {
+        "R": 92,
+        "G": 170,
+        "B": 52,
+        "A": 69
+      },
+      "NodeType": "ColorInputNode",
+      "Id": "127a661a23704e7082b099a38fd1fb54",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "8ae2b4212e754464b6f1c5d3fbc9d174",
+          "Name": "Color",
+          "Description": "Selected Color.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a Color from the palette"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.Color.ByARGB@int,int,int,int",
+      "Id": "1aecd28464154f5b95ff9f8b0713e901",
+      "Inputs": [
+        {
+          "Id": "c813793daaa74f3e805890a5ad382293",
+          "Name": "alpha",
+          "Description": "Alpha value (between 0 and 255 inclusive)\n\nint\nDefault value : 255",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c785327617f94185b945a9da85c410c8",
+          "Name": "red",
+          "Description": "Red value for RGB color model (between 0 and 255 inclusive)\n\nint\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2d982e82fe3a497591d4326277acf52e",
+          "Name": "green",
+          "Description": "Green value for RGB color model (between 0 and 255 inclusive)\n\nint\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2bd5891f3a9a48918a8814e05de247af",
+          "Name": "blue",
+          "Description": "Blue value for RGB color model (between 0 and 255 inclusive)\n\nint\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d6ea4f120edc462dbccfb2ca3d4b367b",
+          "Name": "color",
+          "Description": "Color created from ARGB",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Construct a color by alpha, red, green, and blue components.\n\nColor.ByARGB (alpha: int = 255, red: int = 0, green: int = 0, blue: int = 0): Color"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "120;\n153;\n66;\n66;",
+      "Id": "ab8aa6ff0b554ff39f4190b87e11874c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d4900a26728448348edd3d25d0caa7d3",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b610e8d8124e491da8845a5e94659f44",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ca3ee3ab3151475d867afb519f444305",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ea2993bb279440bbb369fd69b7bea7ae",
+          "Name": "",
+          "Description": "Value of expression at line 4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.Name",
+      "Id": "360c6f76379646319b8b612cef3fa086",
+      "Inputs": [
+        {
+          "Id": "5d929ecb47b840ee9326b05a521635c6",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8302fd30553448ca9a9cce8416e33b4b",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the Name of the Element\n\nElement.Name: string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "i == \"Toilet\";",
+      "Id": "307595224f624ac68540c2ee238aa057",
+      "Inputs": [
+        {
+          "Id": "bc5bdad8ccab4c79a9fb0d5b6b38036f",
+          "Name": "i",
+          "Description": "i",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5b7408d65e984d6ca4b85fdca44dd404",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.FilterByBoolMask@var[]..[],var[]..[]",
+      "Id": "cc19f4eb9dfe426f8ba13efee27d37b1",
+      "Inputs": [
+        {
+          "Id": "11824bcb653749a69c64f42b99425290",
+          "Name": "list",
+          "Description": "List to filter.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cba5f058cb454cc88c9046ad135abb4c",
+          "Name": "mask",
+          "Description": "List of booleans representing a mask.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4d8e85dfbbb74932ac7cc26594ba7100",
+          "Name": "in",
+          "Description": "Items whose mask index is true.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "29192c3b5fd34ac9afa28ea0f293e2f9",
+          "Name": "out",
+          "Description": "Items whose mask index is false.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Filters a sequence by looking up corresponding indices in a separate list of booleans.\n\nList.FilterByBoolMask (list: var[]..[], mask: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.Geometry",
+      "Id": "58b1db760fcd40bbadad9cdd245cf59e",
+      "Inputs": [
+        {
+          "Id": "5cb9843864e449ae981c4da924f0f9c7",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3f7aa8979caf45ce92b7462b6a3be51f",
+          "Name": "var[]",
+          "Description": "var[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get all of the Geometry associated with this object\n\nElement.Geometry ( ): var[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.Geometry",
+      "Id": "9a1a0739a228404999229c131102d055",
+      "Inputs": [
+        {
+          "Id": "1aa5e1b248164ae2b2cde40ff2ab1e92",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "05d36c71dbb0443db4cf5a79224ed585",
+          "Name": "var[]",
+          "Description": "var[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get all of the Geometry associated with this object\n\nElement.Geometry ( ): var[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Modifiers.GeometryColor.ByGeometryColor@Autodesk.DesignScript.Geometry.Geometry,DSCore.Color",
+      "Id": "dca75b0fb71b4d4fa0dc09f4cbb81c82",
+      "Inputs": [
+        {
+          "Id": "a86b5739db6048f2884624e270e7b4d2",
+          "Name": "geometry",
+          "Description": "The geometry to which you would like to apply color.\n\nGeometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9ab425a87d1543539d94a43f9ef41051",
+          "Name": "color",
+          "Description": "The color.\n\nColor",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8e649a726b8f4ef69110e53e3ec95b04",
+          "Name": "GeometryColor",
+          "Description": "A Display object.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Display geometry using a color.\n\nGeometryColor.ByGeometryColor (geometry: Geometry, color: Color): GeometryColor"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.ColorPalette, CoreNodeModels",
+      "InputValue": {
+        "R": 220,
+        "G": 20,
+        "B": 60,
+        "A": 100
+      },
+      "NodeType": "ColorInputNode",
+      "Id": "b33567a2adc64a0b9d506df42c68bbd8",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "aa505671cebe43dd9badc0598a56c3b7",
+          "Name": "Color",
+          "Description": "Selected Color.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a Color from the palette"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Modifiers.GeometryColor.ByGeometryColor@Autodesk.DesignScript.Geometry.Geometry,DSCore.Color",
+      "Id": "ae7e6abea6e6402c9a18f08368f03258",
+      "Inputs": [
+        {
+          "Id": "92f7a83cbcc74434bf3d23aba64ae31e",
+          "Name": "geometry",
+          "Description": "The geometry to which you would like to apply color.\n\nGeometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cac513bd18184169be485773ba5684a8",
+          "Name": "color",
+          "Description": "The color.\n\nColor",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0e4291467f854b54a4264089dece9b27",
+          "Name": "GeometryColor",
+          "Description": "A Display object.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Display geometry using a color.\n\nGeometryColor.ByGeometryColor (geometry: Geometry, color: Color): GeometryColor"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.ColorPalette, CoreNodeModels",
+      "InputValue": {
+        "R": 0,
+        "G": 0,
+        "B": 0,
+        "A": 36
+      },
+      "NodeType": "ColorInputNode",
+      "Id": "0a46b859fc9f4a878ad4a526119282a3",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "6f0fe1c782ca44ff8fc91973748bede3",
+          "Name": "Color",
+          "Description": "Selected Color.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a Color from the palette"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "39671e899b1142bb8e2159b285136485",
+      "End": "8514b8ce55664ecf8365d3469fa6dc33",
+      "Id": "93ea1e23a81e4c61a0420ee9abe53a59"
+    },
+    {
+      "Start": "134d3da9d3f442b891717bea577f7bda",
+      "End": "b5cd2653d2fa47bc933f08c2f5279be9",
+      "Id": "a72bc1e102ad470d968f6ac0fa3d4b02"
+    },
+    {
+      "Start": "5169e047bd484de282d5d53cb67dcd5d",
+      "End": "5d929ecb47b840ee9326b05a521635c6",
+      "Id": "9e838acca8a144e481ed51e721cb1f90"
+    },
+    {
+      "Start": "5169e047bd484de282d5d53cb67dcd5d",
+      "End": "11824bcb653749a69c64f42b99425290",
+      "Id": "0265c90081044c45a9891eb540f362e4"
+    },
+    {
+      "Start": "15dc2bab3d794a0293f6be8a61cec333",
+      "End": "eada5aa0134a4754a4ec91c24f95780f",
+      "Id": "bd552675bb5747dcb29696776f65fb8c"
+    },
+    {
+      "Start": "8be4ed6013494f25871724c6dd9d3683",
+      "End": "d6c659532d8d45a5b30814e39fc90b41",
+      "Id": "6411af8ce0704251ae36066814a0182f"
+    },
+    {
+      "Start": "5fd1a6b6c3164bd188495c0f3f55b420",
+      "End": "fef1bba36e644b738c3093000af1fb32",
+      "Id": "275dd41edc0648e4aa9841ad932976b7"
+    },
+    {
+      "Start": "8ae2b4212e754464b6f1c5d3fbc9d174",
+      "End": "43f193e639964825b0ae146067854cda",
+      "Id": "8d9e496a5dd449e382237eef0f5482b1"
+    },
+    {
+      "Start": "d4900a26728448348edd3d25d0caa7d3",
+      "End": "c813793daaa74f3e805890a5ad382293",
+      "Id": "03d556f52b6344d3be3b1b011e2c35ce"
+    },
+    {
+      "Start": "b610e8d8124e491da8845a5e94659f44",
+      "End": "c785327617f94185b945a9da85c410c8",
+      "Id": "497ff10c914e4976b4129de21186fe04"
+    },
+    {
+      "Start": "ca3ee3ab3151475d867afb519f444305",
+      "End": "2d982e82fe3a497591d4326277acf52e",
+      "Id": "25310353e84047a4a622a3462689abc1"
+    },
+    {
+      "Start": "ea2993bb279440bbb369fd69b7bea7ae",
+      "End": "2bd5891f3a9a48918a8814e05de247af",
+      "Id": "70681a2e55ae4eee99426a50d218bb89"
+    },
+    {
+      "Start": "8302fd30553448ca9a9cce8416e33b4b",
+      "End": "bc5bdad8ccab4c79a9fb0d5b6b38036f",
+      "Id": "cc89a457cf1a46dbb78d4081e874ec46"
+    },
+    {
+      "Start": "5b7408d65e984d6ca4b85fdca44dd404",
+      "End": "cba5f058cb454cc88c9046ad135abb4c",
+      "Id": "909bbd044a3349bb922871d6aa2122d6"
+    },
+    {
+      "Start": "4d8e85dfbbb74932ac7cc26594ba7100",
+      "End": "5cb9843864e449ae981c4da924f0f9c7",
+      "Id": "c3b50532ba804eb081471a3cd1e41200"
+    },
+    {
+      "Start": "29192c3b5fd34ac9afa28ea0f293e2f9",
+      "End": "1aa5e1b248164ae2b2cde40ff2ab1e92",
+      "Id": "f375a90135ba476b8458d9d330c9ecdb"
+    },
+    {
+      "Start": "3f7aa8979caf45ce92b7462b6a3be51f",
+      "End": "a86b5739db6048f2884624e270e7b4d2",
+      "Id": "3b4ff21b620b48e2aa99e7e298724df8"
+    },
+    {
+      "Start": "05d36c71dbb0443db4cf5a79224ed585",
+      "End": "92f7a83cbcc74434bf3d23aba64ae31e",
+      "Id": "b3febd7cee894fba916524bf8287fd14"
+    },
+    {
+      "Start": "aa505671cebe43dd9badc0598a56c3b7",
+      "End": "9ab425a87d1543539d94a43f9ef41051",
+      "Id": "6eb311767bf24fd491e52596a25d9fb8"
+    },
+    {
+      "Start": "6f0fe1c782ca44ff8fc91973748bede3",
+      "End": "cac513bd18184169be485773ba5684a8",
+      "Id": "f2082f1ccf264c7e969322ea2258ae24"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.0.5650",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 19280.01953125,
+      "EyeY": 53006.3359375,
+      "EyeZ": 93129.7578125,
+      "LookX": -37920.625,
+      "LookY": -70289.125,
+      "LookZ": -73436.515625,
+      "UpX": -0.21539965271949768,
+      "UpY": 0.88294804096221924,
+      "UpZ": -0.41714003682136536
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
+        "Id": "6f54834ee170400695124030bec3fec7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 273.3413690564459,
+        "Y": 1140.2162943685253
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "ca6390bdf778448481753ebdb61e6ea5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 40.743857333248343,
+        "Y": 1138.8686732369372
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.Geometry",
+        "Id": "ee392d24ae274ea38772329f7228df13",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 547.34136905644607,
+        "Y": 1140.2162943685257
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
+        "Id": "fd0ad498dc294a76b20bdb018bfa20ef",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 87.275407742504683,
+        "Y": 1652.4516274363898
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "9931b395dbce4e5dbb0c6916249cf0e7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -138.64235012264248,
+        "Y": 1651.1040063048013
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "40861dfa71ec48b9891d9622cda952e6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -13.89981111842269,
+        "Y": 955.27988950049553
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
+        "Id": "f1ed0952f41e4b24a5a5c98a2a83b79d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 182.69770060477509,
+        "Y": 956.62751063208407
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.Geometry",
+        "Id": "708b8832ad1041f39873c8b9fc3f9578",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 456.69770060477515,
+        "Y": 956.62751063208407
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "GeometryColor.ByGeometryColor",
+        "Id": "27f26eea449d4cbe916c5904e10f223d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1332.8375295245687,
+        "Y": 2288.493732677739
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Color Palette",
+        "Id": "127a661a23704e7082b099a38fd1fb54",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1140.6470296544171,
+        "Y": 2308.4818827320246
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Color.ByARGB",
+        "Id": "1aecd28464154f5b95ff9f8b0713e901",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 756.8454765978172,
+        "Y": 2370.8673920285473
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "ab8aa6ff0b554ff39f4190b87e11874c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 623.41558839316122,
+        "Y": 2370.5700865145427
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.Name",
+        "Id": "360c6f76379646319b8b612cef3fa086",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 318.77979420458865,
+        "Y": 1743.8939951629097
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "307595224f624ac68540c2ee238aa057",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 568.65748346016721,
+        "Y": 1748.5935983098132
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.FilterByBoolMask",
+        "Id": "cc19f4eb9dfe426f8ba13efee27d37b1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 834.499425155148,
+        "Y": 1653.5538088432629
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Element.Geometry",
+        "Id": "58b1db760fcd40bbadad9cdd245cf59e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1103.5659876690306,
+        "Y": 1464.7735520669314
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Element.Geometry",
+        "Id": "9a1a0739a228404999229c131102d055",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1107.7418683904916,
+        "Y": 1723.2607806227354
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "GeometryColor.ByGeometryColor",
+        "Id": "dca75b0fb71b4d4fa0dc09f4cbb81c82",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1485.0590970215369,
+        "Y": 1458.1366473310354
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Color Palette",
+        "Id": "b33567a2adc64a0b9d506df42c68bbd8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1316.4823993657012,
+        "Y": 1558.6518778353138
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "GeometryColor.ByGeometryColor",
+        "Id": "ae7e6abea6e6402c9a18f08368f03258",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1507.2417495428742,
+        "Y": 1723.1770302610705
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Color Palette",
+        "Id": "0a46b859fc9f4a878ad4a526119282a3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1335.2864343610581,
+        "Y": 1816.824457991871
+      }
+    ],
+    "Annotations": [],
+    "X": -946.87975389277426,
+    "Y": -1627.3481049763382,
+    "Zoom": 1.1787493962233495
+  }
+}
