@@ -1,0 +1,1434 @@
+{
+  "Uuid": "738d059e-2972-4dbe-96d8-65220b105b9c",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Home",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Circle.ByCenterPointRadius@Autodesk.DesignScript.Geometry.Point,double",
+      "Id": "3642306ef5fe4ad687f3b7bc76fd2043",
+      "Inputs": [
+        {
+          "Id": "2cb2188b4e3d431d82b1d81c137ce7f8",
+          "Name": "centerPoint",
+          "Description": "Center point of circle\n\nPoint\n기본값 : Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "27f686fbd5bf4fb78e82e95cafe6e952",
+          "Name": "radius",
+          "Description": "Radius\n\ndouble\n기본값 : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "914c5a833bb543bf8a769d9fee1b18e8",
+          "Name": "Circle",
+          "Description": "Circle created with center point and radius",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "표준 XY 평면의 입력 중심점과 반지름을 사용하고 표준 Z을 법선으로 사용하여 원을 만듭니다.\n\nCircle.ByCenterPointRadius (centerPoint: Point = Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0), radius: double = 1): Circle"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "11;",
+      "Id": "1dac6e016a5b4d9990946ab27f6e564e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f98e887a78344a93a759f31f3fad94de",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Curve.Offset@double",
+      "Id": "78d5a0c4e988451baa8fb00319c542d8",
+      "Inputs": [
+        {
+          "Id": "968f7814e18949e5935c65e0a6425ec2",
+          "Name": "curve",
+          "Description": "Autodesk.DesignScript.Geometry.Curve",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e1fb4079b2ed48b7b29a9a3fb00883d9",
+          "Name": "distance",
+          "Description": "간격띄우기할 양수 또는 음수 거리\n\ndouble\n기본값 : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "afaa1262ea5348458321852111c426fe",
+          "Name": "Curve",
+          "Description": "새 간격띄우기 곡선",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "곡선의 간격을 지정된 양만큼 띄웁니다. 곡선은 평면형이어야 합니다.\n\nCurve.Offset (distance: double = 1): Curve"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Curve.PointAtParameter@double",
+      "Id": "5e73a974fdf4482388eb02ae5ef6091a",
+      "Inputs": [
+        {
+          "Id": "f2d93b5a2d1447f399627f6a02a5d1b1",
+          "Name": "curve",
+          "Description": "Autodesk.DesignScript.Geometry.Curve",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2025fb58c30640018984227af55502e9",
+          "Name": "param",
+          "Description": "매개변수 평가 위치\n\ndouble\n기본값 : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "49152519bd2c4c2986c6834ccafd2c82",
+          "Name": "Point",
+          "Description": "점",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "StartParameter() 및 EndParameter() 사이의 지정된 매개변수에서 곡선상의 점을 가져옵니다\n\nCurve.PointAtParameter (param: double = 0): Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0..1..#11;",
+      "Id": "404ade1879ac44daa4bad7829092f8d7",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1166086310ed49afab84e841fe64fe2c",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Line.ByStartPointEndPoint@Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point",
+      "Id": "9bfaeb5c397e4521977d478ee007b8c4",
+      "Inputs": [
+        {
+          "Id": "efd0823dfa8b486089cf3295d4ef4ec4",
+          "Name": "startPoint",
+          "Description": "Line start point\n\nPoint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c31c1363d92a44cbae759ff5ed25a66b",
+          "Name": "endPoint",
+          "Description": "Line end point\n\nPoint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "010b904578024244a37b9f7683f4cc11",
+          "Name": "Line",
+          "Description": "Line from start and end point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "두 입력 점 사이에 직선을 만듭니다.\n\nLine.ByStartPointEndPoint (startPoint: Point, endPoint: Point): Line"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.ByCoordinates@double,double,double",
+      "Id": "effbac637e264457b7c8b79e1f122b38",
+      "Inputs": [
+        {
+          "Id": "6f3f482f0033407eaee31c46d7cf3e78",
+          "Name": "x",
+          "Description": "X coordinate\n\ndouble\n기본값 : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "169c51ed74224453850dc458d31a16d9",
+          "Name": "y",
+          "Description": "Y coordinate\n\ndouble\n기본값 : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "278b454f4b7444ac8fc17a5e5571f3c7",
+          "Name": "z",
+          "Description": "Z coordinate\n\ndouble\n기본값 : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d9c8642d16fa448481b958e0d35e6c28",
+          "Name": "Point",
+          "Description": "Point created by coordinates",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 3개의 데카르트 좌표를 사용하여 점을 형성합니다\n\nPoint.ByCoordinates (x: double = 0, y: double = 0, z: double = 0): Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Curve.SplitByPoints@Autodesk.DesignScript.Geometry.Point[]",
+      "Id": "6bbc2c8fe09a4dac814a7da8c6fc287c",
+      "Inputs": [
+        {
+          "Id": "d1dd8f7c833647f888bb649d404e4865",
+          "Name": "curve",
+          "Description": "Autodesk.DesignScript.Geometry.Curve",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c6498f6bb2e541a3bfa493ef26057781",
+          "Name": "points",
+          "Description": "분할할 곡선에 있는 점\n\nPoint[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0207524c78024acdb86f132d74d98fb4",
+          "Name": "Curve[]",
+          "Description": "분할로 인해 작성된 곡선",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "곡선을 지정된 점에 여러 개 조각으로 분할합니다.\n\nCurve.SplitByPoints (points: Point[]): Curve[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Geometry.DoesIntersect@Autodesk.DesignScript.Geometry.Geometry",
+      "Id": "57b919862ffd4144a3d2464acfb3cd66",
+      "Inputs": [
+        {
+          "Id": "b513e3846fbb4bd3808438971adc88ce",
+          "Name": "geometry",
+          "Description": "Autodesk.DesignScript.Geometry.Geometry",
+          "UsingDefaultValue": false,
+          "Level": 1,
+          "UseLevels": true,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6f39b7505ba84854bfbca04f6c562e13",
+          "Name": "other",
+          "Description": "Geometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "311b22c8f6f94808af5edda556a772cd",
+          "Name": "bool",
+          "Description": "bool",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "다른 형상 객체가 이 객체와 교차하는지 확인\n\nGeometry.DoesIntersect (other: Geometry): bool"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.FilterByBoolMask@var[]..[],var[]..[]",
+      "Id": "089e952bce7d4f7594780342cee03388",
+      "Inputs": [
+        {
+          "Id": "5bbcbecf8d2945abb1e543dcffbd674e",
+          "Name": "list",
+          "Description": "필터링할 리스트.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "494fd8785fe945c6a5563cd706a061a6",
+          "Name": "mask",
+          "Description": "마스크를 나타내는 부울 리스트.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": true,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "391ffda13b65467ab800982e986f4350",
+          "Name": "in",
+          "Description": "마스크 인덱스가 true인 항목.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5a937c7e9cf84ebba047c783dc911f73",
+          "Name": "out",
+          "Description": "마스크 인덱스가 false인 항목.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "별도의 부울 리스트에서 해당하는 인덱스를 조회하여 시퀀스를 필터링합니다.\n\nList.FilterByBoolMask (list: var[]..[], mask: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.DropItems@var[]..[],int",
+      "Id": "2bd29f8a928f46b3a76e7985ddf82d93",
+      "Inputs": [
+        {
+          "Id": "59b5c3cc51164220aee8bc0221518ccc",
+          "Name": "list",
+          "Description": "항목을 제거할 리스트.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6c04b17854e04a5fab345f22fac37f78",
+          "Name": "amount",
+          "Description": "제거할 항목의 수. 음수인 경우 리스트의 끝에서 항목이 제거됩니다.\n\nint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5344896c16a74e8fa9d36fbd8832381e",
+          "Name": "list",
+          "Description": "나머지 항목의 리스트.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "리스트의 시작 부분에서 일정한 양의 항목을 제거합니다. 양이 음수 값이면, 리스트의 끝 부분에서 항목이 제거됩니다.\n\nList.DropItems (list: var[]..[], amount: int): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "-1;",
+      "Id": "7099f4aa647148cd991144634852b679",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "20dd1c4f8bb1477ea6292bea9aee3466",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.AddItemToFront@var[]..[],var[]..[]",
+      "Id": "94d5c128d1d44589b9bd3d8d36a40a69",
+      "Inputs": [
+        {
+          "Id": "9c577c5bbbb34f80a7f8828b44c25028",
+          "Name": "item",
+          "Description": "추가할 항목. 항목은 객체 또는 리스트일 수 있습니다.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 1,
+          "UseLevels": true,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0e30bde3c17646938d9d11f6806132fe",
+          "Name": "list",
+          "Description": "항목을 추가할 리스트.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": true,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "acbc37f1bb2f455685a13ab5d888bb17",
+          "Name": "list",
+          "Description": "추가 항목 리스트",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "리스트의 처음에 항목을 추가합니다.\n\nList.AddItemToFront (item: var[]..[], list: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.PolyCurve.ByJoinedCurves@Autodesk.DesignScript.Geometry.Curve[],double",
+      "Id": "d282baa5054f40e0adb5affb6162daeb",
+      "Inputs": [
+        {
+          "Id": "dffb74a6abfa4e90a3828fe9b7a19477",
+          "Name": "curves",
+          "Description": "PolyCurve에 결합할 곡선\n\nCurve[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6bc7ff3efc8441a38f0f0b03db52afd8",
+          "Name": "joinTolerance",
+          "Description": "결합할 곡선 간에 허용되는 간격 크기를 결정하는 공차\n\ndouble\n기본값 : 0.001",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "552be7dce9e14a61beacaa662601f82f",
+          "Name": "PolyCurve",
+          "Description": "결합된 곡선으로 작성된 Polycurve",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "곡선을 결합하여 PolyCurve를 작성합니다. 연결이 필요한 경우 곡선을 반전합니다. 1e-6 ~ 1e-3 유닛 사이에서 기본 결합 공차를 선택합니다.\n\nPolyCurve.ByJoinedCurves (curves: Curve[], joinTolerance: double = 0.001): PolyCurve"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.PolyCurve.Fillet@double,bool",
+      "Id": "16d17ae5da6c4d479c47a83d5676194e",
+      "Inputs": [
+        {
+          "Id": "b2ec516927a7413c89a42fdeaadf2151",
+          "Name": "polyCurve",
+          "Description": "Autodesk.DesignScript.Geometry.PolyCurve",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f6b0230223e54692a4afae30390e31c0",
+          "Name": "radius",
+          "Description": "모깎기 반지름\n\ndouble\n기본값 : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e9b9fbe6b4f84a49af7e28b9fe25448f",
+          "Name": "rightSide",
+          "Description": "PolyCurve의 시작에 대해 상대적으로 오른쪽 측면에서 모깎기를 하려면 True, 왼쪽에서 모깎기를 하려면 false\n\nbool\n기본값 : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ace5c041820642868e2c3f3c86b41ffe",
+          "Name": "PolyCurve",
+          "Description": "Filleted polyCurve",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "해당 평면에서 polycurve를 모깎기합니다.\n\nPolyCurve.Fillet (radius: double = 1, rightSide: bool = true): PolyCurve"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0.3;",
+      "Id": "7d1f39ada5fb4ceaac2dcab070921f13",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a5f8e5103f9741c0890aca632483f647",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.PolyCurve.NumberOfCurves",
+      "Id": "335bcb3e3cc342ab87f45df985f5b17d",
+      "Inputs": [
+        {
+          "Id": "b746c648dd1c4ba1861ab62116714ce2",
+          "Name": "polyCurve",
+          "Description": "Autodesk.DesignScript.Geometry.PolyCurve",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "339d98b49d8a4470a5eb8054dea1ae0f",
+          "Name": "int",
+          "Description": "int",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "polycurve의 곡선 수\n\nPolyCurve.NumberOfCurves: int"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "i==3;",
+      "Id": "f36b78dcd2f9405eba6b795805508c63",
+      "Inputs": [
+        {
+          "Id": "8847c555e1f542c9b38f06c9ec77966e",
+          "Name": "i",
+          "Description": "i",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "971aeb10f5ff442e84d407beb20e4080",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.FilterByBoolMask@var[]..[],var[]..[]",
+      "Id": "ebea05dfcaae4ddbb06927298cd99e3f",
+      "Inputs": [
+        {
+          "Id": "5fa5ded413624985b186a37bc3a45508",
+          "Name": "list",
+          "Description": "필터링할 리스트.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a59c61740c7e4abdaa2dcf420ca41c07",
+          "Name": "mask",
+          "Description": "마스크를 나타내는 부울 리스트.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b3185f15ebbe4f43b31af05397b60d19",
+          "Name": "in",
+          "Description": "마스크 인덱스가 true인 항목.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e908e227b9a1484faa8887287139dc49",
+          "Name": "out",
+          "Description": "마스크 인덱스가 false인 항목.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "별도의 부울 리스트에서 해당하는 인덱스를 조회하여 시퀀스를 필터링합니다.\n\nList.FilterByBoolMask (list: var[]..[], mask: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.PolyCurve.Fillet@double,bool",
+      "Id": "e96d65b890b24ba0be8799ccc66d859b",
+      "Inputs": [
+        {
+          "Id": "46b9a328ac0846a485971e0837f57848",
+          "Name": "polyCurve",
+          "Description": "Autodesk.DesignScript.Geometry.PolyCurve",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "eb8768425e9d4b7cb5734d2fdbd01c13",
+          "Name": "radius",
+          "Description": "모깎기 반지름\n\ndouble\n기본값 : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e0c0d8fb0def4d3d947187d35b8fcaa7",
+          "Name": "rightSide",
+          "Description": "PolyCurve의 시작에 대해 상대적으로 오른쪽 측면에서 모깎기를 하려면 True, 왼쪽에서 모깎기를 하려면 false\n\nbool\n기본값 : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d521ade416a844b4b560e1ccb7668c60",
+          "Name": "PolyCurve",
+          "Description": "Filleted polyCurve",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "해당 평면에서 polycurve를 모깎기합니다.\n\nPolyCurve.Fillet (radius: double = 1, rightSide: bool = true): PolyCurve"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "i;",
+      "Id": "1f8a30a9d1c34a0f9d6707927ec228ee",
+      "Inputs": [
+        {
+          "Id": "e514a0dcef014a95b61028e6b4fade69",
+          "Name": "i",
+          "Description": "i",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2446b3496cd74a3db5d5cb4acffe30a7",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "-1;",
+      "Id": "57e4583329594ef1bc2d2f0d38435674",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "39153391f02148d8bd748d38506cc55b",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "i[1];",
+      "Id": "884267cab85e4805ba8f6ffe3175b3a4",
+      "Inputs": [
+        {
+          "Id": "daf4f1815c644036b59c544018517011",
+          "Name": "i",
+          "Description": "i",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c6b75f04dbda4d339e05b6c029fd9794",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0.3;",
+      "Id": "1a6f0edeb02e40c09279114322d307a7",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "3535aff6ebfd4bf7989d91f4045828e8",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "914c5a833bb543bf8a769d9fee1b18e8",
+      "End": "968f7814e18949e5935c65e0a6425ec2",
+      "Id": "dec1c7e97dee42edbd85055e0fe4287d"
+    },
+    {
+      "Start": "f98e887a78344a93a759f31f3fad94de",
+      "End": "27f686fbd5bf4fb78e82e95cafe6e952",
+      "Id": "d7186859c30843b386cf6ae4d3013876"
+    },
+    {
+      "Start": "afaa1262ea5348458321852111c426fe",
+      "End": "d1dd8f7c833647f888bb649d404e4865",
+      "Id": "e258a2f317c84c38a1d49d8d94d100cd"
+    },
+    {
+      "Start": "afaa1262ea5348458321852111c426fe",
+      "End": "f2d93b5a2d1447f399627f6a02a5d1b1",
+      "Id": "69fb65e3a699476bae72908298d57cd6"
+    },
+    {
+      "Start": "49152519bd2c4c2986c6834ccafd2c82",
+      "End": "c31c1363d92a44cbae759ff5ed25a66b",
+      "Id": "b62deeea0a1844c0bbc2edf4a0931366"
+    },
+    {
+      "Start": "49152519bd2c4c2986c6834ccafd2c82",
+      "End": "c6498f6bb2e541a3bfa493ef26057781",
+      "Id": "67c20a99ccfd44b0a1bdeace2c824d06"
+    },
+    {
+      "Start": "1166086310ed49afab84e841fe64fe2c",
+      "End": "59b5c3cc51164220aee8bc0221518ccc",
+      "Id": "1525a1e231c04a51aacf74573cf16740"
+    },
+    {
+      "Start": "010b904578024244a37b9f7683f4cc11",
+      "End": "5bbcbecf8d2945abb1e543dcffbd674e",
+      "Id": "c0115bf0365b4d29b4cf324ff6020dbd"
+    },
+    {
+      "Start": "010b904578024244a37b9f7683f4cc11",
+      "End": "6f39b7505ba84854bfbca04f6c562e13",
+      "Id": "8c18cd828f9f463cb4ef6c8dfef4f1fc"
+    },
+    {
+      "Start": "d9c8642d16fa448481b958e0d35e6c28",
+      "End": "efd0823dfa8b486089cf3295d4ef4ec4",
+      "Id": "da308793e7d8496288005479c7ef667b"
+    },
+    {
+      "Start": "0207524c78024acdb86f132d74d98fb4",
+      "End": "b513e3846fbb4bd3808438971adc88ce",
+      "Id": "a775f3374f464766a2387575d38f5c92"
+    },
+    {
+      "Start": "311b22c8f6f94808af5edda556a772cd",
+      "End": "494fd8785fe945c6a5563cd706a061a6",
+      "Id": "0a763f8855de43c18740fe57f6dd1979"
+    },
+    {
+      "Start": "391ffda13b65467ab800982e986f4350",
+      "End": "0e30bde3c17646938d9d11f6806132fe",
+      "Id": "bbbaa353d3a84d548bb7dca2d993113c"
+    },
+    {
+      "Start": "5344896c16a74e8fa9d36fbd8832381e",
+      "End": "2025fb58c30640018984227af55502e9",
+      "Id": "0ca2a998affa4ef6afa4b95ab21c6cc2"
+    },
+    {
+      "Start": "20dd1c4f8bb1477ea6292bea9aee3466",
+      "End": "6c04b17854e04a5fab345f22fac37f78",
+      "Id": "9a1881ddbc5b4241b8305c6fd42d5abc"
+    },
+    {
+      "Start": "acbc37f1bb2f455685a13ab5d888bb17",
+      "End": "dffb74a6abfa4e90a3828fe9b7a19477",
+      "Id": "d3e594414a764a82821fe22099d088b6"
+    },
+    {
+      "Start": "acbc37f1bb2f455685a13ab5d888bb17",
+      "End": "daf4f1815c644036b59c544018517011",
+      "Id": "3825a7b8f7d2401ca715e643265047b7"
+    },
+    {
+      "Start": "552be7dce9e14a61beacaa662601f82f",
+      "End": "b2ec516927a7413c89a42fdeaadf2151",
+      "Id": "415b389e13784e4388038e4bfe80d0f6"
+    },
+    {
+      "Start": "ace5c041820642868e2c3f3c86b41ffe",
+      "End": "b746c648dd1c4ba1861ab62116714ce2",
+      "Id": "dd6b2090600f44b9aac4a8fdf35fb48e"
+    },
+    {
+      "Start": "ace5c041820642868e2c3f3c86b41ffe",
+      "End": "5fa5ded413624985b186a37bc3a45508",
+      "Id": "5425294b85864a1085634e6592c3bc7b"
+    },
+    {
+      "Start": "a5f8e5103f9741c0890aca632483f647",
+      "End": "f6b0230223e54692a4afae30390e31c0",
+      "Id": "92b8f7fb3db34ee7a1fc0bf0093eabd7"
+    },
+    {
+      "Start": "339d98b49d8a4470a5eb8054dea1ae0f",
+      "End": "8847c555e1f542c9b38f06c9ec77966e",
+      "Id": "78460f3c5a5d4cdb9a277bd3ba34ed93"
+    },
+    {
+      "Start": "971aeb10f5ff442e84d407beb20e4080",
+      "End": "a59c61740c7e4abdaa2dcf420ca41c07",
+      "Id": "9c2591267da94a89a58266bebf0cbc03"
+    },
+    {
+      "Start": "b3185f15ebbe4f43b31af05397b60d19",
+      "End": "46b9a328ac0846a485971e0837f57848",
+      "Id": "4d8f006c053a4debb0e9e510fcdb5ed1"
+    },
+    {
+      "Start": "e908e227b9a1484faa8887287139dc49",
+      "End": "e514a0dcef014a95b61028e6b4fade69",
+      "Id": "b95052ac6f924dd5bb1d5f808ae9eabb"
+    },
+    {
+      "Start": "39153391f02148d8bd748d38506cc55b",
+      "End": "e1fb4079b2ed48b7b29a9a3fb00883d9",
+      "Id": "43a2f9b8eda94b7fa461f2c91979184e"
+    },
+    {
+      "Start": "3535aff6ebfd4bf7989d91f4045828e8",
+      "End": "eb8768425e9d4b7cb5734d2fdbd01c13",
+      "Id": "4ef23f9785294166b7cc85e7ab153724"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "없음",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.0.5650",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "배경 미리보기",
+      "EyeX": -8.7102909088134766,
+      "EyeY": 20.651044845581055,
+      "EyeZ": -2.9193058013916016,
+      "LookX": 7.4054675102233887,
+      "LookY": -23.8437442779541,
+      "LookZ": -3.1146039962768555,
+      "UpX": 0.79012948274612427,
+      "UpY": 0.51503759622573853,
+      "UpZ": -0.332312673330307
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Circle.ByCenterPointRadius",
+        "Id": "3642306ef5fe4ad687f3b7bc76fd2043",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -751.90015565197621,
+        "Y": 230.32011333845162
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "1dac6e016a5b4d9990946ab27f6e564e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -936.90015565197621,
+        "Y": 260.533446671785
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Curve.Offset",
+        "Id": "78d5a0c4e988451baa8fb00319c542d8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -433.90015565197609,
+        "Y": 282.32011333845162
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Curve.PointAtParameter",
+        "Id": "5e73a974fdf4482388eb02ae5ef6091a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 208.4553640799943,
+        "Y": 951.13691888754511
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "404ade1879ac44daa4bad7829092f8d7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -308.54463592000559,
+        "Y": 939.35025222087847
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Line.ByStartPointEndPoint",
+        "Id": "9bfaeb5c397e4521977d478ee007b8c4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1468.8092856281048,
+        "Y": 906.86424644954832
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Point.ByCoordinates",
+        "Id": "effbac637e264457b7c8b79e1f122b38",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1016.5347607671963,
+        "Y": 1088.2490005741943
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Curve.SplitByPoints",
+        "Id": "6bbc2c8fe09a4dac814a7da8c6fc287c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1133.9269881065379,
+        "Y": 101.36897984049469
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Geometry.DoesIntersect",
+        "Id": "57b919862ffd4144a3d2464acfb3cd66",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2084.8767699790556,
+        "Y": 115.96979056534292
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "List.FilterByBoolMask",
+        "Id": "089e952bce7d4f7594780342cee03388",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2520.1034380887245,
+        "Y": 247.31509456216668
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "List.DropItems",
+        "Id": "2bd29f8a928f46b3a76e7985ddf82d93",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -75.544635920005646,
+        "Y": 977.13691888754511
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "7099f4aa647148cd991144634852b679",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -308.85793239974942,
+        "Y": 1263.9259037175907
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "List.AddItemToFront",
+        "Id": "94d5c128d1d44589b9bd3d8d36a40a69",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3045.249300176436,
+        "Y": 320.81247572608015
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "PolyCurve.ByJoinedCurves",
+        "Id": "d282baa5054f40e0adb5affb6162daeb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3869.05446243628,
+        "Y": 333.209757268565
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "PolyCurve.Fillet",
+        "Id": "16d17ae5da6c4d479c47a83d5676194e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4226.05446243628,
+        "Y": 380.54102661268826
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "7d1f39ada5fb4ceaac2dcab070921f13",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3886.1731415078284,
+        "Y": 696.19089273985946
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "PolyCurve.NumberOfCurves",
+        "Id": "335bcb3e3cc342ab87f45df985f5b17d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4565.4982188843214,
+        "Y": 448.00955093125049
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "f36b78dcd2f9405eba6b795805508c63",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4861.4982188843214,
+        "Y": 452.22288426458363
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "List.FilterByBoolMask",
+        "Id": "ebea05dfcaae4ddbb06927298cd99e3f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5074.05446243628,
+        "Y": 386.21594923619523
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "PolyCurve.Fillet",
+        "Id": "e96d65b890b24ba0be8799ccc66d859b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5343.4982188843214,
+        "Y": 261.3296859441748
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "1f8a30a9d1c34a0f9d6707927ec228ee",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5461.0712821918069,
+        "Y": 511.46903447991303
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "57e4583329594ef1bc2d2f0d38435674",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -750.90155604690574,
+        "Y": 394.49143482389809
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "884267cab85e4805ba8f6ffe3175b3a4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3439.1935518970217,
+        "Y": -101.62993798753678
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "1a6f0edeb02e40c09279114322d307a7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5073.804586254405,
+        "Y": 272.83216245867243
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "3d9799ee51504c7895663a1cf7bc5a02",
+        "Title": "1. 오렌지 테두리만들기",
+        "Nodes": [
+          "3642306ef5fe4ad687f3b7bc76fd2043",
+          "1dac6e016a5b4d9990946ab27f6e564e",
+          "78d5a0c4e988451baa8fb00319c542d8",
+          "57e4583329594ef1bc2d2f0d38435674",
+          "c67ae6452e4c46b5a51599c17ced81aa",
+          "d7b94ead713e43259250f67cb1b17a33"
+        ],
+        "Left": -946.90015565197621,
+        "Top": -48.67988666154838,
+        "Width": 725.00000000000011,
+        "Height": 536.17132148544647,
+        "FontSize": 96.0,
+        "InitialTop": 191.32011333845162,
+        "InitialHeight": 219.33004858353522,
+        "TextblockHeight": 230.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "88f9c919656d4c24bcb150b816d015ca",
+        "Title": "2. 안쪽 테두리를 10등분하는 점 찾기",
+        "Nodes": [
+          "5e73a974fdf4482388eb02ae5ef6091a",
+          "404ade1879ac44daa4bad7829092f8d7",
+          "2bd29f8a928f46b3a76e7985ddf82d93",
+          "7099f4aa647148cd991144634852b679"
+        ],
+        "Left": -318.85793239974942,
+        "Top": 583.35025222087847,
+        "Width": 727.31329647974371,
+        "Height": 773.57565149671223,
+        "FontSize": 96.0,
+        "InitialTop": 939.35025222087847,
+        "InitialHeight": 497.58421149684409,
+        "TextblockHeight": 346.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "2aaccf41121549a1aec24e2c15ea6c9d",
+        "Title": "4. 오렌지 과육 구분선 만들기",
+        "Nodes": [
+          "effbac637e264457b7c8b79e1f122b38",
+          "9bfaeb5c397e4521977d478ee007b8c4"
+        ],
+        "Left": 1006.5347607671963,
+        "Top": 666.86424644954832,
+        "Width": 675.27452486090851,
+        "Height": 566.384754124646,
+        "FontSize": 96.0,
+        "InitialTop": 906.86424644954832,
+        "InitialHeight": 247.116594624713,
+        "TextblockHeight": 230.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "4a8f20809c7b4a769c0a75ca5799d701",
+        "Title": "3. 안쪽 테두리 커브를 10등분하기",
+        "Nodes": [
+          "6bbc2c8fe09a4dac814a7da8c6fc287c",
+          "a9293c43b844435bbb18d3b0cb863716"
+        ],
+        "Left": 710.38456822557464,
+        "Top": -446.11949843123205,
+        "Width": 634.54241988096328,
+        "Height": 666.48847827172676,
+        "FontSize": 96.0,
+        "InitialTop": -90.119498431232046,
+        "InitialHeight": 149.0,
+        "TextblockHeight": 346.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "2274a017c7ac43be99073a8d724a7db4",
+        "Title": "5. 분할된 안쪽 테두리선과 과육 구분선 세트만들기",
+        "Nodes": [
+          "57b919862ffd4144a3d2464acfb3cd66",
+          "089e952bce7d4f7594780342cee03388",
+          "94d5c128d1d44589b9bd3d8d36a40a69"
+        ],
+        "Left": 2074.8767699790556,
+        "Top": -124.03020943465708,
+        "Width": 1143.3725301973805,
+        "Height": 563.84268516073723,
+        "FontSize": 96.0,
+        "InitialTop": 115.96979056534292,
+        "InitialHeight": 231.9193958590273,
+        "TextblockHeight": 230.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "ba9e6917c42a426c8e5b6a59ac02fa6c",
+        "Title": "6. 과육 폴리커브 fillet(모따기)",
+        "Nodes": [
+          "d282baa5054f40e0adb5affb6162daeb",
+          "16d17ae5da6c4d479c47a83d5676194e",
+          "7d1f39ada5fb4ceaac2dcab070921f13",
+          "335bcb3e3cc342ab87f45df985f5b17d",
+          "f36b78dcd2f9405eba6b795805508c63",
+          "ebea05dfcaae4ddbb06927298cd99e3f",
+          "1a6f0edeb02e40c09279114322d307a7",
+          "1f8a30a9d1c34a0f9d6707927ec228ee",
+          "e96d65b890b24ba0be8799ccc66d859b"
+        ],
+        "Left": 3859.05446243628,
+        "Top": 136.3296859441748,
+        "Width": 1735.4437564480413,
+        "Height": 652.86120679568467,
+        "FontSize": 96.0,
+        "InitialTop": 261.3296859441748,
+        "InitialHeight": 333.62329062818765,
+        "TextblockHeight": 115.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "c67ae6452e4c46b5a51599c17ced81aa",
+        "Title": "바깥쪽 테두리",
+        "Nodes": [],
+        "Left": -751.90015565197621,
+        "Top": 191.32011333845162,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "d7b94ead713e43259250f67cb1b17a33",
+        "Title": "안쪽 테두리",
+        "Nodes": [],
+        "Left": -433.90015565197609,
+        "Top": 243.32011333845162,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "a9293c43b844435bbb18d3b0cb863716",
+        "Title": "새 참고",
+        "Nodes": [],
+        "Left": 720.38456822557464,
+        "Top": -90.119498431232046,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 272.34179256194932,
+    "Y": 266.051634269578,
+    "Zoom": 0.23035261666177481
+  }
+}
