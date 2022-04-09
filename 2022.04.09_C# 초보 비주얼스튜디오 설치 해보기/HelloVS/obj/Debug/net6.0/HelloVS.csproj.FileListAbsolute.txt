@@ -1,0 +1,15 @@
+D:\MK\hnanmal_tistory\2022.04.09_C# 초보 비주얼스튜디오 설치 해보기\HelloVS\bin\Debug\net6.0\HelloVS.exe
+D:\MK\hnanmal_tistory\2022.04.09_C# 초보 비주얼스튜디오 설치 해보기\HelloVS\bin\Debug\net6.0\HelloVS.deps.json
+D:\MK\hnanmal_tistory\2022.04.09_C# 초보 비주얼스튜디오 설치 해보기\HelloVS\bin\Debug\net6.0\HelloVS.runtimeconfig.json
+D:\MK\hnanmal_tistory\2022.04.09_C# 초보 비주얼스튜디오 설치 해보기\HelloVS\bin\Debug\net6.0\HelloVS.dll
+D:\MK\hnanmal_tistory\2022.04.09_C# 초보 비주얼스튜디오 설치 해보기\HelloVS\bin\Debug\net6.0\HelloVS.pdb
+D:\MK\hnanmal_tistory\2022.04.09_C# 초보 비주얼스튜디오 설치 해보기\HelloVS\obj\Debug\net6.0\HelloVS.csproj.AssemblyReference.cache
+D:\MK\hnanmal_tistory\2022.04.09_C# 초보 비주얼스튜디오 설치 해보기\HelloVS\obj\Debug\net6.0\HelloVS.GeneratedMSBuildEditorConfig.editorconfig
+D:\MK\hnanmal_tistory\2022.04.09_C# 초보 비주얼스튜디오 설치 해보기\HelloVS\obj\Debug\net6.0\HelloVS.AssemblyInfoInputs.cache
+D:\MK\hnanmal_tistory\2022.04.09_C# 초보 비주얼스튜디오 설치 해보기\HelloVS\obj\Debug\net6.0\HelloVS.AssemblyInfo.cs
+D:\MK\hnanmal_tistory\2022.04.09_C# 초보 비주얼스튜디오 설치 해보기\HelloVS\obj\Debug\net6.0\HelloVS.csproj.CoreCompileInputs.cache
+D:\MK\hnanmal_tistory\2022.04.09_C# 초보 비주얼스튜디오 설치 해보기\HelloVS\obj\Debug\net6.0\HelloVS.dll
+D:\MK\hnanmal_tistory\2022.04.09_C# 초보 비주얼스튜디오 설치 해보기\HelloVS\obj\Debug\net6.0\refint\HelloVS.dll
+D:\MK\hnanmal_tistory\2022.04.09_C# 초보 비주얼스튜디오 설치 해보기\HelloVS\obj\Debug\net6.0\HelloVS.pdb
+D:\MK\hnanmal_tistory\2022.04.09_C# 초보 비주얼스튜디오 설치 해보기\HelloVS\obj\Debug\net6.0\HelloVS.genruntimeconfig.cache
+D:\MK\hnanmal_tistory\2022.04.09_C# 초보 비주얼스튜디오 설치 해보기\HelloVS\obj\Debug\net6.0\ref\HelloVS.dll
