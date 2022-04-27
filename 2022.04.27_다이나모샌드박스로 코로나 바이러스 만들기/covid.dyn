@@ -1,0 +1,1016 @@
+{
+  "Uuid": "71f7b1cf-f570-48f5-8479-b78dde8215f4",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "covid",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Sphere.ByCenterPointRadius@Autodesk.DesignScript.Geometry.Point,double",
+      "Id": "3d3037abc6274c74b6552f4076dd0d34",
+      "Inputs": [
+        {
+          "Id": "65ee7d09bd4e42478d451be26910289e",
+          "Name": "centerPoint",
+          "Description": "Point\n기본값 : Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6ac4583ac011468c8d403c6c093adeb9",
+          "Name": "radius",
+          "Description": "double\n기본값 : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "10e919301ebe4b0e9847b63208bcf47e",
+          "Name": "Sphere",
+          "Description": "Sphere",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "입력 점을 중심으로 지정된 반지름을 사용하여 솔리드 구를 만듭니다.\n\nSphere.ByCenterPointRadius (centerPoint: Point = Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0), radius: double = 1): Sphere"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "100;",
+      "Id": "2bf36789c19c48b7bc812481f64ba3e4",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9a21ee068dab44e49ff0077b5809b857",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Surface.PointAtParameter@double,double",
+      "Id": "a0d6aa5230b2451d82f09a4feb72cb02",
+      "Inputs": [
+        {
+          "Id": "63bd7def25a044d0be1e96af03cca133",
+          "Name": "surface",
+          "Description": "Autodesk.DesignScript.Geometry.Surface",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4a6c64e56a9644b398cc1353019136e6",
+          "Name": "u",
+          "Description": "double\n기본값 : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "42e29417b68d464493613531fae42122",
+          "Name": "v",
+          "Description": "double\n기본값 : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "88d14111eda64f5fb3fe4dd009cf159b",
+          "Name": "Point",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "CrossProduct",
+      "Description": "지정된 U 및 V 매개변수에서 점을 반환합니다.\n\nSurface.PointAtParameter (u: double = 0, v: double = 0): Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0..1..0.1;",
+      "Id": "a628e7f409ea4012b6bbfaa609b21fb1",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a65b1d9a6e6e464dabbd8434b189e03d",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Geometry.Explode",
+      "Id": "544afb9ff6944ca5996dbbfadf261416",
+      "Inputs": [
+        {
+          "Id": "19967b02f26a49c7bba4aa059f11920e",
+          "Name": "geometry",
+          "Description": "Autodesk.DesignScript.Geometry.Geometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "64beae14bc044aa1876c799d2ab4769d",
+          "Name": "Geometry[]",
+          "Description": "Geometry[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "복합 또는 분리되지 않은 요소를 구성요소 부품으로 분리합니다.\n\nGeometry.Explode ( ): Geometry[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "i[0];",
+      "Id": "c7eeb7b906bc4f00bb2cb7b83f2d4a1a",
+      "Inputs": [
+        {
+          "Id": "7c97f0a648364f2ebad6f8486c407e66",
+          "Name": "i",
+          "Description": "i",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2a0464a4500c4ecfb624fb730309874d",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Vector.ByTwoPoints@Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point",
+      "Id": "7e455476ebc24dc1b0030362118e5542",
+      "Inputs": [
+        {
+          "Id": "f425f0ca4dbe44bdbbe7f0088e2ac53b",
+          "Name": "start",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "587af1e3d50f4c529c7d55c966cfb139",
+          "Name": "end",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "55481fe0d80f4e38bf26a2029014b908",
+          "Name": "Vector",
+          "Description": "Vector",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "두 개의 끝점으로 벡터를 형성합니다. 시작점에서 끝점까지 벡터가 형성됩니다.\n\nVector.ByTwoPoints (start: Point, end: Point): Vector"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.ByCoordinates@double,double,double",
+      "Id": "fc9707c4027e46d2ac38e5d346fcf136",
+      "Inputs": [
+        {
+          "Id": "6d3e156038ff4a3b83a5653ec81b618f",
+          "Name": "x",
+          "Description": "X coordinate\n\ndouble\n기본값 : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "112c4aa07ee4451b967df005e3b6eac9",
+          "Name": "y",
+          "Description": "Y coordinate\n\ndouble\n기본값 : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1ac33af229ac475b868eb21a3afa1a45",
+          "Name": "z",
+          "Description": "Z coordinate\n\ndouble\n기본값 : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "dc872412e6934b23aa40e518e068b638",
+          "Name": "Point",
+          "Description": "Point created by coordinates",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 3개의 데카르트 좌표를 사용하여 점을 형성합니다\n\nPoint.ByCoordinates (x: double = 0, y: double = 0, z: double = 0): Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Vector.Scale@double",
+      "Id": "0532455eae29436aa056ba4a9644e84d",
+      "Inputs": [
+        {
+          "Id": "767c410a55bf4fe783c80055cedd1ea0",
+          "Name": "vector",
+          "Description": "Autodesk.DesignScript.Geometry.Vector",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "edcc91704dda4294ae7884f25733f600",
+          "Name": "scale_factor",
+          "Description": "Scale factor\n\ndouble\n기본값 : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3ccdb573cc524855bdf211802ff3faa0",
+          "Name": "Vector",
+          "Description": "Scaled vector",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "원점 주위로 벡터 축척을 균일하게 조정\n\nVector.Scale (scale_factor: double = 1): Vector"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0.01*20;",
+      "Id": "69fdf097a8034bc5a62343a5e215b087",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "feaf6d6d32bb4567aa6827a38987912e",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Geometry.Translate@Autodesk.DesignScript.Geometry.Vector",
+      "Id": "fdb9c84285014fd5b9e685e04d80cb2b",
+      "Inputs": [
+        {
+          "Id": "02132cf981d0466c8cdf86f996d4717c",
+          "Name": "geometry",
+          "Description": "Autodesk.DesignScript.Geometry.Geometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "771db676e2004c17a952ef2d1705d25d",
+          "Name": "direction",
+          "Description": "Vector",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c0107e0a6bbc42e9a5083a45128e34f7",
+          "Name": "Geometry",
+          "Description": "Geometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "형상을 지정된 방향으로 벡터 길이만큼 변환\n\nGeometry.Translate (direction: Vector): Geometry"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "5;\n3;",
+      "Id": "f367f6d30025442cb5e7f6d17a177220",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "8a20d69df1224ee5b1b2fe57aa719777",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "02dec46dc9684b5d9819cafdb631b7b1",
+          "Name": "",
+          "Description": "선 2의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Cone.ByPointsRadii@Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point,double,double",
+      "Id": "a423e23f73294026a5f6fed290b27fa6",
+      "Inputs": [
+        {
+          "Id": "86fd8b95ad6243ae8273e3e9f1b2163e",
+          "Name": "startPoint",
+          "Description": "Point\n기본값 : Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f3b8d557c7ad4a61b715171e96e6ee1d",
+          "Name": "endPoint",
+          "Description": "Point\n기본값 : Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 1)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5ed7db5f00c74b0c891b4132785b8ead",
+          "Name": "startRadius",
+          "Description": "double\n기본값 : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5fb11b334f904aad80ef9c565cde5cc4",
+          "Name": "endRadius",
+          "Description": "double\n기본값 : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "17ecd3822c894eab932eae798155815d",
+          "Name": "Cone",
+          "Description": "Cone",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "시작점과 끝점의 지정된 반지름으로 시작점에서 끝점까지 축이 있는 원추를 만듭니다. 이 객체에는 정점이 없으며 잘린 원추로 간주될 수 있습니다.\n\nCone.ByPointsRadii (startPoint: Point = Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0), endPoint: Point = Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 1), startRadius: double = 1, endRadius: double = 1): Cone"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Geometry.Translate@Autodesk.DesignScript.Geometry.Vector",
+      "Id": "c534e81582a546d8a4cafabc4b52b0aa",
+      "Inputs": [
+        {
+          "Id": "66299888cd004bda9179694910838622",
+          "Name": "geometry",
+          "Description": "Autodesk.DesignScript.Geometry.Geometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2da5560aeb144ee5895b7fd42f60559f",
+          "Name": "direction",
+          "Description": "Vector",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "31cf04b0747f44e99c8c718d8656ecf3",
+          "Name": "Geometry",
+          "Description": "Geometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "형상을 지정된 방향으로 벡터 길이만큼 변환\n\nGeometry.Translate (direction: Vector): Geometry"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Vector.Scale@double",
+      "Id": "3e790ca9ecac4e8bae2077be5df119eb",
+      "Inputs": [
+        {
+          "Id": "d905b24d5e6c489ea3fe0c440a6145fb",
+          "Name": "vector",
+          "Description": "Autodesk.DesignScript.Geometry.Vector",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1a996ba68078445da211dcbdbab300ae",
+          "Name": "scale_factor",
+          "Description": "Scale factor\n\ndouble\n기본값 : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d623f57459ed4b4daac7028eebfdf621",
+          "Name": "Vector",
+          "Description": "Scaled vector",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "원점 주위로 벡터 축척을 균일하게 조정\n\nVector.Scale (scale_factor: double = 1): Vector"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0.01*5;",
+      "Id": "a3c05c5ebaa64ece9944efa5472cab49",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "25a3a5bb0b6d4a6fb81d142c76329f81",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Cone.ByPointsRadii@Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point,double,double",
+      "Id": "8aae889cc09d47f19756709293536020",
+      "Inputs": [
+        {
+          "Id": "39369bc22d08474299c6e4d361f88093",
+          "Name": "startPoint",
+          "Description": "Point\n기본값 : Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "525eee8b18af469399d01111f0b3f591",
+          "Name": "endPoint",
+          "Description": "Point\n기본값 : Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 1)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2f83a368b3eb44619f7d2707027143a1",
+          "Name": "startRadius",
+          "Description": "double\n기본값 : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a72bc32c3eef4119bca40592e60509e2",
+          "Name": "endRadius",
+          "Description": "double\n기본값 : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8c3ca805732d4a1da6d14cbfc9adb8fe",
+          "Name": "Cone",
+          "Description": "Cone",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "시작점과 끝점의 지정된 반지름으로 시작점에서 끝점까지 축이 있는 원추를 만듭니다. 이 객체에는 정점이 없으며 잘린 원추로 간주될 수 있습니다.\n\nCone.ByPointsRadii (startPoint: Point = Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0), endPoint: Point = Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 1), startRadius: double = 1, endRadius: double = 1): Cone"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "10;\n10;",
+      "Id": "5d31b1d93d364c95ad281aa820924009",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9eecf17b374b4bb5b0b979e1767df298",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "612e429c08424e4aa5497c9d51859680",
+          "Name": "",
+          "Description": "선 2의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "10e919301ebe4b0e9847b63208bcf47e",
+      "End": "19967b02f26a49c7bba4aa059f11920e",
+      "Id": "3f32220403524182a2815a3215b8a978"
+    },
+    {
+      "Start": "9a21ee068dab44e49ff0077b5809b857",
+      "End": "6ac4583ac011468c8d403c6c093adeb9",
+      "Id": "a62941e8bec64fa78bc101ae4c074345"
+    },
+    {
+      "Start": "88d14111eda64f5fb3fe4dd009cf159b",
+      "End": "587af1e3d50f4c529c7d55c966cfb139",
+      "Id": "289b7db75f684b4a80ae2cde22766c39"
+    },
+    {
+      "Start": "88d14111eda64f5fb3fe4dd009cf159b",
+      "End": "02132cf981d0466c8cdf86f996d4717c",
+      "Id": "a943016953e54f2fbbe91c6d4ba72a88"
+    },
+    {
+      "Start": "88d14111eda64f5fb3fe4dd009cf159b",
+      "End": "86fd8b95ad6243ae8273e3e9f1b2163e",
+      "Id": "9fd11f4d3e2444e68e29f798a1b956bc"
+    },
+    {
+      "Start": "a65b1d9a6e6e464dabbd8434b189e03d",
+      "End": "4a6c64e56a9644b398cc1353019136e6",
+      "Id": "c03f3b5b3a91414c82b1817d2812484a"
+    },
+    {
+      "Start": "a65b1d9a6e6e464dabbd8434b189e03d",
+      "End": "42e29417b68d464493613531fae42122",
+      "Id": "72bac0cc305b42d994cbc6977afa7e62"
+    },
+    {
+      "Start": "64beae14bc044aa1876c799d2ab4769d",
+      "End": "7c97f0a648364f2ebad6f8486c407e66",
+      "Id": "3a03bdcd520f43bf92ab45ea8e4a273a"
+    },
+    {
+      "Start": "2a0464a4500c4ecfb624fb730309874d",
+      "End": "63bd7def25a044d0be1e96af03cca133",
+      "Id": "f37d820d173e4c90bbbe56b45eae7fee"
+    },
+    {
+      "Start": "55481fe0d80f4e38bf26a2029014b908",
+      "End": "767c410a55bf4fe783c80055cedd1ea0",
+      "Id": "7ac3c72b3eba430e8694ed557b4bd7ec"
+    },
+    {
+      "Start": "55481fe0d80f4e38bf26a2029014b908",
+      "End": "d905b24d5e6c489ea3fe0c440a6145fb",
+      "Id": "be4abc8a79034dc5868802d2c222da6c"
+    },
+    {
+      "Start": "dc872412e6934b23aa40e518e068b638",
+      "End": "65ee7d09bd4e42478d451be26910289e",
+      "Id": "08bb624455274036b756d4e62ce5b28e"
+    },
+    {
+      "Start": "dc872412e6934b23aa40e518e068b638",
+      "End": "f425f0ca4dbe44bdbbe7f0088e2ac53b",
+      "Id": "a15c34c32bd244aca9d5f4bf4b55db12"
+    },
+    {
+      "Start": "3ccdb573cc524855bdf211802ff3faa0",
+      "End": "771db676e2004c17a952ef2d1705d25d",
+      "Id": "7a605ba10b044b1f885c22897fbbd926"
+    },
+    {
+      "Start": "feaf6d6d32bb4567aa6827a38987912e",
+      "End": "edcc91704dda4294ae7884f25733f600",
+      "Id": "ec23c695f60543cdabe83b99faf95c3e"
+    },
+    {
+      "Start": "c0107e0a6bbc42e9a5083a45128e34f7",
+      "End": "f3b8d557c7ad4a61b715171e96e6ee1d",
+      "Id": "8aa80e50463e46fabb1c4448943ae73f"
+    },
+    {
+      "Start": "c0107e0a6bbc42e9a5083a45128e34f7",
+      "End": "66299888cd004bda9179694910838622",
+      "Id": "ff381d4572654707a53bc47e75e301d0"
+    },
+    {
+      "Start": "c0107e0a6bbc42e9a5083a45128e34f7",
+      "End": "39369bc22d08474299c6e4d361f88093",
+      "Id": "ec284f165e614553b7d13c8b4f1a6934"
+    },
+    {
+      "Start": "8a20d69df1224ee5b1b2fe57aa719777",
+      "End": "5ed7db5f00c74b0c891b4132785b8ead",
+      "Id": "fc372bd49d0c4cf4928a9e82ca7c2352"
+    },
+    {
+      "Start": "02dec46dc9684b5d9819cafdb631b7b1",
+      "End": "5fb11b334f904aad80ef9c565cde5cc4",
+      "Id": "d44bc9175f164edc8fac5b4ca074070d"
+    },
+    {
+      "Start": "31cf04b0747f44e99c8c718d8656ecf3",
+      "End": "525eee8b18af469399d01111f0b3f591",
+      "Id": "ce32378e6b3144ad96fdebab9363265b"
+    },
+    {
+      "Start": "d623f57459ed4b4daac7028eebfdf621",
+      "End": "2da5560aeb144ee5895b7fd42f60559f",
+      "Id": "62a92200211f4139bf84a1c3f9ab6263"
+    },
+    {
+      "Start": "25a3a5bb0b6d4a6fb81d142c76329f81",
+      "End": "1a996ba68078445da211dcbdbab300ae",
+      "Id": "e2715fee1b444c75a6942f96b167cf5c"
+    },
+    {
+      "Start": "9eecf17b374b4bb5b0b979e1767df298",
+      "End": "2f83a368b3eb44619f7d2707027143a1",
+      "Id": "10c8709e064e43ffb5ae9c4d9feae990"
+    },
+    {
+      "Start": "612e429c08424e4aa5497c9d51859680",
+      "End": "a72bc32c3eef4119bca40592e60509e2",
+      "Id": "c9608c64939f4c4c813ea092cfa41f0e"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "없음",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.0.5650",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "배경 미리보기",
+      "EyeX": -669.19775390625,
+      "EyeY": -97.2613296508789,
+      "EyeZ": -9.5693817138671875,
+      "LookX": 565.9039306640625,
+      "LookY": 72.7979736328125,
+      "LookZ": -139.11065673828125,
+      "UpX": -0.32415568828582764,
+      "UpY": 0.94264185428619385,
+      "UpZ": 0.079684235155582428
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Sphere.ByCenterPointRadius",
+        "Id": "3d3037abc6274c74b6552f4076dd0d34",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 486.23545304669881,
+        "Y": 156.88937823713206
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "2bf36789c19c48b7bc812481f64ba3e4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 316.82390935796786,
+        "Y": 215.31800837859674
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Surface.PointAtParameter",
+        "Id": "a0d6aa5230b2451d82f09a4feb72cb02",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1464.6608393032009,
+        "Y": 114.43464861212806
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "a628e7f409ea4012b6bbfaa609b21fb1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1192.8435498234339,
+        "Y": 273.40983525165518
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Geometry.Explode",
+        "Id": "544afb9ff6944ca5996dbbfadf261416",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 784.53801893357354,
+        "Y": 84.416417192469467
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "c7eeb7b906bc4f00bb2cb7b83f2d4a1a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1080.6076266520618,
+        "Y": 89.599537778662921
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Vector.ByTwoPoints",
+        "Id": "7e455476ebc24dc1b0030362118e5542",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1907.9620719450327,
+        "Y": -104.16062018277944
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Point.ByCoordinates",
+        "Id": "fc9707c4027e46d2ac38e5d346fcf136",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 226.66871187412261,
+        "Y": -18.353529968065857
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Vector.Scale",
+        "Id": "0532455eae29436aa056ba4a9644e84d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2409.6328526177376,
+        "Y": -204.19321141998918
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "69fdf097a8034bc5a62343a5e215b087",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2183.6443097702449,
+        "Y": -36.817298914417165
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Geometry.Translate",
+        "Id": "fdb9c84285014fd5b9e685e04d80cb2b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2963.9268856060617,
+        "Y": 312.34741660001254
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "f367f6d30025442cb5e7f6d17a177220",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3247.5189233534797,
+        "Y": 224.63351923812877
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Cone.ByPointsRadii",
+        "Id": "a423e23f73294026a5f6fed290b27fa6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3494.7849433472788,
+        "Y": 142.69720761905387
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Geometry.Translate",
+        "Id": "c534e81582a546d8a4cafabc4b52b0aa",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3535.1322766487688,
+        "Y": 639.90295809684255
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Vector.Scale",
+        "Id": "3e790ca9ecac4e8bae2077be5df119eb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2619.0839057965954,
+        "Y": 558.95270101299468
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "a3c05c5ebaa64ece9944efa5472cab49",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2357.2689336349385,
+        "Y": 698.09197862977157
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Cone.ByPointsRadii",
+        "Id": "8aae889cc09d47f19756709293536020",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4125.5266683705358,
+        "Y": 595.01310514463682
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "5d31b1d93d364c95ad281aa820924009",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3867.6454327526772,
+        "Y": 778.18933173903815
+      }
+    ],
+    "Annotations": [],
+    "X": -440.91281667311569,
+    "Y": 345.76023177243303,
+    "Zoom": 0.34014248259702123
+  }
+}
