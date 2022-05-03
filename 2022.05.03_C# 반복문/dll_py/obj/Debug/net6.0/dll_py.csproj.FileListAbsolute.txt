@@ -1,0 +1,12 @@
+D:\mk\hnanmal_tistory\2022.05.03_C# 반복문\dll_py\bin\Debug\net6.0\dll_py.deps.json
+D:\mk\hnanmal_tistory\2022.05.03_C# 반복문\dll_py\bin\Debug\net6.0\dll_py.dll
+D:\mk\hnanmal_tistory\2022.05.03_C# 반복문\dll_py\bin\Debug\net6.0\dll_py.pdb
+D:\mk\hnanmal_tistory\2022.05.03_C# 반복문\dll_py\obj\Debug\net6.0\dll_py.csproj.AssemblyReference.cache
+D:\mk\hnanmal_tistory\2022.05.03_C# 반복문\dll_py\obj\Debug\net6.0\dll_py.GeneratedMSBuildEditorConfig.editorconfig
+D:\mk\hnanmal_tistory\2022.05.03_C# 반복문\dll_py\obj\Debug\net6.0\dll_py.AssemblyInfoInputs.cache
+D:\mk\hnanmal_tistory\2022.05.03_C# 반복문\dll_py\obj\Debug\net6.0\dll_py.AssemblyInfo.cs
+D:\mk\hnanmal_tistory\2022.05.03_C# 반복문\dll_py\obj\Debug\net6.0\dll_py.csproj.CoreCompileInputs.cache
+D:\mk\hnanmal_tistory\2022.05.03_C# 반복문\dll_py\obj\Debug\net6.0\dll_py.dll
+D:\mk\hnanmal_tistory\2022.05.03_C# 반복문\dll_py\obj\Debug\net6.0\refint\dll_py.dll
+D:\mk\hnanmal_tistory\2022.05.03_C# 반복문\dll_py\obj\Debug\net6.0\dll_py.pdb
+D:\mk\hnanmal_tistory\2022.05.03_C# 반복문\dll_py\obj\Debug\net6.0\ref\dll_py.dll

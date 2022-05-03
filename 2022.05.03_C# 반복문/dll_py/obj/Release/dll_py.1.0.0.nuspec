@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>dll_py</id>
+    <version>1.0.0</version>
+    <authors>dll_py</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="UnmanagedExports" version="1.2.7" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\mk\hnanmal_tistory\2022.05.03_C# 반복문\dll_py\bin\Release\net6.0\dll_py.dll" target="lib\net6.0\dll_py.dll" />
+  </files>
+</package>
