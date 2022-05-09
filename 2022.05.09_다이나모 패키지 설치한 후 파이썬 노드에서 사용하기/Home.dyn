@@ -12,7 +12,7 @@
     {
       "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
       "NodeType": "PythonScriptNode",
-      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport os\r\npython_rootpath = os.getenv('LOCALAPPDATA')+'\\Programs\\Python'\r\nfile_list = os.listdir(python_rootpath)\r\npython_version = file_list[-1]\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\n\r\nsys.path.append(os.getenv('LOCALAPPDATA').replace('\\\\','\\\\\\\\') + f'\\Programs\\Python\\{python_version}\\Lib\\site-packages')\r\n\r\n\r\nsys.path.append(r'C:\\Users\\pjmk0\\AppData\\Roaming\\Dynamo\\Dynamo Revit\\2.12\\packages\\archi-lab.net\\bin')\r\n## clr.AddReference('archi-lab.net')\r\n\r\n\r\n\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n# Place your code below this line\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = 0",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport os\r\npython_rootpath = os.getenv('LOCALAPPDATA')+'\\Programs\\Python'\r\npython_dir_list = os.listdir(python_rootpath)\r\npython_version = python_dir_list[-1]\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\n\r\nsys.path.append(os.getenv('LOCALAPPDATA').replace('\\\\','\\\\\\\\') + f'\\Programs\\Python\\{python_version}\\Lib\\site-packages')\r\n\r\ndynamo_rootpath = os.getenv('APPDATA')+'\\Dynamo\\Dynamo Revit'\r\ndyn_dir_list = os.listdir(dynamo_rootpath)\r\ndynamo_version = dyn_dir_list[-1]\r\nsys.path.append(os.getenv('APPDATA').replace('\\\\','\\\\\\\\') + f'\\Dynamo\\Dynamo Revit\\{dynamo_version}\\packages\\archi-lab.net\\bin')\r\n\r\n#sys.path.append(r'C:\\Users\\pjmk0\\AppData\\Roaming\\Dynamo\\Dynamo Revit\\2.12\\packages\\archi-lab.net\\bin')\r\nclr.AddReference('archilab')\r\n\r\nimport archilab\r\n\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\ninputCat = IN[0]\r\n\r\n# Place your code below this line\r\n\r\n# Assign your output to the OUT variable.\r\n#OUT = dir(archilab.Revit.Elements.Applications.VersionNumber)\r\n#OUT = archilab.Revit.Selection.Select.ByCategory(inputCat)\r\n\r\nOUT = archilab.Revit.Elements.Applications.VersionNumber()",
       "Engine": "CPython3",
       "VariableInputPorts": true,
       "Id": "95ea5695e1f843f0b2b00044e4e00edf",
@@ -40,11 +40,202 @@
       ],
       "Replication": "Disabled",
       "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "archilab.Revit.Elements.Applications.VersionNumber",
+      "Id": "716a452b3a60472b9c10ccae498429b0",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c785d87db5a343a9bede0a0f1ccc6f03",
+          "Name": "int",
+          "Description": "int",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Applications.VersionNumber ( ): int"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 571,
+      "SelectedString": "OST_StructuralColumns",
+      "NodeType": "ExtensionNode",
+      "Id": "2b3750308edc4ff081bbdb29807b0da1",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "870d27274156434eacd647ccd6a404b0",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "archilab.Revit.Selection.Select.ByCategory@Revit.Elements.Category",
+      "Id": "02b030cecdeb494bad5ea7ee83214b9c",
+      "Inputs": [
+        {
+          "Id": "9663793ac42b49a687f949077f0f2ec1",
+          "Name": "category",
+          "Description": "Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d3a367c867bc4337a045b0d449e97854",
+          "Name": "Element[]",
+          "Description": "Element[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Select.ByCategory (category: Category): Element[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.Object.Type@var",
+      "Id": "1e0e54c1682d40daa4b645abec5a50e7",
+      "Inputs": [
+        {
+          "Id": "854413ed7e314c73b8ec601f810c672c",
+          "Name": "object",
+          "Description": "Object to query type\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e128c9808f124f7989419517a75aa0e2",
+          "Name": "string",
+          "Description": "Type of object.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the type of object represented as string.\n\nObject.Type (object: var): string"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport os\r\nimport sys\r\nimport clr\r\n\r\ndynamo_rootpath = os.getenv('APPDATA')+'\\Dynamo\\Dynamo Revit'\r\ndyn_dir_list = os.listdir(dynamo_rootpath)\r\ndynamo_version = dyn_dir_list[-1]\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nsys.path.append(os.getenv('APPDATA').replace('\\\\','\\\\\\\\') + f'\\Dynamo\\Dynamo Revit\\{dynamo_version}\\packages\\archi-lab.net\\bin')\r\n\r\n#sys.path.append(r'C:\\Users\\pjmk0\\AppData\\Roaming\\Dynamo\\Dynamo Revit\\2.12\\packages\\archi-lab.net\\bin')\r\nclr.AddReference('archilab')\r\n\r\nimport archilab\r\n\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\ninputCat = IN[0]\r\n\r\n# Place your code below this line\r\n\r\n# Assign your output to the OUT variable.\r\n#OUT = dir(archilab.Revit.Elements.Applications.VersionNumber)\r\n#OUT = archilab.Revit.Selection.Select.ByCategory(inputCat)\r\n\r\nOUT = archilab.Revit.Elements.Applications.VersionNumber()",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "2d8e8b7ebebe4ed28a8e4cbe40e34017",
+      "Inputs": [
+        {
+          "Id": "4c872e05449c4283b35246e94b2d0a37",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "aa9d903e205d40a6aa02487f6e1acbeb",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport os\r\nimport sys\r\nimport re\r\nimport clr\r\n\r\ndynamo_rootpath = os.getenv('APPDATA')+'\\Dynamo\\Dynamo Revit'\r\ndyn_dir_list = os.listdir(dynamo_rootpath)\r\n\r\np = re.compile('\\d[.]\\d{2,5}')\r\nversion_list = list(filter(lambda x: p.match(x), dyn_dir_list))\r\n\r\ndynamo_version = version_list[-1]\r\n\r\nsys.path.append(os.getenv('APPDATA').replace('\\\\','\\\\\\\\') + f'\\Dynamo\\Dynamo Revit\\{dynamo_version}\\packages\\archi-lab.net\\bin')\r\n\r\nclr.AddReference('archilab')\r\nimport archilab\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n# Place your code below this line\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = archilab.Revit.Elements.Applications.VersionNumber()",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "d7c9c32439fc455399cb2525558dea97",
+      "Inputs": [
+        {
+          "Id": "f8ca970dbed3465fa75ffe6b78b46ba5",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a97848368519454c9e5412975b813e8f",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
     }
   ],
-  "Connectors": [],
+  "Connectors": [
+    {
+      "Start": "870d27274156434eacd647ccd6a404b0",
+      "End": "9663793ac42b49a687f949077f0f2ec1",
+      "Id": "456411d99e5c46fcbd62da6ea737befc"
+    },
+    {
+      "Start": "870d27274156434eacd647ccd6a404b0",
+      "End": "854413ed7e314c73b8ec601f810c672c",
+      "Id": "890775e711624d2dad31f6804f6da06e"
+    },
+    {
+      "Start": "870d27274156434eacd647ccd6a404b0",
+      "End": "d1b7dc377b3e404ca4f26cc3aa97d315",
+      "Id": "d0ba395b4d2a4cd0ad2263c6f5000d20"
+    }
+  ],
   "Dependencies": [],
-  "NodeLibraryDependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "archi-lab.net",
+      "Version": "2023.213.1523",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "716a452b3a60472b9c10ccae498429b0",
+        "02b030cecdeb494bad5ea7ee83214b9c"
+      ]
+    }
+  ],
   "Thumbnail": "",
   "GraphDocumentationURL": null,
   "ExtensionWorkspaceData": [
@@ -98,13 +289,73 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 283.50539956803448,
-        "Y": 152.8444924406048
+        "X": 370.94070315175895,
+        "Y": 221.38276532094235
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Applications.VersionNumber",
+        "Id": "716a452b3a60472b9c10ccae498429b0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -1061.4953806049932,
+        "Y": -373.0588042636067
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "2b3750308edc4ff081bbdb29807b0da1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 48.379804508221355,
+        "Y": 20.700539727384523
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Select.ByCategory",
+        "Id": "02b030cecdeb494bad5ea7ee83214b9c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 630.785599506125,
+        "Y": 369.25700852649857
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Object.Type",
+        "Id": "1e0e54c1682d40daa4b645abec5a50e7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 861.161893816943,
+        "Y": 183.23492752410084
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "2d8e8b7ebebe4ed28a8e4cbe40e34017",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -179.65751138200687,
+        "Y": 58.023485136272086
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "d7c9c32439fc455399cb2525558dea97",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -1017.2684831319109,
+        "Y": -714.6493191138261
       }
     ],
     "Annotations": [],
-    "X": -72.764999999999986,
-    "Y": -44.257499999999993,
-    "Zoom": 1.1575
+    "X": 1248.6149747970626,
+    "Y": 1032.7859225025061,
+    "Zoom": 1.0422648180387739
   }
 }
