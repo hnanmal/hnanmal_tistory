@@ -1,0 +1,130 @@
+{
+  "Uuid": "a17a6bf9-a594-4742-b3ce-9bcd4d9d5691",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Dyn_Python_PYPI",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport os\r\nimport sys\r\nimport re\r\nimport clr\r\n\r\npython_rootpath = os.getenv('LOCALAPPDATA')+'\\Programs\\Python'\r\npython_dir_list = os.listdir(python_rootpath)\r\n\r\np = re.compile('Python\\d{2,5}')\r\nversion_list = list(filter(lambda x: p.match(x), python_dir_list))\r\npython_version = version_list[-1]\r\n\r\nsys.path.append(os.getenv('LOCALAPPDATA').replace('\\\\','\\\\\\\\') + f'\\Programs\\Python\\{python_version}\\Lib\\site-packages')\r\n\r\nimport openpyxl\r\n\r\n\r\n\r\n\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = dir(openpyxl)",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "14be0f63651046d485688a16ef439631",
+      "Inputs": [
+        {
+          "Id": "b7ef1d76b19c43f4851e28eab35768c7",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bf14293141b544c0b592bc15bad966d4",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "/*\n\n<<대상 패키지(ex. OpenpyXl)가 설치되어 있지 않다면>>\n아래문구를 복사하여 cmd 창에 붙여넣고 엔터를 치세요.\n\n\npip install openpyxl\n\n*/;",
+      "Id": "7a2d09e7c7cb4d4b944f9082823f414c",
+      "Inputs": [],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    }
+  ],
+  "Connectors": [],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.0.5650",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "14be0f63651046d485688a16ef439631",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 459.0,
+        "Y": 279.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "PyPI 이용시 주의사항",
+        "Id": "7a2d09e7c7cb4d4b944f9082823f414c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 95.930449011414908,
+        "Y": -56.471917872198077
+      }
+    ],
+    "Annotations": [],
+    "X": 29.463097354211641,
+    "Y": 89.43528482721382,
+    "Zoom": 0.97676875
+  }
+}
