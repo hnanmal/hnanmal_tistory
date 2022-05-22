@@ -1,0 +1,1864 @@
+{
+  "Uuid": "8b47dd06-70cc-4840-8e1b-5059a86ef541",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "ReplaceByCondition 활용방법",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.HigherOrder.Replace, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "925e9a541440446489e16bfb1059df39",
+      "Inputs": [
+        {
+          "Id": "8eb4fb11ceaa41f3809a1021be3c75ac",
+          "Name": "item",
+          "Description": "Item to potentially be replaced",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ca3516406c77432b9699551d77a41970",
+          "Name": "replaceWith",
+          "Description": "Object to replace with",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d6d920fae7c643a2a9dc66ace84c1195",
+          "Name": "condition",
+          "Description": "Predicate used to determine if it should be replaced.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e086445308014d8488c53107107e4af6",
+          "Name": "var",
+          "Description": "If condition(item) = True, then \"replaceWith\" is returned. Otherwise \"item\" is returned unaltered.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "원래 객체가 지정된 조건을 충족하는 경우 객체를 지정된 대체 항목으로 대체합니다."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "[\n0,1,2,3,4,5,6,7,8,9,10\n];",
+      "Id": "40e0207817b340909a46c5076f4664c1",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "2ae606f216a4419fba2897a83938ef63",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"even\";",
+      "Id": "b2782ac9332346c3bbc608ff639155a7",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "db41c310af4443f096c1bbf89670a5f3",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "%@var[]..[],var[]..[]",
+      "Id": "00412f88e3ee45acbd3d8b4b8f900632",
+      "Inputs": [
+        {
+          "Id": "94364a6f295b4c399d72ebf0f65584ab",
+          "Name": "x",
+          "Description": "정수 또는 double 값\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cfc5f2feaa494ccc9a912ef7a08b9448",
+          "Name": "y",
+          "Description": "정수 또는 double 값\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "921d98cd6ba34c0b9aae907d67f84ef2",
+          "Name": "number",
+          "Description": "y 입력으로 나눈 후의 x 입력의 나머지",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "모듈로: x/y의 나머지 부분 찾기\n\n% (x: var[]..[], y: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0;",
+      "Id": "13b2e2aff8184263ab5a10c178b63a12",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d3a6bbb2462d48e793ca80a96460b9ce",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.HigherOrder.ComposeFunctions, CoreNodeModels",
+      "VariableInputPorts": true,
+      "NodeType": "ExtensionNode",
+      "Id": "69b57a875441446fa81756f46f1a3715",
+      "Inputs": [
+        {
+          "Id": "f51ad3eed9994e05912d4918c607be7a",
+          "Name": "function0",
+          "Description": "Function #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7358767e26d746dfa4c73da83f691801",
+          "Name": "function1",
+          "Description": "Function #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "dab21d72518e44e2a21fa1d556d284ef",
+          "Name": "function",
+          "Description": "Composed function.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "여러 개의 함수에서 단일 함수를 반환합니다. 예: 계수 및 나누기 함수가 리스트에 적용할 단일 함수로 구성됩니다."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "==@var[]..[],var[]..[]",
+      "Id": "d2cb12b866cc405a88281c055fd0948e",
+      "Inputs": [
+        {
+          "Id": "8fb98db781f1404896e7c911eb3e3232",
+          "Name": "x",
+          "Description": "비교할 기본 유형 객체(예: 부울, 정수, double, 문자열 등)\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7e10cdd42d904357afdf8bf5961b6a8e",
+          "Name": "y",
+          "Description": "비교할 기본 유형 객체(예: 부울, 정수, double, 문자열 등)\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5ef13aeba69a4baea0fc3e5c8309671a",
+          "Name": "bool",
+          "Description": "동일성 검사 결과",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "x와 y가 동일한지 비교\n\n== (x: var[]..[], y: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "2;",
+      "Id": "12b0053a5cd34a539d70cb5e24a0e444",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "01e26a5b5c6e40efa38f5543c5d27a5f",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.ReplaceItemAtIndex@var[]..[],int,var[]..[]",
+      "Id": "84aeb2f3e135410d921815b6e5fb8143",
+      "Inputs": [
+        {
+          "Id": "6a94aba1d7384afdb508282a8e2cf3c6",
+          "Name": "list",
+          "Description": "항목을 대체할 리스트.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d7d54bf028af4583a9ed400b8ec9ea17",
+          "Name": "index",
+          "Description": "대체할 항목의 인덱스.\n\nint",
+          "UsingDefaultValue": false,
+          "Level": 1,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a47a1867afc14b94b70685d2f6c7722f",
+          "Name": "item",
+          "Description": "삽입할 항목.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 1,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ee3b1c55fcc844c183fb2ca6661fa9a8",
+          "Name": "list",
+          "Description": "항목이 대체된 새 리스트.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 인덱스에 위치한 지정된 리스트에서 항목을 대체합니다.\n\nList.ReplaceItemAtIndex (list: var[]..[], index: int, item: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"even\";",
+      "Id": "0d79931c65c54892aaa7318e21df06ef",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "3659ebd559ab4bf98dc818f705fa012f",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "[\n0,1,2,3,4,5,6,7,8,9,10\n];",
+      "Id": "18117dbf7f2a48faa7390ae13bf4ab2f",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ce845bc47f304f44bf34d640434d9a6e",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "%@var[]..[],var[]..[]",
+      "Id": "95894b82c9b645988d37dc6c497bb9f6",
+      "Inputs": [
+        {
+          "Id": "59f36507d10d45e08a095784ad428b79",
+          "Name": "x",
+          "Description": "정수 또는 double 값\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cc42566b037a4cd0b4cbf8f27658df78",
+          "Name": "y",
+          "Description": "정수 또는 double 값\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "adfa88a082dd48e7b933a49113541db5",
+          "Name": "number",
+          "Description": "y 입력으로 나눈 후의 x 입력의 나머지",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "모듈로: x/y의 나머지 부분 찾기\n\n% (x: var[]..[], y: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "2;",
+      "Id": "60d44103a69d462d9076211e76366497",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e8b2c35a40c7424dad1cc3dbbd4f7a2f",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0;",
+      "Id": "e8fc41e9097d40d989148b632d0a3142",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "de184448ce5e4998bcecf0016e06f41b",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "==@var[]..[],var[]..[]",
+      "Id": "b3ba1d9a3bea4b82ac5f0c2b318b5bb4",
+      "Inputs": [
+        {
+          "Id": "dc2c3d17066143f5b280d4b0f95489d4",
+          "Name": "x",
+          "Description": "비교할 기본 유형 객체(예: 부울, 정수, double, 문자열 등)\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0d538872674148339c5569f29724ce30",
+          "Name": "y",
+          "Description": "비교할 기본 유형 객체(예: 부울, 정수, double, 문자열 등)\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "85a40e6bc19747f4b6d06ba895d5d7cf",
+          "Name": "bool",
+          "Description": "동일성 검사 결과",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "x와 y가 동일한지 비교\n\n== (x: var[]..[], y: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.AllIndicesOf@var[]..[],var",
+      "Id": "9775ed5f615d495d9d993d415ad52f82",
+      "Inputs": [
+        {
+          "Id": "cbfb850719d04f369775d10932d2ad90",
+          "Name": "list",
+          "Description": "검색할 리스트. 이 인수가 null이면 빈 리스트가 반환됩니다.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cfcc26e1f3e541fcb5656693e2544906",
+          "Name": "item",
+          "Description": "찾을 항목.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1d617022b03440a195bed25b6c42c084",
+          "Name": "indices",
+          "Description": "항목이 발견된 경우 항목의 모든 발생의 0 기점 색인 리스트 또는 항목이 리스트에 없는 경우 빈 리스트.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "항목을 지정하면 리스트에서 모든 발생의 0 기점 색인을 반환합니다. 항목을 찾을 수 없으면 빈 리스트가 반환됩니다.\n\nList.AllIndicesOf (list: var[]..[], item: var): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": true,
+      "Id": "dcb6c53bdaa24d268a74beaf0ad9954c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "35e5dc5b13a34c29ba75013a055d85c7",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "True와 False 사이에서 선택."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Transpose@var[]..[]",
+      "Id": "d96800b0c1b740ffb0a216a22b3ae2ca",
+      "Inputs": [
+        {
+          "Id": "98617ae82f25424cb10b0e1b494fe3ec",
+          "Name": "lists",
+          "Description": "행과 열을 바꿀 리스트의 리스트\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "91427eb7adc74af7b9ec5b1b05452bcd",
+          "Name": "lists",
+          "Description": "행과 열을 바꾼 리스트의 리스트",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "리스트의 리스트에서 행 및 열을 교체합니다. 다른 행보다 짧은 행이 몇 개 있을 경우 null 값이 결과 배열에 자리 표시자로 삽입되어 항상 직사각형이 되도록 합니다.\n\nList.Transpose (lists: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.UniqueItems@var[]..[]",
+      "Id": "24d28bbe98c249369ca09ef66954833f",
+      "Inputs": [
+        {
+          "Id": "5950c83ec4e34c0c9d6839c4ac3514f3",
+          "Name": "list",
+          "Description": "중복 항목을 필터링할 리스트.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": true,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f3c710617c8645129fae531606e62d60",
+          "Name": "list",
+          "Description": "필터링된 리스트.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "지정된 리스트의 고유한 항목이 모두 포함된 새 리스트를 만듭니다.\n\nList.UniqueItems (list: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Sort@var[]",
+      "Id": "ba7f2882ff4245c88472c714b3349438",
+      "Inputs": [
+        {
+          "Id": "fa59fae5efb749b5a100763520cc5e4e",
+          "Name": "list",
+          "Description": "정렬될 항목의 리스트\n\nvar[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2b21ebf08a04472c85aaf07b0185a89b",
+          "Name": "int[]",
+          "Description": "정렬한 리스트에 있는 항목의 색인",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "항목별로 리스트를 정렬하고 색인을 반환합니다.\n\nList.Sort (list: var[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.LastItem@var[]..[]",
+      "Id": "9f378524449e475dbb6adbd837eb9298",
+      "Inputs": [
+        {
+          "Id": "13b06687cc1d412bbe1ae63749a3ee9b",
+          "Name": "list",
+          "Description": "마지막 항목을 가져올 리스트\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": true,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "29bce6dc50f943ecab4f43b262ae03cc",
+          "Name": "item",
+          "Description": "리스트의 마지막 항목",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "리스트의 마지막 항목을 검색합니다.\n\nList.LastItem (list: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "9d3a8104ce4d4c1fa1834a9c1966704e",
+      "Inputs": [
+        {
+          "Id": "245a10e8c3a54f52af3857aedcc3e0bc",
+          "Name": "",
+          "Description": "출력을 표시할 노드",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ce3dcb51454644988d94c0af50a53324",
+          "Name": "",
+          "Description": "노드 출력",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "노드의 출력 시각화"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0;",
+      "Id": "dbb2cfe44c4140a8b549a76b4ab63c37",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "00cdf848b732464d822ec11949a4bfd7",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "2;",
+      "Id": "fe0d98249d214dca9c57922433b541b2",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e84ee8674144497da29e31ac7ba98b17",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"even\";",
+      "Id": "ec478ef4b1e6477f94ebaafbb4cf49ce",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b7e798a5905743bdad7b9fe4a2af5dcc",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "==@var[]..[],var[]..[]",
+      "Id": "e26d4caa38794486ad0ad5c37f661abc",
+      "Inputs": [
+        {
+          "Id": "bbdc744f761f41a0aab244ae47dfe9ba",
+          "Name": "x",
+          "Description": "비교할 기본 유형 객체(예: 부울, 정수, double, 문자열 등)\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7cc13bec9daf4736947f266c3ebe26c6",
+          "Name": "y",
+          "Description": "비교할 기본 유형 객체(예: 부울, 정수, double, 문자열 등)\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "eb012317584b4b63894c97a04b93dd50",
+          "Name": "bool",
+          "Description": "동일성 검사 결과",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "x와 y가 동일한지 비교\n\n== (x: var[]..[], y: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "%@var[]..[],var[]..[]",
+      "Id": "13182e54164f4495a108142f02fd7490",
+      "Inputs": [
+        {
+          "Id": "63e5890091b7426bb1e572abae5e647b",
+          "Name": "x",
+          "Description": "정수 또는 double 값\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cdfa1b68dfeb40b19fe8f304e0c73982",
+          "Name": "y",
+          "Description": "정수 또는 double 값\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "45760fc49fb648a682906edac494029e",
+          "Name": "number",
+          "Description": "y 입력으로 나눈 후의 x 입력의 나머지",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "모듈로: x/y의 나머지 부분 찾기\n\n% (x: var[]..[], y: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "[\n0,1,2,3,4,5,6,7,8,9,10\n];",
+      "Id": "3a472bfdbeaa44f7836449f04347e286",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f04d233332be4ef7a61aa39c16f9c60a",
+          "Name": "",
+          "Description": "선 1의 표현식 값",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "DesignScript 코드를 직접 작성할 수 있습니다"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.HigherOrder.Replace, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "8c2167bb73dc454085a232b9a917cd09",
+      "Inputs": [
+        {
+          "Id": "f016d38348964fc6b33aa8ca5dbca196",
+          "Name": "item",
+          "Description": "잠재적으로 대체될 항목",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f41af55d65504b5c9c0b1a3f7d0970af",
+          "Name": "replaceWith",
+          "Description": "대체할 객체",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fb445a3d32da4626b5dff3eec3154b51",
+          "Name": "condition",
+          "Description": "대체해야 하는지 확인하기 위해 사용되는 대체 함수",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "06f88c3816374d489f8cf0e382704f6a",
+          "Name": "var[]..[]",
+          "Description": "\"replaceWith\"에 지정된 항목으로 대체하기 위해 조건이 사용된 경우의 항목 또는 항목 리스트",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "원래 객체가 지정된 조건을 충족하는 경우 객체를 지정된 대체 항목으로 대체합니다."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.HigherOrder.ComposeFunctions, CoreNodeModels",
+      "VariableInputPorts": true,
+      "NodeType": "ExtensionNode",
+      "Id": "e282e8d02ca044e2b4f5b90e1ecb2b13",
+      "Inputs": [
+        {
+          "Id": "756e8d5702824c908bec738408bd017a",
+          "Name": "function0",
+          "Description": "함수 #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7c952a0e8f4e41a894b540b81a07af87",
+          "Name": "function1",
+          "Description": "함수 #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ddb0550eec7b4bd285cf58c0e04f7ad1",
+          "Name": "function",
+          "Description": "구성된 함수.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "여러 개의 함수에서 단일 함수를 반환합니다. 예: 계수 및 나누기 함수가 리스트에 적용할 단일 함수로 구성됩니다."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.HigherOrder.ComposeFunctions, CoreNodeModels",
+      "VariableInputPorts": true,
+      "NodeType": "ExtensionNode",
+      "Id": "ad33ad9d78a8496b96155552d4ec83f2",
+      "Inputs": [
+        {
+          "Id": "770457d2dfd84b3c8145d715865dcbab",
+          "Name": "function0",
+          "Description": "함수 #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2bfa8512f63d4c6c8c8b72a6346ec060",
+          "Name": "function1",
+          "Description": "함수 #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ca9bc9458aae48f7af571f828e16763f",
+          "Name": "function",
+          "Description": "구성된 함수.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "여러 개의 함수에서 단일 함수를 반환합니다. 예: 계수 및 나누기 함수가 리스트에 적용할 단일 함수로 구성됩니다."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.HigherOrder.Replace, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "81c2ba6c483a4a83be14faa5e8a1185d",
+      "Inputs": [
+        {
+          "Id": "d17bcb8fa4144cb1b53208c6a8bbc698",
+          "Name": "item",
+          "Description": "잠재적으로 대체될 항목",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "39268e8f9b7d48e6801c4a104fc1e955",
+          "Name": "replaceWith",
+          "Description": "대체할 객체",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "27c1ea91a3f04254a3fa499bf34f3251",
+          "Name": "condition",
+          "Description": "대체해야 하는지 확인하기 위해 사용되는 대체 함수",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2f1099b1d4e94dddb2bb72d869f8cf71",
+          "Name": "var[]..[]",
+          "Description": "\"replaceWith\"에 지정된 항목으로 대체하기 위해 조건이 사용된 경우의 항목 또는 항목 리스트",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "원래 객체가 지정된 조건을 충족하는 경우 객체를 지정된 대체 항목으로 대체합니다."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "2ae606f216a4419fba2897a83938ef63",
+      "End": "8eb4fb11ceaa41f3809a1021be3c75ac",
+      "Id": "9f0e2a033280458682cbd3d37d39dc28"
+    },
+    {
+      "Start": "db41c310af4443f096c1bbf89670a5f3",
+      "End": "ca3516406c77432b9699551d77a41970",
+      "Id": "5c5169d01f01461bb47681b291b73f7b"
+    },
+    {
+      "Start": "921d98cd6ba34c0b9aae907d67f84ef2",
+      "End": "f51ad3eed9994e05912d4918c607be7a",
+      "Id": "e89e73a20bbe41f0967ef867819c4545"
+    },
+    {
+      "Start": "d3a6bbb2462d48e793ca80a96460b9ce",
+      "End": "7e10cdd42d904357afdf8bf5961b6a8e",
+      "Id": "2e8ea3f9da5e49ee88967144a116ee4b"
+    },
+    {
+      "Start": "dab21d72518e44e2a21fa1d556d284ef",
+      "End": "d6d920fae7c643a2a9dc66ace84c1195",
+      "Id": "cd6ac1af5b5745d8a3955deeb2236c12"
+    },
+    {
+      "Start": "5ef13aeba69a4baea0fc3e5c8309671a",
+      "End": "7358767e26d746dfa4c73da83f691801",
+      "Id": "6fabc3d723284e0b9f7840de6f9eea8b"
+    },
+    {
+      "Start": "01e26a5b5c6e40efa38f5543c5d27a5f",
+      "End": "cfc5f2feaa494ccc9a912ef7a08b9448",
+      "Id": "b12b7e0c00594aad8851f35e3ed89f3a"
+    },
+    {
+      "Start": "ee3b1c55fcc844c183fb2ca6661fa9a8",
+      "End": "245a10e8c3a54f52af3857aedcc3e0bc",
+      "Id": "249a3e4c705d4a1196ad9146276194b2"
+    },
+    {
+      "Start": "3659ebd559ab4bf98dc818f705fa012f",
+      "End": "a47a1867afc14b94b70685d2f6c7722f",
+      "Id": "c99b4220b5234f6e985b6ca6dd5fad50"
+    },
+    {
+      "Start": "ce845bc47f304f44bf34d640434d9a6e",
+      "End": "59f36507d10d45e08a095784ad428b79",
+      "Id": "e3d4f0c129824d10a6054eec2ca173ee"
+    },
+    {
+      "Start": "ce845bc47f304f44bf34d640434d9a6e",
+      "End": "6a94aba1d7384afdb508282a8e2cf3c6",
+      "Id": "476a12fcb6c64603bdd8cc2ecd39a6ef"
+    },
+    {
+      "Start": "adfa88a082dd48e7b933a49113541db5",
+      "End": "dc2c3d17066143f5b280d4b0f95489d4",
+      "Id": "39f124e684c84529a7a07f4db3e184e1"
+    },
+    {
+      "Start": "e8b2c35a40c7424dad1cc3dbbd4f7a2f",
+      "End": "cc42566b037a4cd0b4cbf8f27658df78",
+      "Id": "5b8f125f9d884392abe78101a05ba0bd"
+    },
+    {
+      "Start": "de184448ce5e4998bcecf0016e06f41b",
+      "End": "0d538872674148339c5569f29724ce30",
+      "Id": "ec1238aecd2741a1b48faea74bf93670"
+    },
+    {
+      "Start": "85a40e6bc19747f4b6d06ba895d5d7cf",
+      "End": "cbfb850719d04f369775d10932d2ad90",
+      "Id": "43ecf6d5fdce4391ac9fff5a2204b8e2"
+    },
+    {
+      "Start": "1d617022b03440a195bed25b6c42c084",
+      "End": "d7d54bf028af4583a9ed400b8ec9ea17",
+      "Id": "00dc406020304ea8b36671397d15f5b5"
+    },
+    {
+      "Start": "35e5dc5b13a34c29ba75013a055d85c7",
+      "End": "cfcc26e1f3e541fcb5656693e2544906",
+      "Id": "20e6dc0b8d2546caa031753574c0ffef"
+    },
+    {
+      "Start": "91427eb7adc74af7b9ec5b1b05452bcd",
+      "End": "5950c83ec4e34c0c9d6839c4ac3514f3",
+      "Id": "2bfc1f65549b49bf984438e1413caa3c"
+    },
+    {
+      "Start": "f3c710617c8645129fae531606e62d60",
+      "End": "fa59fae5efb749b5a100763520cc5e4e",
+      "Id": "e0f834e0c279440493e2e36e82e7545e"
+    },
+    {
+      "Start": "2b21ebf08a04472c85aaf07b0185a89b",
+      "End": "13b06687cc1d412bbe1ae63749a3ee9b",
+      "Id": "c29f5d76450441fc80945ca4df365926"
+    },
+    {
+      "Start": "ce3dcb51454644988d94c0af50a53324",
+      "End": "98617ae82f25424cb10b0e1b494fe3ec",
+      "Id": "7d212161bae74ba1add97fbb0655589c"
+    },
+    {
+      "Start": "00cdf848b732464d822ec11949a4bfd7",
+      "End": "7cc13bec9daf4736947f266c3ebe26c6",
+      "Id": "75201e3c52544fc1a973dd0dfb90a2a6"
+    },
+    {
+      "Start": "e84ee8674144497da29e31ac7ba98b17",
+      "End": "cdfa1b68dfeb40b19fe8f304e0c73982",
+      "Id": "e05f420787d24ed1b5128a541ac98c7b"
+    },
+    {
+      "Start": "b7e798a5905743bdad7b9fe4a2af5dcc",
+      "End": "f41af55d65504b5c9c0b1a3f7d0970af",
+      "Id": "de93f27c8462416ab728d9ee20126f64"
+    },
+    {
+      "Start": "b7e798a5905743bdad7b9fe4a2af5dcc",
+      "End": "39268e8f9b7d48e6801c4a104fc1e955",
+      "Id": "4ddc6cc95cc94fd8a0c497f217d0b6bb"
+    },
+    {
+      "Start": "eb012317584b4b63894c97a04b93dd50",
+      "End": "756e8d5702824c908bec738408bd017a",
+      "Id": "c2ede45a7a1b4e439826f528e9b42d1b"
+    },
+    {
+      "Start": "eb012317584b4b63894c97a04b93dd50",
+      "End": "2bfa8512f63d4c6c8c8b72a6346ec060",
+      "Id": "be67d815350b48e1aba88f032aa5dbaf"
+    },
+    {
+      "Start": "45760fc49fb648a682906edac494029e",
+      "End": "7c952a0e8f4e41a894b540b81a07af87",
+      "Id": "53fff4adca504e5ca4439653fd133664"
+    },
+    {
+      "Start": "45760fc49fb648a682906edac494029e",
+      "End": "770457d2dfd84b3c8145d715865dcbab",
+      "Id": "34d4eb29735e4c8b9ad5998262a34118"
+    },
+    {
+      "Start": "f04d233332be4ef7a61aa39c16f9c60a",
+      "End": "f016d38348964fc6b33aa8ca5dbca196",
+      "Id": "686ae18c61e140b2aeac2a68f900caee"
+    },
+    {
+      "Start": "f04d233332be4ef7a61aa39c16f9c60a",
+      "End": "d17bcb8fa4144cb1b53208c6a8bbc698",
+      "Id": "93fe7f57cc2a437d9041e2681df132c9"
+    },
+    {
+      "Start": "ddb0550eec7b4bd285cf58c0e04f7ad1",
+      "End": "27c1ea91a3f04254a3fa499bf34f3251",
+      "Id": "d2f97e6f3b034a569cfd4ed2f4933779"
+    },
+    {
+      "Start": "ca9bc9458aae48f7af571f828e16763f",
+      "End": "fb445a3d32da4626b5dff3eec3154b51",
+      "Id": "cce8f66fea5a41bfb3813e3354a10f74"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": null,
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "없음",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.1.8246",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "배경 미리보기",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "ReplaceByCondition",
+        "Id": "925e9a541440446489e16bfb1059df39",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2213.7626574253618,
+        "Y": -850.531138630711
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "40e0207817b340909a46c5076f4664c1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1761.9849896592282,
+        "Y": -1057.9837516075581
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "b2782ac9332346c3bbc608ff639155a7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1826.6397176350381,
+        "Y": -825.66302403063241
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "%",
+        "Id": "00412f88e3ee45acbd3d8b4b8f900632",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1447.7093626427945,
+        "Y": -765.29754542530247
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "13b2e2aff8184263ab5a10c178b63a12",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1285.358566624242,
+        "Y": -378.5047034111758
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Function Compose",
+        "Id": "69b57a875441446fa81756f46f1a3715",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1751.5987285874114,
+        "Y": -591.35547235119782
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "==",
+        "Id": "d2cb12b866cc405a88281c055fd0948e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1470.358566624242,
+        "Y": -408.71803674450916
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "12b0053a5cd34a539d70cb5e24a0e444",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1262.7093626427945,
+        "Y": -735.08421209196922
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.ReplaceItemAtIndex",
+        "Id": "84aeb2f3e135410d921815b6e5fb8143",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4590.1411373939209,
+        "Y": -1068.210203639781
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "0d79931c65c54892aaa7318e21df06ef",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3810.4201306404029,
+        "Y": -979.43273658429666
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "18117dbf7f2a48faa7390ae13bf4ab2f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2968.0597657907219,
+        "Y": -1061.9858125507005
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "%",
+        "Id": "95894b82c9b645988d37dc6c497bb9f6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3439.6248871332791,
+        "Y": -857.17730552405214
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "60d44103a69d462d9076211e76366497",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3254.6248871332791,
+        "Y": -826.96397219071912
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "e8fc41e9097d40d989148b632d0a3142",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3661.1756057513589,
+        "Y": -632.52266990456951
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "==",
+        "Id": "b3ba1d9a3bea4b82ac5f0c2b318b5bb4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3846.1756057513589,
+        "Y": -662.73600323790288
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.AllIndicesOf",
+        "Id": "9775ed5f615d495d9d993d415ad52f82",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4253.7753776522186,
+        "Y": -865.92367842270346
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Boolean",
+        "Id": "dcb6c53bdaa24d268a74beaf0ad9954c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4065.3198747305014,
+        "Y": -781.54070308862561
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Transpose",
+        "Id": "d96800b0c1b740ffb0a216a22b3ae2ca",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5132.6876241532145,
+        "Y": -1057.1353429212938
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.UniqueItems",
+        "Id": "24d28bbe98c249369ca09ef66954833f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5404.3707579901256,
+        "Y": -1055.964772586922
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Sort",
+        "Id": "ba7f2882ff4245c88472c714b3349438",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5627.0298788089085,
+        "Y": -1054.2499215991986
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.LastItem",
+        "Id": "9f378524449e475dbb6adbd837eb9298",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5887.6180841160367,
+        "Y": -1055.0902697858917
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "9d3a8104ce4d4c1fa1834a9c1966704e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4874.5585919297591,
+        "Y": -1093.2453661329864
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "dbb2cfe44c4140a8b549a76b4ab63c37",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2067.9242370981328,
+        "Y": 2233.0951827111171
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "fe0d98249d214dca9c57922433b541b2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2060.2484998180025,
+        "Y": 1887.8168155686772
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "ec478ef4b1e6477f94ebaafbb4cf49ce",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2229.8217148429326,
+        "Y": 1485.5374010948572
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "==",
+        "Id": "e26d4caa38794486ad0ad5c37f661abc",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2252.9242370981328,
+        "Y": 2202.8818493777871
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "%",
+        "Id": "13182e54164f4495a108142f02fd7490",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2245.2484998180025,
+        "Y": 1857.6034822353472
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "3a472bfdbeaa44f7836449f04347e286",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2172.0090303308925,
+        "Y": 1221.6758462769271
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "ReplaceByCondition",
+        "Id": "8c2167bb73dc454085a232b9a917cd09",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3254.8285505084327,
+        "Y": 1364.810304888797
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Function Compose",
+        "Id": "e282e8d02ca044e2b4f5b90e1ecb2b13",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2803.5080383918025,
+        "Y": 2012.5288621105569
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Function Compose",
+        "Id": "ad33ad9d78a8496b96155552d4ec83f2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2795.3866415615926,
+        "Y": 1584.5147638378171
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "ReplaceByCondition",
+        "Id": "81c2ba6c483a4a83be14faa5e8a1185d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3255.1704727382726,
+        "Y": 1867.1912421180173
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "16f57e28c2f94a0ab6bc48ed8efa82af",
+        "Title": "Target List",
+        "Nodes": [
+          "40e0207817b340909a46c5076f4664c1"
+        ],
+        "Left": 1751.9849896592282,
+        "Top": -1110.9837516075581,
+        "Width": 252.0,
+        "Height": 173.0,
+        "FontSize": 36.0,
+        "InitialTop": -1057.9837516075581,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "3a28b0be99e648f4a9bc7d2aca76474e",
+        "Title": "바꿔치기할 결과값",
+        "Nodes": [
+          "b2782ac9332346c3bbc608ff639155a7"
+        ],
+        "Left": 1816.6397176350381,
+        "Top": -921.66302403063241,
+        "Width": 190.0,
+        "Height": 189.0,
+        "FontSize": 36.0,
+        "InitialTop": -825.66302403063241,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 86.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "1ba7fb169ee04c02961ecd444e596e98",
+        "Title": "어떤 수를 2로 나눌때의 나머지를 반환하는 함수: f(x)",
+        "Nodes": [
+          "00412f88e3ee45acbd3d8b4b8f900632",
+          "12b0053a5cd34a539d70cb5e24a0e444"
+        ],
+        "Left": 1252.7093626427945,
+        "Top": -905.29754542530247,
+        "Width": 380.0,
+        "Height": 263.21333333333325,
+        "FontSize": 36.0,
+        "InitialTop": -765.29754542530247,
+        "InitialHeight": 175.21333333333331,
+        "TextblockHeight": 130.0,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "c45e788061d44a03a09672d8cfa5bb6b",
+        "Title": "어떤 수가 0과 같은지 보고 같으면 True, 틀리면 False를 반환하는 함수: g(x)",
+        "Nodes": [
+          "13b2e2aff8184263ab5a10c178b63a12",
+          "d2cb12b866cc405a88281c055fd0948e"
+        ],
+        "Left": 1275.358566624242,
+        "Top": -591.71803674450916,
+        "Width": 358.0,
+        "Height": 306.21333333333337,
+        "FontSize": 36.0,
+        "InitialTop": -408.71803674450916,
+        "InitialHeight": 175.21333333333337,
+        "TextblockHeight": 173.0,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "6e43ba0948f9424cb25c02a3f2fa4d37",
+        "Title": "Function Compose: g(f(x))",
+        "Nodes": [
+          "69b57a875441446fa81756f46f1a3715",
+          "4c15468ff259428a8902f72e9bdeb868"
+        ],
+        "Left": 1741.5987285874114,
+        "Top": -687.35547235119782,
+        "Width": 321.35565853801768,
+        "Height": 215.0,
+        "FontSize": 36.0,
+        "InitialTop": -591.35547235119782,
+        "InitialHeight": 157.86386730719698,
+        "TextblockHeight": 86.0,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "9d0fd7ea9741414da95c35ebc0679d1f",
+        "Title": "바꿔치기할 결과값",
+        "Nodes": [
+          "0d79931c65c54892aaa7318e21df06ef"
+        ],
+        "Left": 3800.4201306404029,
+        "Top": -1075.4327365842967,
+        "Width": 190.0,
+        "Height": 189.0,
+        "FontSize": 36.0,
+        "InitialTop": -979.43273658429666,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 86.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "5435cf67e38a4284acd462cf50937a1d",
+        "Title": "Target List",
+        "Nodes": [
+          "18117dbf7f2a48faa7390ae13bf4ab2f"
+        ],
+        "Left": 2958.0597657907219,
+        "Top": -1114.9858125507005,
+        "Width": 252.0,
+        "Height": 173.0,
+        "FontSize": 36.0,
+        "InitialTop": -1061.9858125507005,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "d3f23b5fde8a41dcba27696957105e4d",
+        "Title": "어떤 수를 2로 나눌때의 나머지를 반환하는 구간",
+        "Nodes": [
+          "95894b82c9b645988d37dc6c497bb9f6",
+          "60d44103a69d462d9076211e76366497"
+        ],
+        "Left": 3244.6248871332791,
+        "Top": -953.17730552405214,
+        "Width": 380.0,
+        "Height": 219.21333333333303,
+        "FontSize": 36.0,
+        "InitialTop": -857.17730552405214,
+        "InitialHeight": 175.21333333333303,
+        "TextblockHeight": 86.0,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "15e9cb5df7f74f5d8069d40acd268c83",
+        "Title": "어떤 수가 0과 같은지 보고 같으면 True, 틀리면 False를 반환하는 구간",
+        "Nodes": [
+          "e8fc41e9097d40d989148b632d0a3142",
+          "b3ba1d9a3bea4b82ac5f0c2b318b5bb4"
+        ],
+        "Left": 3651.1756057513589,
+        "Top": -845.73600323790288,
+        "Width": 358.0,
+        "Height": 306.21333333333337,
+        "FontSize": 36.0,
+        "InitialTop": -662.73600323790288,
+        "InitialHeight": 175.21333333333331,
+        "TextblockHeight": 173.0,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "e2026c838ec1449a9949ce704bdd1e18",
+        "Title": "True인 index 번호 추출",
+        "Nodes": [
+          "9775ed5f615d495d9d993d415ad52f82",
+          "dcb6c53bdaa24d268a74beaf0ad9954c"
+        ],
+        "Left": 4055.3198747305014,
+        "Top": -918.92367842270346,
+        "Width": 396.4555029217172,
+        "Height": 205.38297533407786,
+        "FontSize": 36.0,
+        "InitialTop": -865.92367842270346,
+        "InitialHeight": 229.38297533407786,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "3a62262c57f44f13822853aefe5b96c8",
+        "Title": "추가 코딩 부분...",
+        "Nodes": [
+          "d96800b0c1b740ffb0a216a22b3ae2ca",
+          "24d28bbe98c249369ca09ef66954833f",
+          "ba7f2882ff4245c88472c714b3349438",
+          "9f378524449e475dbb6adbd837eb9298"
+        ],
+        "Left": 5122.6876241532145,
+        "Top": -1110.1353429212938,
+        "Width": 937.93045996282217,
+        "Height": 148.88542132209523,
+        "FontSize": 36.0,
+        "InitialTop": -1057.1353429212938,
+        "InitialHeight": 125.88542132209523,
+        "TextblockHeight": 43.0,
+        "Background": "#FFD4B6DB"
+      },
+      {
+        "Id": "a2690b805f5c4250ad82b30347a18d76",
+        "Title": "Target List",
+        "Nodes": [
+          "3a472bfdbeaa44f7836449f04347e286"
+        ],
+        "Left": 2162.0090303308925,
+        "Top": 1168.6758462769271,
+        "Width": 252.0,
+        "Height": 173.0,
+        "FontSize": 36.0,
+        "InitialTop": 1221.6758462769271,
+        "InitialHeight": 150.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "ea459e32c2e042eaabc9121d9ebfcb94",
+        "Title": "바꿔치기할 결과값",
+        "Nodes": [
+          "ec478ef4b1e6477f94ebaafbb4cf49ce"
+        ],
+        "Left": 2219.8217148429326,
+        "Top": 1389.5374010948572,
+        "Width": 190.0,
+        "Height": 189.0,
+        "FontSize": 36.0,
+        "InitialTop": 1485.5374010948572,
+        "InitialHeight": 123.0,
+        "TextblockHeight": 86.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "d30310a0aeb24e2ebcef50e5017e1cc4",
+        "Title": "어떤 수를 2로 나눌때의 나머지를 반환하는 함수: f(x)",
+        "Nodes": [
+          "13182e54164f4495a108142f02fd7490",
+          "fe0d98249d214dca9c57922433b541b2"
+        ],
+        "Left": 2050.2484998180025,
+        "Top": 1717.6034822353472,
+        "Width": 380.0,
+        "Height": 263.21333333332996,
+        "FontSize": 36.0,
+        "InitialTop": 1857.6034822353472,
+        "InitialHeight": 153.213333333333,
+        "TextblockHeight": 130.0,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "cf28eeef1c8447cd81c771bc240964b7",
+        "Title": "Function Compose: g(f(x))",
+        "Nodes": [
+          "ad33ad9d78a8496b96155552d4ec83f2",
+          "33997a0b88a64f409c2cd71305283016"
+        ],
+        "Left": 2785.3866415615926,
+        "Top": 1488.5147638378171,
+        "Width": 321.35565853801972,
+        "Height": 215.0,
+        "FontSize": 36.0,
+        "InitialTop": 1584.5147638378171,
+        "InitialHeight": 157.863867307198,
+        "TextblockHeight": 86.0,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "a8cda490b6304c649045e6c1f3ef1898",
+        "Title": "Function Compose: f(g(x))",
+        "Nodes": [
+          "e282e8d02ca044e2b4f5b90e1ecb2b13",
+          "279a29e32cab4ce38b07cc84ac97ce02"
+        ],
+        "Left": 2793.5080383918025,
+        "Top": 1916.5288621105569,
+        "Width": 316.84544581850014,
+        "Height": 215.0,
+        "FontSize": 36.0,
+        "InitialTop": 2012.5288621105569,
+        "InitialHeight": 156.378350188646,
+        "TextblockHeight": 86.0,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "fd64ad2cd4f64cd59af0b648de93fac4",
+        "Title": "어떤 수가 0과 같은지 보고 같으면 True, 틀리면 False를 반환하는 함수: g(x)",
+        "Nodes": [
+          "dbb2cfe44c4140a8b549a76b4ab63c37",
+          "e26d4caa38794486ad0ad5c37f661abc"
+        ],
+        "Left": 2057.9242370981328,
+        "Top": 2019.8818493777871,
+        "Width": 358.0,
+        "Height": 306.21333333332996,
+        "FontSize": 36.0,
+        "InitialTop": 2202.8818493777871,
+        "InitialHeight": 153.213333333334,
+        "TextblockHeight": 173.0,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "4c15468ff259428a8902f72e9bdeb868",
+        "Title": "New Note",
+        "Nodes": [],
+        "Left": 1978.9543871254289,
+        "Top": -578.49160504400072,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "279a29e32cab4ce38b07cc84ac97ce02",
+        "Title": "New Note",
+        "Nodes": [],
+        "Left": 3026.3534842103027,
+        "Top": 2023.907212299207,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "33997a0b88a64f409c2cd71305283016",
+        "Title": "New Note",
+        "Nodes": [],
+        "Left": 3022.7423000996123,
+        "Top": 1597.3786311450172,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 104.78343099280755,
+    "Y": 361.84575731000257,
+    "Zoom": 0.17669373974454888
+  }
+}
