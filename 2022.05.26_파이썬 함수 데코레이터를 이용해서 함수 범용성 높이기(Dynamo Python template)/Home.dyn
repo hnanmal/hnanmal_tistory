@@ -1,0 +1,503 @@
+{
+  "Uuid": "97bb79fd-1431-4012-85ba-4ca0ea68d613",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Home",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "[1,2,3,4,5,6,7];\n[[1,2,3],[4,[5,6],7],[4]];",
+      "Id": "14c273e76eb64e8dad3945b83be836b9",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "630274a9bc2b47f88f35b02db9ba0762",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8e45f937a6c14a5fa0ba07aca720b2cb",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Python 표준 및 DesignScript 라이브러리 로드\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\nfrom typing import Iterable\r\n# 이 노드에 대한 입력값은 IN 변수에 리스트로 저장됩니다.\r\ndataEnteringNode = IN\r\ninput = IN[0]\r\n\r\n# 코드를 이 선 아래에 배치\r\ndef flat_list(_array, _func):\r\n    r_array = []\r\n\r\n    def recursive_func(_args):\r\n        for i in _args:\r\n            if isinstance(i, Iterable):\r\n                r_array.append(map(lambda x: _func(x), i))\r\n            else:\r\n                recursive_func(i)\r\n\r\n    recursive_func(_array)\r\n    return r_array\r\n\r\ndef twotime(a):\r\n    return 2 * a\r\n\r\nresult = flat_list(input, twotime)\r\n# 출력을 OUT 변수에 지정합니다.\r\nOUT = result",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "3d7d67f755fc4b4fa5c11b075254b6c1",
+      "Inputs": [
+        {
+          "Id": "dbc7c1f93e3a49cba949fe7ca7a926e6",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "27c983d1bab740cf8836aa49e0364bef",
+          "Name": "OUT",
+          "Description": "Python 스크립트의 결과",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "3;\n[1,2,3,4,5];\n[[1,2,3],[4,[[5,6],7]],[4]];",
+      "Id": "25c674c7d33c4ddd8e6f604dc881b974",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "dadf6595404843b6b9303d47e92f86d3",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9319577d54744574ba01ca7b6f725968",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9229ee0fc0b04137962c14ba1fce0be5",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 703,
+      "SelectedString": "OST_Windows",
+      "NodeType": "ExtensionNode",
+      "Id": "f8c5838f50bb403091ed4ce238ec8a0a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "3fd03d3266d346f194eb72c8c3adbf6d",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "8d40a24d556b4756abc3557dfa37ef27",
+      "Inputs": [
+        {
+          "Id": "950e9b92b62f4981b43f3913cdb64098",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bf1d29fc598e4139b9cfaf9ca9fde6a1",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Python 표준 및 DesignScript 라이브러리 로드\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# 이 노드에 대한 입력값은 IN 변수에 리스트로 저장됩니다.\r\ndataEnteringNode = IN\r\ninput1 = IN[0]\r\n\r\n# 코드를 이 선 아래에 배치\r\ndef iterize(function):\r\n    def wrapper(args):\r\n        if isinstance(args, list) or isinstance(args, set) or isinstance(args, tuple) or isinstance(args, dict):\r\n            return map(wrapper, args)\r\n        else:\r\n            return function(args)\r\n    return wrapper\r\n    \r\n    \r\n@iterize\r\ndef test_function1(x):\r\n    return x.Geometry()\r\n\r\n\r\ndef test_function2(args):\r\n    return map(lambda x: x*2, args)\r\n\r\n\r\n# 출력을 OUT 변수에 지정합니다.\r\nOUT = test_function1(input1)",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "b28dfd9882de4639bdca659ab2fc9ee4",
+      "Inputs": [
+        {
+          "Id": "83df38a87ae04cb881a950477b9768c1",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "54326f9f446548c3bae66b462554cbdf",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "i[0];",
+      "Id": "6de12f0c6a264bd58023803b80671290",
+      "Inputs": [
+        {
+          "Id": "089e2e72e90747a4b5a29cd28e59bf6d",
+          "Name": "i",
+          "Description": "i",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "64507c3b53144c08ac9fe8002a4e98f8",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Python 표준 및 DesignScript 라이브러리 로드\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\nfrom typing import Iterable\r\n\r\ndef iterize(function):\r\n    def wrapper(args):\r\n        if isinstance(args, list) or isinstance(args, set) or isinstance(args, tuple) or isinstance(args, dict):\r\n            return map(wrapper, args)\r\n        else:\r\n            return function(args)\r\n    return wrapper\r\n\r\n# 이 노드에 대한 입력값은 IN 변수에 리스트로 저장됩니다.\r\ndataEnteringNode = IN\r\ninput1 = IN[0]\r\ninput2 = IN[1]\r\n\r\n# 코드를 이 선 아래에 배치\r\n@iterize\r\ndef test_function1(a):\r\n    return a*2\r\n\r\n\r\n@iterize\r\ndef test_function2(a):\r\n    return a.Geometry()\r\n    \r\n@iterize\r\ndef test_function3(a):\r\n    return a.GetParameterValueByName(\"Frame\")\r\n\r\nresult = test_function1(input2)\r\n\r\n# 출력을 OUT 변수에 지정합니다.\r\nOUT = result",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "8711d5c3e80b44a695c57959d7c61316",
+      "Inputs": [
+        {
+          "Id": "ac0a4e0591464768a62606b9c09708fb",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f25f588912f14819874c7e4fe9d389aa",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "49a07e5fee0e4b3bbdb00d8a822406fa",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "3;\n[1,2,3,4,5];\n[[1,2,3],[4,[[5,6],7]],[4]];",
+      "Id": "57e8bdf35c9a4baea2ed2c7b5a60516a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "db9da1ece7dc47ad8e78a4d40b23c67b",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f535e859ebb340729686b95f009614ee",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f8cc13e0961f4e9d8c45faa96c8d902c",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Python 표준 및 DesignScript 라이브러리 로드\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# 이 노드에 대한 입력값은 IN 변수에 리스트로 저장됩니다.\r\ndataEnteringNode = IN\r\ninput1 = IN[0]\r\n\r\n# 코드를 이 선 아래에 배치\r\ndef iterize(function):\r\n    def wrapper(args):\r\n        if isinstance(args, list) or isinstance(args, set) or isinstance(args, tuple) or isinstance(args, dict):\r\n            return map(wrapper, args)\r\n        else:\r\n            return function(args)\r\n    return wrapper\r\n\r\n@iterize\r\ndef test_function1(x):\r\n    return x*2\r\n\r\n\r\ndef test_function2(args):\r\n    return map(lambda x: x*2, args)\r\n\r\n\r\n# 출력을 OUT 변수에 지정합니다.\r\nOUT = test_function1(input1)",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "dfaa403725c34605b2a1045d08c3d7b9",
+      "Inputs": [
+        {
+          "Id": "7861608423dd4abb8772aba59905614d",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b7881cfb731d40ffbe1512021d28ddc0",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "8e45f937a6c14a5fa0ba07aca720b2cb",
+      "End": "dbc7c1f93e3a49cba949fe7ca7a926e6",
+      "Id": "3bd0fbea35bb4f4383c588cc28238155"
+    },
+    {
+      "Start": "dadf6595404843b6b9303d47e92f86d3",
+      "End": "ac0a4e0591464768a62606b9c09708fb",
+      "Id": "4353c6f1aac1443c8a5ec71fded15445"
+    },
+    {
+      "Start": "9319577d54744574ba01ca7b6f725968",
+      "End": "f25f588912f14819874c7e4fe9d389aa",
+      "Id": "aebd3245915d46c384799cb65f5ddab3"
+    },
+    {
+      "Start": "3fd03d3266d346f194eb72c8c3adbf6d",
+      "End": "950e9b92b62f4981b43f3913cdb64098",
+      "Id": "fceaa16361c141a6b35e7b4765de25a7"
+    },
+    {
+      "Start": "bf1d29fc598e4139b9cfaf9ca9fde6a1",
+      "End": "089e2e72e90747a4b5a29cd28e59bf6d",
+      "Id": "84210a2e2a3c4b239881dc0ee08e7c40"
+    },
+    {
+      "Start": "bf1d29fc598e4139b9cfaf9ca9fde6a1",
+      "End": "83df38a87ae04cb881a950477b9768c1",
+      "Id": "aa7810820ae4484aa0705dd129b29deb"
+    },
+    {
+      "Start": "f8cc13e0961f4e9d8c45faa96c8d902c",
+      "End": "7861608423dd4abb8772aba59905614d",
+      "Id": "55085a54686246f4b31a597955417fbb"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.10.1.3976",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 18041.6953125,
+      "EyeY": 17146.115234375,
+      "EyeZ": 32787.8828125,
+      "LookX": -5449.876953125,
+      "LookY": -9122.01953125,
+      "LookZ": -35160.9296875,
+      "UpX": -0.0053455745801329613,
+      "UpY": 0.99939084053039551,
+      "UpZ": -0.0344877690076828
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "14c273e76eb64e8dad3945b83be836b9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -4.2785188187449421,
+        "Y": 439.42521355979477
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "3d7d67f755fc4b4fa5c11b075254b6c1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 319.41093983228291,
+        "Y": 452.37568133263483
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "25c674c7d33c4ddd8e6f604dc881b974",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1054.1925065885785,
+        "Y": 538.9015081521685
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "f8c5838f50bb403091ed4ce238ec8a0a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1633.5361556585565,
+        "Y": -317.51764139614528
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
+        "Id": "8d40a24d556b4756abc3557dfa37ef27",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1899.5361556585565,
+        "Y": -317.51764139614528
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "b28dfd9882de4639bdca659ab2fc9ee4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2363.6397388468986,
+        "Y": -328.11534619526208
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "6de12f0c6a264bd58023803b80671290",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2157.4306993370851,
+        "Y": -478.9782249434665
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "8711d5c3e80b44a695c57959d7c61316",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1433.8342318729708,
+        "Y": 538.50506509372576
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "57e8bdf35c9a4baea2ed2c7b5a60516a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -258.52577206903982,
+        "Y": -177.83758987983757
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "dfaa403725c34605b2a1045d08c3d7b9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 78.2007966653834,
+        "Y": -168.06933941360603
+      }
+    ],
+    "Annotations": [],
+    "X": -1515.3295057182618,
+    "Y": 475.36648146347738,
+    "Zoom": 0.93139431760746427
+  }
+}
