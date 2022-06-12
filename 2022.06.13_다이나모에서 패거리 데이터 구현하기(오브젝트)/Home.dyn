@@ -1,0 +1,100 @@
+{
+  "Uuid": "c5a7c55e-0a27-4d86-b9de-5aff7d61620f",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "Home",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "DesignScript.Builtin.Dictionary": {
+        "Key": "DesignScript.Builtin.Dictionary",
+        "Value": "DesignScriptBuiltin.dll"
+      },
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "NurbsSurface": {
+        "Key": "Autodesk.DesignScript.Geometry.NurbsSurface",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\nfrom dataclasses import dataclass \r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n# Place your code below this line\r\n@dataclass \r\nclass Product: \r\n    weight: int = None\r\n    price: float = None\r\n\r\napple = Product()\r\napple.price = 10\r\n# Assign your output to the OUT variable.\r\nOUT = apple",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "15093ce7262e443abf0bd41b7861d7a6",
+      "Inputs": [
+        {
+          "Id": "6fc50308071c449cb675f9fc9857faaf",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b6ff670323384c00815533fd4a177d52",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    }
+  ],
+  "Connectors": [],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.10.1.3976",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -4.3541488647460938,
+      "EyeY": 4.7169947624206543,
+      "EyeZ": 21.045040130615234,
+      "LookX": 4.3541488647460938,
+      "LookY": -4.7169947624206543,
+      "LookZ": -21.045040130615234,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "15093ce7262e443abf0bd41b7861d7a6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 269.5503320352226,
+        "Y": 542.60132540903749
+      }
+    ],
+    "Annotations": [],
+    "X": -241.89474789019073,
+    "Y": -727.254559481867,
+    "Zoom": 1.9661239960026697
+  }
+}
