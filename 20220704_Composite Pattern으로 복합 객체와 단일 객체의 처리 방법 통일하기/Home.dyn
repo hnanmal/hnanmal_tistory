@@ -1,0 +1,240 @@
+{
+  "Uuid": "f64053f4-add3-4189-87a0-74159f2c534b",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Home",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\nfrom abc import *\r\n\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\ninputWalls = IN[0]\r\n\r\n# Place your code below this line\r\n\r\n\r\nclass Wall_component(metaclass=ABCMeta):\r\n    @abstractmethod\r\n    def calcArea(self):\r\n        pass\r\n\r\nclass Wall_leaf(Wall_component):\r\n    def __init__(self, revitWall):\r\n        self.revitWall = revitWall\r\n    \r\n    def calcArea(self):\r\n        return self.revitWall.GetParameterValueByName(\"Area\")\r\n\r\nclass Wall_composite(Wall_component):\r\n    def __init__(self):\r\n        self.components = []\r\n        \r\n    def add(self, component:Wall_component):\r\n        self.components.append(component)\r\n        \r\n    def calcArea(self):\r\n        res = [x.GetParameterValueByName(\"Area\") for x in self.components]\r\n        return res\r\n\r\n\r\n\r\ncompost1 =  Wall_composite()\r\ncompost1.add(Wall_leaf(inputWalls[0]))\r\ncompost1.add(Wall_leaf(inputWalls[1]))\r\n\r\ncompost0 = Wall_composite()\r\ncompost0.add(Wall_leaf(inputWalls[2]))\r\ncompost0.add(compost1)\r\n\r\ncompost2 = Wall_composite()\r\nlist(map(compost2.add, inputWalls))\r\nresult = compost2.calcArea()\r\n\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = result",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "c386fc1e70664b1f978582f01a2e456e",
+      "Inputs": [
+        {
+          "Id": "4c143df91fff4e338ab84e62aaa87c66",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "dd02f9a5f2c04895aa01d5571f786964",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "9f2ad75fb0654ed1864ae101fea68518",
+      "Inputs": [
+        {
+          "Id": "42fb136c2b54481ab5961cc3c9326b5e",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0208c6dce81a4807807d94867492f0f8",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 686,
+      "SelectedString": "OST_Walls",
+      "NodeType": "ExtensionNode",
+      "Id": "ba3dba0425e24f8088043aaba131d8e8",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "83020d93cc16420b8b010e61248ebf5e",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.GetParameterValueByName@string",
+      "Id": "44a8b8770dd443059f3c4a8d81ce6de6",
+      "Inputs": [
+        {
+          "Id": "5fc8de63aa1745d0ac304c379779d0e3",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7f35299ba779495c8d72d2314df4dc4e",
+          "Name": "parameterName",
+          "Description": "The name of the parameter whose value you want to obtain.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "872013f5f6da4c18b7250b8d3c949a72",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the value of one of the element's parameters.\n\nElement.GetParameterValueByName (parameterName: string): var[]..[]"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "0208c6dce81a4807807d94867492f0f8",
+      "End": "4c143df91fff4e338ab84e62aaa87c66",
+      "Id": "22a18bd921ff4d208a37e5bc041f3761"
+    },
+    {
+      "Start": "83020d93cc16420b8b010e61248ebf5e",
+      "End": "42fb136c2b54481ab5961cc3c9326b5e",
+      "Id": "46f83f0ee9a247b78bb6520b0d989235"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.0.5650",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "c386fc1e70664b1f978582f01a2e456e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 665.32653673182062,
+        "Y": 342.26476759978414
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
+        "Id": "9f2ad75fb0654ed1864ae101fea68518",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 389.0,
+        "Y": 286.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "ba3dba0425e24f8088043aaba131d8e8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 184.0,
+        "Y": 288.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.GetParameterValueByName",
+        "Id": "44a8b8770dd443059f3c4a8d81ce6de6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 420.5,
+        "Y": 61.0
+      }
+    ],
+    "Annotations": [],
+    "X": -434.80792323084665,
+    "Y": -365.85920493611081,
+    "Zoom": 1.3938837133076682
+  }
+}
